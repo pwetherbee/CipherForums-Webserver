@@ -1,0 +1,198 @@
+@font-face {
+  font-family: "Menlo";
+  src: url("//db.onlinewebfonts.com/t/9f94dc20bb2a09c15241d3a880b7ad01.ttf");
+}
+
+body {
+  margin: 0;
+  font-family: "Menlo";
+  font-size: 17px;
+  background-size: cover;
+  background-color: #f5f5f5;
+  /* background-image: url("assets/hubble.jpg"); */
+}
+
+.fadeInAnimated {
+  opacity: 0;
+  animation: fadeIn 2.5s forwards;
+}
+
+
+.profile {
+  /* font-family: menlo; */
+  color: white;
+  background-color: black;
+  width: 40%;
+  height: 10%;
+  margin-left: 4%;
+  margin-top: 5%;
+  padding: 1%;
+  /*border:1vmin solid black;*/
+}
+
+.forum {
+  /* font-family: menlo; */
+  background-color: white;
+  width: 80%;
+  height: 10%;
+  margin-left: 3%;
+  margin-top: 7%;
+  padding: 1%;
+  /*border: 1vmin solid black;*/
+  /*padding-bottom: 1%;*/
+}
+
+.insideForum {
+  /* font-family: menlo; */
+  width: 80%;
+  height: 10%;
+  margin-top: 0%;
+  margin-left: 6%;
+  background-color: #f5f5f5;
+  padding: 2%;
+  line-height: 1%;
+}
+
+
+
+.key__textbox {
+  height: 2rem;
+  width: 15rem;
+  text-align: center;
+   /*border-radius: 0.5rem; */
+  font-size: 20px;
+}
+
+.date {
+  display: flex;
+  flex:2,1;
+  justify-content: space-between;
+  background-color: white;
+  color: black;
+  margin-left: 1%;
+  width: 30%;
+  padding-left: 1%;
+}
+
+.likes {
+  /*float: right; */
+  position: relative;
+  background-color: white;
+  color: black;
+  margin-left: 3%;
+  width: 8%;
+  height: 5%;
+  padding: none;
+}
+
+
+.enterKey {
+  position: absolute;
+  margin-left: 55%;
+  top: 5%;
+}
+
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+a:link {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+/*------------------------------------------------------------------------*/
+
+
+
+
+.commentBoxDiv{
+  display: inline-block;
+  margin-top: 4%;
+  margin-left: 4%;
+}
+
+.postKey{
+  display: inline-block;
+}
+
+
+.menu{
+  display: fixed;
+  position: fixed;
+  top: 5%;
+  right: 2%;
+  width:9%;
+  cursor: pointer;
+}
+
+.menu:hover{
+  filter: invert(40%);
+  /*background-color: black;*/
+}
+
+
+.submenuText{
+  background-color: grey;
+  color: white;
+  text-align: center;
+  padding: 1vmin;
+}
+
+#submenu{
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 6%;
+  right: 11%;
+}
+
+.hider{
+overflow: hidden;
+}
+
+
+.hider #submenuText {
+  display: block;
+}
+
+
+/*----------------------*/
+
+.keyList{
+  position: relative;
+  margin-left: 10%;
+  margin-top: 8%;
+  width: 50%;
+}
+
+.keyListFormat{
+  display: flex;
+  justify-content:space-between;
+  width:100%;
+  margin-top: 1%;
+  padding: 1%;
+  border: .5vmin solid black;
+}
+
+
+.keyListItems{
+  display: flex;
+  justify-content:space-between;
+  width:50%;
+}
+
+
+.bold{
+  font-weight: bold;
+}
+
+
+
+/*# sourceMappingURL=/style.619521e3.css.map */

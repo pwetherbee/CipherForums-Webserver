@@ -1,0 +1,219 @@
+@font-face {
+  font-family: "Menlo";
+  src: url("//db.onlinewebfonts.com/t/9f94dc20bb2a09c15241d3a880b7ad01.ttf");
+}
+
+:root {
+  --main-color: #f5f5f5;
+  --secondary-color: white;
+  --tertiary-color: rgb(221, 221, 221);
+  --text-color: black;
+}
+
+::placeholder {
+  color: var(--text-color);
+  opacity: 0.3;
+}
+
+body {
+  margin: 0;
+  font-family: "Menlo";
+  font-size: 17px;
+  background-size: cover;
+  background-color: var(--main-color);
+  color: var(--text-color);
+  /* background-image: url("assets/hubble.jpg"); */
+}
+
+textarea {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+button {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+input {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+img {
+  max-width: 30rem;
+  height: auto;
+}
+
+.dark-mode {
+  --main-color: #121212;
+  --secondary-color: #252525;
+  --tertiary-color: rgb(58, 58, 58);
+  /* --text-color: rgb(154, 255, 96); */
+  --text-color: rgb(223, 223, 223);
+  /* --text-color: rgba(54, 255, 28, 0.781); */
+  /* --text-color: rgb(255, 255, 255); */
+}
+
+.fadeInAnimated {
+  opacity: 0;
+  animation: fadeIn 2.5s forwards;
+}
+
+.profile {
+  /* font-family: menlo; */
+  color: var(--secondary-color);
+  background-color: black;
+  width: 40%;
+  height: 10%;
+  margin-left: 4%;
+  margin-top: 5%;
+  padding: 1%;
+  /*border:1vmin solid black;*/
+}
+
+.forum {
+  /* font-family: menlo; */
+  background-color: var(--secondary-color);
+  width: 50%;
+  height: 10%;
+  margin-left: 3%;
+  margin-top: 7%;
+  padding: 1%;
+  /*border: 1vmin solid black;*/
+  /*padding-bottom: 1%;*/
+}
+
+.insideForum {
+  /* font-family: menlo; */
+  width: 80%;
+  height: 10%;
+  margin-top: 0%;
+  margin-left: 6%;
+  background-color: var(--main-color);
+  padding: 0.5%;
+  line-height: 1%;
+}
+
+.comment__container {
+  border-bottom: 1px dotted rgb(104, 104, 104);
+}
+
+.key__textbox {
+  height: 2rem;
+  width: 15rem;
+  text-align: center;
+  /*border-radius: 0.5rem; */
+  font-size: 20px;
+}
+
+.comment__header {
+  /* background-color: rgb(223, 223, 223); */
+  font-size: 10px;
+  font-style: italic;
+}
+
+.btn__reply {
+  font-style: normal;
+  font-size: 0.6rem;
+}
+
+/* .comment__body {
+  background-color: rgb(241, 241, 241);
+} */
+
+.date {
+  display: flex;
+  flex: 2, 1;
+  justify-content: space-between;
+  background-color: var(--secondary-color);
+  margin-left: 1%;
+  width: 30%;
+  padding-left: 1%;
+}
+
+.likes {
+  /*float: right; */
+  position: relative;
+  background-color: white;
+  color: black;
+  margin-left: 3%;
+  width: 8%;
+  height: 5%;
+  padding: none;
+}
+
+.key__container {
+  position: sticky;
+  margin-left: 55%;
+  /* background-color: var(--tertiary-color); */
+  top: 5%;
+}
+
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+a:link {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/*------------------------------------------------------------------------*/
+
+.commentBoxDiv {
+  display: inline-block;
+  /* background-color: var(--main-color); */
+  margin-top: 4%;
+  margin-left: 4%;
+}
+
+.postKey {
+  display: inline-block;
+}
+
+.menu {
+  display: fixed;
+  position: fixed;
+  top: 5%;
+  right: 2%;
+  width: 9%;
+  cursor: pointer;
+}
+
+.menu:hover {
+  filter: invert(40%);
+  /*background-color: black;*/
+}
+
+.submenuText {
+  background-color: grey;
+  color: white;
+  text-align: center;
+  padding: 1vmin;
+}
+
+#submenu {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 6%;
+  right: 11%;
+}
+
+.hider {
+  overflow: hidden;
+}
+
+.hider #submenuText {
+  display: block;
+}
+
+.formatHexIndent {
+  margin-left: 5%;
+}

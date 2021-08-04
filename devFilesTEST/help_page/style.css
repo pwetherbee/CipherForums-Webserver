@@ -1,0 +1,91 @@
+@font-face {
+  font-family: "Menlo";
+  src: url("//db.onlinewebfonts.com/t/9f94dc20bb2a09c15241d3a880b7ad01.ttf");
+}
+
+body {
+  margin: 0;
+  font-family: "Menlo";
+  font-size: 17px;
+  background-size: cover;
+  /* background-image: url("assets/hubble.jpg"); */
+}
+
+.container{
+	width: 70%;
+	padding:5%;
+}
+
+.title{
+	font-size: 150%;
+	font-weight: bold;
+}
+
+.image{
+	width: 50%;
+	margin-left: 10%;
+}
+
+.indentText{
+  width: 80%;
+  margin-left: 10%;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.menu{
+  display: fixed;
+  position: fixed;
+  top: 5%;
+  right: 2%;
+  width:9%;
+  cursor: pointer;
+}
+
+.menu:hover{
+  filter: invert(40%);
+  /*background-color: black;*/
+}
+
+
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+a:link {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+.submenuText{
+  background-color: grey;
+  color: white;
+  text-align: center;
+  padding: 1vmin;
+}
+
+.hider{
+overflow: hidden;
+}
+
+
+.hider #submenuText {
+  display: block;
+}
+
+
+#submenu{
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 6%;
+  right: 11%;
+}

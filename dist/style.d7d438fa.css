@@ -1,0 +1,111 @@
+@font-face {
+  font-family: "Menlo";
+  src: url("//db.onlinewebfonts.com/t/9f94dc20bb2a09c15241d3a880b7ad01.ttf");
+}
+
+body {
+  margin: 0;
+  font-family: "Menlo";
+  font-size: 17px;
+  background-size: cover;
+  background-color: #f5f5f5;
+  /* background-image: url("assets/hubble.jpg"); */
+}
+
+
+
+
+.commentBoxDiv{
+  display: inline-block;
+  margin-top: 4%;
+  margin-left: 4%;
+}
+
+.postKey{
+  display: inline-block;
+}
+
+
+.menu{
+  display: fixed;
+  position: fixed;
+  top: 5%;
+  right: 2%;
+  width:9%;
+  cursor: pointer;
+}
+
+.menu:hover{
+  filter: invert(40%);
+  /*background-color: black;*/
+}
+
+
+.submenuText{
+  background-color: grey;
+  color: white;
+  text-align: center;
+  padding: 1vmin;
+}
+
+#submenu{
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 6%;
+  right: 11%;
+}
+
+.hider{
+overflow: hidden;
+}
+
+
+.hider #submenuText {
+  display: block;
+}
+
+
+.topicHolder{
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  height: 50%;
+  margin-left: 5%;
+  margin-top: 5%;
+  border: 1vmin solid black;
+  padding:1%;
+  flex-wrap: wrap;
+}
+
+
+.topic{
+  margin-top: 3%;
+  border: 1vmin solid black;
+  padding:1%;
+  width: 25%;
+}
+
+.image{
+  width: 100%;
+}
+
+.topicsText{
+  margin:auto;
+  text-align: center;
+  margin-top: -3%;
+  padding: 3%;
+  font-weight: bold;
+}
+
+
+h1{
+  margin-left: 10%;
+  margin-top: 5%;
+}
+
+
+
+
+
+/*# sourceMappingURL=/style.d7d438fa.css.map */

@@ -1,0 +1,5 @@
+ What is the purpose of this site?
+
+This website aims to give users the ability to fully control the privacy of what they post. Rather than designing systems where your account is set to “private”, all of your posts are mathematically encrypted with your key of choice, then posted publicly. 
+
+How does the encryption work?
