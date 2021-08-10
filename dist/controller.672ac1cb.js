@@ -880,7 +880,7 @@ try {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.postComment = exports.getForum = exports.state = void 0;
+exports.putForum = exports.postComment = exports.getForum = exports.state = void 0;
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -894,6 +894,13 @@ var state = {
 };
 exports.state = state;
 
+var updateState = function updateState(data) {
+  state.id = data.id;
+  console.log("this forum ID is:", data.id);
+  state.author = data.author;
+  state.comments = data.comments;
+};
+
 var getForum = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(id) {
     var url,
@@ -905,28 +912,29 @@ var getForum = /*#__PURE__*/function () {
         switch (_context.prev = _context.next) {
           case 0:
             url = _args.length > 1 && _args[1] !== undefined ? _args[1] : "http://localhost:3000/api/threads";
-            _context.next = 3;
+            console.log("fetching data");
+            _context.next = 4;
             return fetch("".concat(url, "/").concat(id));
 
-          case 3:
+          case 4:
             res = _context.sent;
+            console.log("heres the res", res);
 
             if (res.ok) {
-              _context.next = 6;
+              _context.next = 8;
               break;
             }
 
             throw new Error("ID not found");
 
-          case 6:
-            _context.next = 8;
+          case 8:
+            _context.next = 10;
             return res.json();
 
-          case 8:
+          case 10:
             data = _context.sent;
-            state.id = id;
-            state.author = data.author;
-            state.comments = data.comments;
+            // console.log("heres the data", data);
+            updateState(data);
             return _context.abrupt("return", data);
 
           case 13:
@@ -954,10 +962,7 @@ var postComment = /*#__PURE__*/function () {
         switch (_context2.prev = _context2.next) {
           case 0:
             url = _args2.length > 1 && _args2[1] !== undefined ? _args2[1] : "http://localhost:3000/api/threads/".concat(state.id);
-            console.log(JSON.stringify({
-              foo: "bar"
-            }));
-            _context2.next = 4;
+            _context2.next = 3;
             return fetch(url, {
               method: "POST",
               headers: {
@@ -967,24 +972,24 @@ var postComment = /*#__PURE__*/function () {
               body: JSON.stringify(comment)
             });
 
-          case 4:
+          case 3:
             fetchPro = _context2.sent;
 
             if (fetchPro.ok) {
-              _context2.next = 8;
+              _context2.next = 7;
               break;
             }
 
             alert("comment could not be submitted");
             return _context2.abrupt("return");
 
-          case 8:
+          case 7:
             state.comments.push(comment); // const res = await Promise.race([fetchPro, timeout(1000)]);
             // if (!res.ok) {
             // }
             // const res = await Promise.race([fetchPro]);
 
-          case 9:
+          case 8:
           case "end":
             return _context2.stop();
         }
@@ -998,6 +1003,58 @@ var postComment = /*#__PURE__*/function () {
 }();
 
 exports.postComment = postComment;
+
+var putForum = /*#__PURE__*/function () {
+  var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(comment) {
+    var url,
+        res,
+        data,
+        _args3 = arguments;
+    return regeneratorRuntime.wrap(function _callee3$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            url = _args3.length > 1 && _args3[1] !== undefined ? _args3[1] : "http://localhost:3000/api/threads";
+            _context3.next = 3;
+            return fetch(url, {
+              method: "PUT",
+              headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json"
+              }
+            });
+
+          case 3:
+            res = _context3.sent;
+
+            if (res !== null && res !== void 0 && res.ok) {
+              _context3.next = 7;
+              break;
+            }
+
+            alert("Post could not be created");
+            return _context3.abrupt("return");
+
+          case 7:
+            data = res.json();
+            updateState(data);
+            console.log(data);
+            return _context3.abrupt("return", data);
+
+          case 11:
+          case "end":
+            return _context3.stop();
+        }
+      }
+    }, _callee3);
+  }));
+
+  return function putForum(_x3) {
+    return _ref3.apply(this, arguments);
+  };
+}();
+
+exports.putForum = putForum;
 },{}],"forum_post/views/View.js":[function(require,module,exports) {
 "use strict";
 
@@ -13546,27 +13603,25 @@ var controlInitialLoad = /*#__PURE__*/function () {
         switch (_context.prev = _context.next) {
           case 0:
             url = window.location.href;
-            console.log(url);
             id = url.split("/").slice(-1);
-            console.log(id);
-            _context.prev = 4;
-            _context.next = 7;
+            _context.prev = 2;
+            _context.next = 5;
             return model.getForum(id);
 
-          case 7:
+          case 5:
             data = _context.sent;
-            _context.next = 14;
+            _context.next = 12;
             break;
 
-          case 10:
-            _context.prev = 10;
-            _context.t0 = _context["catch"](4);
+          case 8:
+            _context.prev = 8;
+            _context.t0 = _context["catch"](2);
 
             _forumView.default.render_error();
 
             return _context.abrupt("return");
 
-          case 14:
+          case 12:
             _forumView.default.render(data);
 
             _forumView.default.setForumInfo();
@@ -13585,12 +13640,12 @@ var controlInitialLoad = /*#__PURE__*/function () {
               controlUpdateKey();
             }, 500);
 
-          case 19:
+          case 17:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[4, 10]]);
+    }, _callee, null, [[2, 8]]);
   }));
 
   return function controlInitialLoad() {
@@ -13727,6 +13782,7 @@ var controlPostComment = /*#__PURE__*/function () {
             currTime = +new Date() / 1000;
             authorTest = "test_author";
             comment = {
+              forumID: model.state.id,
               author: authorTest,
               time: currTime,
               text: commentEncrypted
@@ -13742,7 +13798,6 @@ var controlPostComment = /*#__PURE__*/function () {
             // }
             commentTextBox.value = ""; // TODO: just render latest comment, not entire thread
 
-            console.log("comment was posted");
             unencrypted = _objectSpread({}, comment);
             unencrypted["text"] = parseComment(commentText);
 
@@ -13750,7 +13805,7 @@ var controlPostComment = /*#__PURE__*/function () {
 
             commentEls = document.querySelectorAll(".comment__body");
 
-          case 17:
+          case 16:
           case "end":
             return _context4.stop();
         }
@@ -13763,15 +13818,21 @@ var controlPostComment = /*#__PURE__*/function () {
   };
 }();
 
-var controlHideKey = /*#__PURE__*/function () {
+var controlCreateForum = /*#__PURE__*/function () {
   var _ref5 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
+    var newForum;
     return regeneratorRuntime.wrap(function _callee5$(_context5) {
       while (1) {
         switch (_context5.prev = _context5.next) {
           case 0:
-            _keyView.default.hideKey();
+            _context5.next = 2;
+            return model.putForum();
 
-          case 1:
+          case 2:
+            newForum = _context5.sent;
+            location.href = "/threads/".concat(newForum.newID);
+
+          case 4:
           case "end":
             return _context5.stop();
         }
@@ -13779,8 +13840,29 @@ var controlHideKey = /*#__PURE__*/function () {
     }, _callee5);
   }));
 
-  return function controlHideKey() {
+  return function controlCreateForum() {
     return _ref5.apply(this, arguments);
+  };
+}();
+
+var controlHideKey = /*#__PURE__*/function () {
+  var _ref6 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee6() {
+    return regeneratorRuntime.wrap(function _callee6$(_context6) {
+      while (1) {
+        switch (_context6.prev = _context6.next) {
+          case 0:
+            _keyView.default.hideKey();
+
+          case 1:
+          case "end":
+            return _context6.stop();
+        }
+      }
+    }, _callee6);
+  }));
+
+  return function controlHideKey() {
+    return _ref6.apply(this, arguments);
   };
 }();
 
@@ -13795,9 +13877,11 @@ var init = function init() {
 
   var searchBar = document.querySelector(".search__textbox");
   var searchButton = document.querySelector(".search__btn");
+  var createForumButton = document.querySelector(".create__forum__btn");
   searchButton.addEventListener("click", function (e) {
     controlForumView(searchBar.value);
   });
+  createForumButton.addEventListener("click", controlCreateForum);
   var submitButton = document.querySelector(".btn__comment");
   submitButton.addEventListener("click", controlPostComment); //night mode
 
@@ -13835,7 +13919,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54402" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54150" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

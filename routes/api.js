@@ -1,83 +1,125 @@
 var express = require("express");
+const idGen = require("../helpers/generateRandomID");
+// const idgen = require("../helpers/generateRandomID");
 var router = express.Router();
+let SQLHelper = require("../helpers/sqlQueryHelper");
 router.use(express.json());
 
-let forum1 = {
-  id: "999",
-  author: "Colin",
-  comments: [
-    {
-      author: "Colin",
-      time: "1627170251",
-      text: "7f741c422a0a640a08312043405371345970035e2d7442435b090b444375767e5c717d536444705c473a086a67077b744336480c534411535352530a0204034b",
-    },
-    {
-      author: "Patrick",
-      time: "1627171251",
-      text: "5d7c2049170f51371c2532784072543c6a542f7a2e44514d5c450e504152185b40175712535d5f5f520c111e1118584547415e004c4d425b471708594b4a4f4b",
-    },
-  ],
-};
+// let test = idGen.generateID();
+// console.log(test);
 
-let forum2 = {
-  id: "dopeforum",
-  author: "Patrick",
-  comments: [
-    {
-      author: "YoMamma",
-      time: "1627170251",
-      text: "7f741c422a0a640a08312043405371345970035e2d7442435b090b444375767e5c717d536444705c473a086a67077b744336480c534411535352530a0204034b",
-    },
-    {
-      author: "Satoshi",
-      time: "1627171251",
-      text: "5d7c2049170f51371c2532784072543c6a542f7a2e44514d5c450e504152185b40175712535d5f5f520c111e1118584547415e004c4d425b471708594b4a4f4b",
-    },
-    {
-      author: "Bob",
-      time: "1627171321",
-      text: "5a7928680b0c61252309104d787d4e3d465e1a5d0550555c52451150135559515847445d5740535f5a070112430453545c151841525207481459174c4211164b",
-    },
-  ],
-};
+// First forum created: StableBest-sellingNewt
 
-let forum3 = {
-  id: "123",
-  author: "Tate",
-  comments: [
-    {
-      author: "Colin",
-      time: "1627170251",
-      text: "7f741c422a0a640a08312043405371345970035e2d7442435b090b444375767e5c717d536444705c473a086a67077b744336480c534411535352530a0204034b",
-    },
-    {
-      author: "Patrick",
-      time: "1627171251",
-      text: "5d7c2049170f51371c2532784072543c6a542f7a2e44514d5c450e504152185b40175712535d5f5f520c111e1118584547415e004c4d425b471708594b4a4f4b",
-    },
-  ],
-};
+router.get("/threads/:tag", (req, res) => {
+  // TODO: Replace with SQL query
 
-const testdata = {
-  999: forum1,
-  101: forum2,
-  69: forum3,
-};
-
-router.get("/threads/:id", (req, res) => {
-  let id = req.params["id"];
-  res.send(testdata[id]);
+  let urlTag = req.params["tag"];
+  // Make sql query
+  let connection = SQLHelper.createConnection();
+  let query = `
+  SELECT * FROM Forums
+  WHERE url = "${urlTag}"
+  `;
+  connection.connect();
+  connection.query(query, function (err, rows, fields) {
+    if (err) throw err;
+    // console.log(rows, fields);
+    const id = rows[0]?.id;
+    const forum = {
+      author: "Anonymous",
+      id: id,
+      comments: [],
+    };
+    // console.log("success loading forum");
+    // console.log("forum ID: ", forum.id);
+    if (!forum.id) {
+      res.send(forum);
+      return;
+    }
+    query = `
+    SELECT * FROM Comments
+    WHERE forumID = ${forum.id} 
+    `; //(SELECT id FROM Forums WHERE url = "${urlTag}"
+    connection.query(query, function (err, rows, fields) {
+      if (err) throw err;
+      // console.log("success loading comments");
+      rows.forEach((row) => {
+        if (!row) {
+          res.send(forum);
+          return;
+        }
+        let comment = {
+          author: "Anonymous",
+          time: row.timeLog,
+          text: row.commentText,
+          forumID: row.forumID,
+        };
+        forum.comments.push(comment);
+      });
+      res.send(forum);
+    });
+    connection.end();
+  });
 });
 
-router.post("/threads/:id", (req, res) => {
-  let id = req.params["id"];
-  testdata[id].comments.push(req.body);
+router.post("/threads/:tag", (req, res) => {
+  // TODO: Replace with SQL query
+  let urlID = req.params["tag"];
+  let connection = SQLHelper.createConnection();
+  let commentData = req.body;
+  if (!commentData) {
+    return;
+  }
+  // console.log("comment post requested");
+  // console.log(commentData);
+  let query = `
+  INSERT INTO Comments (forumID, commentText)
+  VALUES (${commentData.forumID}, "${commentData.text}")
+  `;
+  connection.connect();
+  connection.query(query, function (err, rows, fields) {
+    if (err) throw err;
+    // console.log("success posting comment");
+  });
+  connection.end();
   res.send("comment successfully added");
 });
 
 router.put("/threads", (req, res) => {
+  // TODO: Replace with SQL query
+  let connection = SQLHelper.createConnection();
+  let urlID = idGen.generateID();
+  connection.connect();
+  let query = `
+  INSERT INTO Forums (url)
+  VALUES ("${urlID}");
+  `;
+  //SELECT id FROM FORUMS
+  //WHERE url IS '${urlID}'
+  connection.query(query, function (err, rows, fields) {
+    if (err) throw err;
+    console.log(rows);
+    console.log("success");
+  });
+  connection.end();
   // assign forum id or name
   // if name not given, generate one
+  // urlID = idGen.generateID();
+  let time = new Date();
+  // testdata[urlID] = {
+  //   id: id, // SQL database will generate the correct serial ID
+  //   url: id,
+  //   author: "Anonymous",
+  //   subtitle: `Forum created on ${time}`,
+  //   comments: [],
+  // };
+  // console.log("Successfully created new forum...");
+  // console.log(`With ID ${urlID}`);
+  res.send(
+    JSON.stringify({
+      newID: urlID,
+    })
+  );
   // if name given, check if name is in data already
   // create template with either anon user or profile name and thread id
 });

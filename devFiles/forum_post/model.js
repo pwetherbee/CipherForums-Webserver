@@ -5,18 +5,27 @@ export const state = {
   comments: [],
 };
 
+const updateState = function (data) {
+  state.id = data.id;
+  console.log("this forum ID is:", data.id);
+  state.author = data.author;
+  state.comments = data.comments;
+};
+
 export const getForum = async function (
   id,
   url = "http://localhost:3000/api/threads"
 ) {
+  console.log("fetching data");
   const res = await fetch(`${url}/${id}`);
+  console.log("heres the res", res);
   if (!res.ok) {
     throw new Error("ID not found");
   }
+  // console.log("heres the res", res);
   const data = await res.json();
-  state.id = id;
-  state.author = data.author;
-  state.comments = data.comments;
+  // console.log("heres the data", data);
+  updateState(data);
   return data;
 };
 
@@ -24,7 +33,6 @@ export const postComment = async function (
   comment,
   url = `http://localhost:3000/api/threads/${state.id}`
 ) {
-  console.log(JSON.stringify({ foo: "bar" }));
   const fetchPro = await fetch(url, {
     method: "POST",
     headers: {
@@ -43,4 +51,25 @@ export const postComment = async function (
 
   // }
   // const res = await Promise.race([fetchPro]);
+};
+
+export const putForum = async function (
+  comment,
+  url = `http://localhost:3000/api/threads`
+) {
+  const res = await fetch(url, {
+    method: "PUT",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  });
+  if (!res?.ok) {
+    alert("Post could not be created");
+    return;
+  }
+  const data = res.json();
+  updateState(data);
+  console.log(data);
+  return data;
 };

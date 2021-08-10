@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Menlo";
-  src: url("//db.onlinewebfonts.com/t/9f94dc20bb2a09c15241d3a880b7ad01.ttf");
+  src: url("//db.onlinewebfonts.com/t/9f94dc20bb2a09c15241d3a880b7ad01.otf");
 }
 
 body {
@@ -131,37 +131,34 @@ a:hover {
 
 /*------------------------------------------------------------------------*/
 
-.bottomBar{
+.bottomBar {
   display: flex;
   padding: 2%;
 }
 
-.bottomBarText{
-  padding:2%;
+.bottomBarText {
+  padding: 2%;
   margin: auto;
 }
 
-.leftSide{
+.leftSide {
   background-color: black;
   color: white;
   width: 50%;
   flex: 1;
 }
 
-.centerSide{
+.centerSide {
   background-color: white;
   flex: 2;
 }
 
-.rightSide{
+.rightSide {
   width: 10%;
   background-color: black;
   color: white;
   margin: auto;
 }
-
-
-
 
 .indentmain {
   background-color: #f5f5f5;
@@ -176,12 +173,12 @@ a:hover {
   text-decoration: underline;
 }
 
-.comments{
-	height: 21vmin;
-	overflow-y: hidden;
+.comments {
+  height: 21vmin;
+  overflow-y: hidden;
 }
 
-.commentHolder{
+.commentHolder {
   position: absolute;
   float: right;
   margin-left: 67%;
@@ -190,43 +187,40 @@ a:hover {
   width: 27%;
 }
 
-.userComments{
+.userComments {
   width: 100%;
   border: 1vmin solid black;
 }
 
-.userCommentsText{
+.userCommentsText {
   padding: 1%;
   background-color: black;
   color: white;
   width: 25%;
 }
 
-.insideUserComments{
+.insideUserComments {
   margin: auto;
   /*padding: 1%;*/
   word-wrap: break-word;
-
 }
 
-.bottomBarRightComments{
+.bottomBarRightComments {
   margin-left: 1%;
   background-color: black;
   color: white;
   width: 30%;
 }
 
-.commentsSidebar{
+.commentsSidebar {
   margin-top: 20%;
 }
 
-.boxSpacing{
+.boxSpacing {
   margin-top: 5%;
 }
 
-.formatHex{
-	/*margin-top: 0%;*/
-	margin: auto;
+.formatHex {
+  /*margin-top: 0%;*/
+  margin: auto;
 }
-
-

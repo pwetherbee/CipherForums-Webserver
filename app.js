@@ -3,15 +3,12 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-// require("@babel/polyfill");
 var fileRouter = require("./routes/fileget");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var threadRouter = require("./routes/threads");
-
 var helpRouter = require("./routes/help");
 var apiRouter = require("./routes/api");
-// var fileRouter = require("./routes/fileget");
 const Bundler = require("parcel-bundler");
 
 var cors = require("cors");
@@ -45,8 +42,6 @@ app.use("/api", apiRouter);
 app.use("/user", usersRouter);
 app.use("/help", helpRouter);
 app.use("/threads", threadRouter);
-
-// app.use("/public", fileRouter);
 // app.use("/public/thread_files", express.static("public/thread_files"));
 app.use("/", express.static("dist"));
 

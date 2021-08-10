@@ -14,9 +14,7 @@ let commentEls;
 
 const controlInitialLoad = async function () {
   let url = window.location.href;
-  console.log(url);
   let id = url.split("/").slice(-1);
-  console.log(id);
   let data;
   try {
     data = await model.getForum(id);
@@ -95,6 +93,7 @@ const controlPostComment = async function () {
   const currTime = +new Date() / 1000;
   const authorTest = "test_author";
   const comment = {
+    forumID: model.state.id,
     author: authorTest,
     time: currTime,
     text: commentEncrypted,
@@ -109,11 +108,16 @@ const controlPostComment = async function () {
   // }
   commentTextBox.value = "";
   // TODO: just render latest comment, not entire thread
-  console.log("comment was posted");
   const unencrypted = { ...comment };
   unencrypted["text"] = parseComment(commentText);
   forumView.pushComment(unencrypted);
   commentEls = document.querySelectorAll(".comment__body");
+};
+
+const controlCreateForum = async function () {
+  //create a new random forum with id
+  let newForum = await model.putForum();
+  location.href = `/threads/${newForum.newID}`;
 };
 
 const controlHideKey = async function () {
@@ -127,9 +131,11 @@ const init = function () {
   keyView.addHandlerHideKey(controlHideKey);
   let searchBar = document.querySelector(".search__textbox");
   let searchButton = document.querySelector(".search__btn");
+  let createForumButton = document.querySelector(".create__forum__btn");
   searchButton.addEventListener("click", (e) => {
     controlForumView(searchBar.value);
   });
+  createForumButton.addEventListener("click", controlCreateForum);
   let submitButton = document.querySelector(".btn__comment");
   submitButton.addEventListener("click", controlPostComment);
   //night mode
