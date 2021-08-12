@@ -22,6 +22,7 @@ router.get("/threads/:tag", (req, res) => {
   `;
   connection.connect();
   connection.query(query, function (err, rows, fields) {
+    console.log("this ran yo");
     if (err) throw err;
     // console.log(rows, fields);
     const id = rows[0]?.id;
@@ -42,6 +43,7 @@ router.get("/threads/:tag", (req, res) => {
     `; //(SELECT id FROM Forums WHERE url = "${urlTag}"
     connection.query(query, function (err, rows, fields) {
       if (err) throw err;
+      // console.log("The api made a successful request");
       // console.log("success loading comments");
       rows.forEach((row) => {
         if (!row) {

@@ -129,12 +129,12 @@ const init = function () {
   forumView.addHandlerRender(controlInitialLoad);
   keyView.addHandlerInputText(controlUpdateKey);
   keyView.addHandlerHideKey(controlHideKey);
-  let searchBar = document.querySelector(".search__textbox");
-  let searchButton = document.querySelector(".search__btn");
+  // let searchBar = document.querySelector(".search__textbox");
+  // let searchButton = document.querySelector(".search__btn");
   let createForumButton = document.querySelector(".create__forum__btn");
-  searchButton.addEventListener("click", (e) => {
-    controlForumView(searchBar.value);
-  });
+  // searchButton.addEventListener("click", (e) => {
+  //   controlForumView(searchBar.value);
+  // });
   createForumButton.addEventListener("click", controlCreateForum);
   let submitButton = document.querySelector(".btn__comment");
   submitButton.addEventListener("click", controlPostComment);

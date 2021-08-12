@@ -12,18 +12,21 @@ const updateState = function (data) {
   state.comments = data.comments;
 };
 
-export const getForum = async function (
-  id,
-  url = "http://localhost:3000/api/threads"
-) {
+console.log("this ran");
+const endpoint = "http://node-express-dev2.us-east-2.elasticbeanstalk.com/";
+//http://localhost:3000/
+//http://node-express-dev2.us-east-2.elasticbeanstalk.com/
+export const getForum = async function (id, url = `${endpoint}api/threads`) {
   console.log("fetching data");
   const res = await fetch(`${url}/${id}`);
-  console.log("heres the res", res);
+  // console.log("heres the res", res);
   if (!res.ok) {
     throw new Error("ID not found");
   }
   // console.log("heres the res", res);
+  console.log();
   const data = await res.json();
+  console.log("data converted to JSON");
   // console.log("heres the data", data);
   updateState(data);
   return data;
@@ -31,7 +34,7 @@ export const getForum = async function (
 
 export const postComment = async function (
   comment,
-  url = `http://localhost:3000/api/threads/${state.id}`
+  url = `http://node-express-dev2.us-east-2.elasticbeanstalk.com/api/threads/${state.id}`
 ) {
   const fetchPro = await fetch(url, {
     method: "POST",
@@ -53,9 +56,11 @@ export const postComment = async function (
   // const res = await Promise.race([fetchPro]);
 };
 
+//
+// let url = "http://node-express-dev2.us-east-2.elasticbeanstalk.com/";
 export const putForum = async function (
   comment,
-  url = `http://localhost:3000/api/threads`
+  url = `http://node-express-dev2.us-east-2.elasticbeanstalk.com/api/threads`
 ) {
   const res = await fetch(url, {
     method: "PUT",

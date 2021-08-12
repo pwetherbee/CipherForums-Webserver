@@ -901,6 +901,10 @@ var updateState = function updateState(data) {
   state.comments = data.comments;
 };
 
+console.log("this ran");
+var endpoint = "http://node-express-dev2.us-east-2.elasticbeanstalk.com/"; //http://localhost:3000/
+//http://node-express-dev2.us-east-2.elasticbeanstalk.com/
+
 var getForum = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(id) {
     var url,
@@ -911,33 +915,35 @@ var getForum = /*#__PURE__*/function () {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            url = _args.length > 1 && _args[1] !== undefined ? _args[1] : "http://localhost:3000/api/threads";
+            url = _args.length > 1 && _args[1] !== undefined ? _args[1] : "".concat(endpoint, "api/threads");
             console.log("fetching data");
             _context.next = 4;
             return fetch("".concat(url, "/").concat(id));
 
           case 4:
             res = _context.sent;
-            console.log("heres the res", res);
 
             if (res.ok) {
-              _context.next = 8;
+              _context.next = 7;
               break;
             }
 
             throw new Error("ID not found");
 
-          case 8:
+          case 7:
+            // console.log("heres the res", res);
+            console.log();
             _context.next = 10;
             return res.json();
 
           case 10:
             data = _context.sent;
-            // console.log("heres the data", data);
+            console.log("data converted to JSON"); // console.log("heres the data", data);
+
             updateState(data);
             return _context.abrupt("return", data);
 
-          case 13:
+          case 14:
           case "end":
             return _context.stop();
         }
@@ -961,7 +967,7 @@ var postComment = /*#__PURE__*/function () {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
-            url = _args2.length > 1 && _args2[1] !== undefined ? _args2[1] : "http://localhost:3000/api/threads/".concat(state.id);
+            url = _args2.length > 1 && _args2[1] !== undefined ? _args2[1] : "http://node-express-dev2.us-east-2.elasticbeanstalk.com/api/threads/".concat(state.id);
             _context2.next = 3;
             return fetch(url, {
               method: "POST",
@@ -1000,7 +1006,9 @@ var postComment = /*#__PURE__*/function () {
   return function postComment(_x2) {
     return _ref2.apply(this, arguments);
   };
-}();
+}(); //
+// let url = "http://node-express-dev2.us-east-2.elasticbeanstalk.com/";
+
 
 exports.postComment = postComment;
 
@@ -1014,7 +1022,7 @@ var putForum = /*#__PURE__*/function () {
       while (1) {
         switch (_context3.prev = _context3.next) {
           case 0:
-            url = _args3.length > 1 && _args3[1] !== undefined ? _args3[1] : "http://localhost:3000/api/threads";
+            url = _args3.length > 1 && _args3[1] !== undefined ? _args3[1] : "http://node-express-dev2.us-east-2.elasticbeanstalk.com/api/threads";
             _context3.next = 3;
             return fetch(url, {
               method: "PUT",
@@ -13873,14 +13881,14 @@ var init = function init() {
 
   _keyView.default.addHandlerInputText(controlUpdateKey);
 
-  _keyView.default.addHandlerHideKey(controlHideKey);
+  _keyView.default.addHandlerHideKey(controlHideKey); // let searchBar = document.querySelector(".search__textbox");
+  // let searchButton = document.querySelector(".search__btn");
 
-  var searchBar = document.querySelector(".search__textbox");
-  var searchButton = document.querySelector(".search__btn");
-  var createForumButton = document.querySelector(".create__forum__btn");
-  searchButton.addEventListener("click", function (e) {
-    controlForumView(searchBar.value);
-  });
+
+  var createForumButton = document.querySelector(".create__forum__btn"); // searchButton.addEventListener("click", (e) => {
+  //   controlForumView(searchBar.value);
+  // });
+
   createForumButton.addEventListener("click", controlCreateForum);
   var submitButton = document.querySelector(".btn__comment");
   submitButton.addEventListener("click", controlPostComment); //night mode
@@ -13919,7 +13927,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55936" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49298" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
