@@ -9,6 +9,9 @@ var usersRouter = require("./routes/users");
 var threadRouter = require("./routes/threads");
 var helpRouter = require("./routes/help");
 var apiRouter = require("./routes/api");
+
+process.env.NODE_ENV = "production";
+
 const Bundler = require("parcel-bundler");
 
 var cors = require("cors");

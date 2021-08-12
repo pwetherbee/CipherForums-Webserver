@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "deploy": "npm run build && npm start"
+    "deploy": "npm install && npm run start"
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
