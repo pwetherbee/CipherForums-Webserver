@@ -1,0 +1,318 @@
+body {
+  margin: 0;
+  font-family: menlo;
+  font-size: 17px;
+  background-size: cover;
+  /*background-color: blue;*/
+  /* background-image: url("assets/hubble.jpg"); */
+}
+
+.fadeInAnimated {
+  opacity: 0;
+  animation: fadeIn 2.5s forwards;
+}
+
+.profile {
+  font-family: menlo;
+  color: white;
+  background-color: black;
+  width: 90%;
+  height: 10%;
+  margin-left: 4%;
+  margin-top: 15%;
+  padding: 1%;
+  /*border:1vmin solid black;*/
+}
+
+.forum {
+  font-family: menlo;
+  background-color: lightgrey;
+  width: 100%;
+  height: 10%;
+  margin-left: 0%;
+  /*margin-top: 10%;*/
+  border: none;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  /*overflow-y: hidden;*/
+}
+
+.insideForum {
+  font-family: menlo;
+  width: 97%;
+  height: 10%;
+  margin-top: 0%;
+  margin-left: 1%;
+  background-color: white;
+  /*padding-left: 2%;*/
+  /*padding-right: 2%;*/
+  line-height: 100%;
+  /*overflow-y: hidden;*/
+  word-wrap: break-word
+}
+
+/*.indent {
+  margin-left: 3%;
+}*/
+
+
+.indentmain {
+  width: 96%;
+  font-weight: bold;
+  padding: none;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  margin-left: 2%;
+  background-color: white;
+}
+
+.indentmain:hover {
+  text-decoration: underline;
+}
+
+.indent2 {
+  margin-left: 6%;
+  font-size: 70%;
+}
+
+.options {
+  font-family: menlo;
+  text-align: right;
+  right: 5%;
+  top: 1%;
+  position: absolute;
+  font-size: 3vmin;
+}
+
+.date {
+  background-color: white;
+  color: black;
+  margin-left: 2%;
+  width: 96%;
+  padding-right: 1%;
+  margin-bottom: 1%;
+}
+
+/*.likes {
+  position: relative;
+  background-color: black;
+  color: white;
+  margin-left: 3%;
+  width: 8%;
+  height: 5%;
+  padding: none;
+}
+*/
+.likestxt {
+  /*margin-top: 10%;*/
+}
+
+.enterKey {
+  position: relative;
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
+a:link {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* 
+    Body, button, comment-thread, and utilities
+
+    Notes:
+        - This section sets some basic styles. You can ignore this part and 
+        go directly to the comment styles.
+*/
+
+* {
+  box-sizing: border-box;
+}
+/*body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+  /*color: rgba(0, 0, 0, 0.85);*/
+  /*background-color: #f9f9f9;*/
+}*/
+button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  font-size: 14px;
+  padding: 4px 8px;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+button:hover,
+button:focus,
+button:active {
+  cursor: pointer;
+  background-color: #ecf0f1;
+}
+.comment-thread {
+  /*width: 700px;*/
+  max-width: 100%;
+  margin: auto;
+  padding: 0 30px;
+  background-color: #fff;
+  border: 1px solid transparent; /* Removes margin collapse */
+}
+.m-0 {
+  margin: 0;
+}
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Comment */
+
+.comment {
+  position: relative;
+  margin: 20px auto;
+}
+.comment-heading {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  font-size: 14px;
+}
+/*.comment-voting {
+    width: 20px;
+    height: 32px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+.comment-voting button {
+    display: block;
+    width: 100%;
+    height: 50%;
+    padding: 0;
+    border: 0;
+    font-size: 10px;
+}*/
+.comment-info {
+  color: rgba(0, 0, 0, 0.5);
+  margin-left: 10px;
+}
+.comment-author {
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: bold;
+  text-decoration: none;
+}
+.comment-author:hover {
+  text-decoration: underline;
+}
+.replies {
+  margin-left: 20px;
+}
+
+
+.key__textbox {
+  margin-top: 6%;
+  height: 2rem;
+  width: 12rem;
+  text-align: center;
+  /*border-radius: 0.5rem; */
+  font-size: 20px;
+}
+
+.menu {
+    display: fixed;
+    position: relative;
+    top: 1%;
+    left: 0%;
+    /*right: %;*/
+    width: 25%;
+    cursor: pointer;
+}
+
+.submenuText{
+  background-color: black;
+  color: white;
+  text-align: center;
+  /*padding: 1vmin;*/
+}
+
+#submenu{
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 15%;
+  right: 5%;
+  background-color: black;
+}
+
+h1{
+  font-size: 100%;
+}
+
+.comments{
+  margin-top: 3%;
+  margin-left: 1%;
+  height: 100%;
+  overflow-y: hidden;
+}
+
+.commentHolder{
+  position: relative;
+  float: right;
+  /*margin-left: 2%;*/
+  margin-top: 0vmin;
+  padding: 1%;
+  width: 100%;
+}
+
+.userComments{
+  width: 100%;
+  border: 1vmin solid black;
+}
+
+.userCommentsText{
+  position: relative;
+  padding: 1%;
+  background-color: black;
+  color: white;
+  width: 100%;
+}
+
+.insideUserComments{
+  margin: auto;
+  /*padding: 1%;*/
+  word-wrap: break-word;
+
+}
+
+.bottomBarRightComments{
+  margin-left: 1%;
+  background-color: black;
+  color: white;
+  width: 100%;
+}
+
+.commentsSidebar{
+  margin-top: 20%;
+}
+
+.boxSpacing{
+  margin-top: 5%;
+}
+
+.formatHex{
+  /*margin-top: 0%;*/
+  margin: auto;
+}
+
+
