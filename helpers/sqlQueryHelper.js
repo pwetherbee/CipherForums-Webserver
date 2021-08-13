@@ -12,6 +12,7 @@ class SQLHelper {
       password: password,
       database: process.env.DB_NAME,
       multipleStatements: true,
+      dateStrings: true,
     });
     return connection;
   }

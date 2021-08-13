@@ -3,6 +3,7 @@ import * as model from "./model.js";
 import forumView from "./views/forumView.js";
 import keyView from "./views/keyView.js";
 import "core-js/stable"; // or more selective import, like "core-js/es/array"
+import moment from "moment";
 import {
   dec_to_text,
   text_to_dec,
@@ -14,12 +15,17 @@ let commentEls;
 
 const controlInitialLoad = async function () {
   let url = window.location.href;
-  let id = url.split("/").slice(-1);
+  let id = url.split("/").slice(-1); // Grabs url after /threads/
   let data;
   try {
     data = await model.getForum(id);
   } catch (e) {
     forumView.render_error();
+    return;
+  }
+  console.log("the data for this forum is", data);
+  if (data === "404") {
+    console.log("forum does not exist");
     return;
   }
   forumView.render(data);
@@ -90,8 +96,8 @@ const controlPostComment = async function () {
   }
   const key = document.querySelector(".key__textbox").value;
   let commentEncrypted = text_to_dec(commentText, key);
-  const currTime = +new Date() / 1000;
-  const authorTest = "test_author";
+  const currTime = moment.utc();
+  const authorTest = "Anonymous";
   const comment = {
     forumID: model.state.id,
     author: authorTest,
@@ -99,13 +105,6 @@ const controlPostComment = async function () {
     text: commentEncrypted,
   };
   await model.postComment(comment);
-  // try {
-
-  // } catch {
-  //   console.log("Error Posting Comment");
-
-  //   return;
-  // }
   commentTextBox.value = "";
   // TODO: just render latest comment, not entire thread
   const unencrypted = { ...comment };

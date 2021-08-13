@@ -12,11 +12,11 @@ const updateState = function (data) {
   state.comments = data.comments;
 };
 
-console.log("this ran");
-const endpoint = "http://node-express-dev2.us-east-2.elasticbeanstalk.com/";
+// const endpoint = "http://cipherforums.com";
+const endpoint = "http://localhost:3000";
 //http://localhost:3000/
 //http://node-express-dev2.us-east-2.elasticbeanstalk.com/
-export const getForum = async function (id, url = `${endpoint}api/threads`) {
+export const getForum = async function (id, url = `${endpoint}/api/threads`) {
   console.log("fetching data");
   const res = await fetch(`${url}/${id}`);
   // console.log("heres the res", res);
@@ -34,7 +34,7 @@ export const getForum = async function (id, url = `${endpoint}api/threads`) {
 
 export const postComment = async function (
   comment,
-  url = `http://node-express-dev2.us-east-2.elasticbeanstalk.com/api/threads/${state.id}`
+  url = `${endpoint}/api/threads/${state.id}`
 ) {
   const fetchPro = await fetch(url, {
     method: "POST",
@@ -60,7 +60,7 @@ export const postComment = async function (
 // let url = "http://node-express-dev2.us-east-2.elasticbeanstalk.com/";
 export const putForum = async function (
   comment,
-  url = `http://node-express-dev2.us-east-2.elasticbeanstalk.com/api/threads`
+  url = `${endpoint}/api/threads`
 ) {
   const res = await fetch(url, {
     method: "PUT",

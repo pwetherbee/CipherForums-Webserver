@@ -1,4 +1,5 @@
 import View from "./View.js";
+import moment from "moment";
 
 class ForumView extends View {
   _parentElement = document.querySelector(".thread__container");
@@ -17,12 +18,30 @@ class ForumView extends View {
     return markup;
   }
   _commentMarkup(comment, init = false) {
-    let time = new Date(comment.time * 1000).toLocaleDateString("en-US");
+    // console.log(time);
+    // let time = new Date(comment.time * 1000).toLocaleDateString("en-US");
+    // console.log(moment.utc(comment.time).local());
+    let date = new Date(moment.utc(comment.time)).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour12: true,
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+    // // console.log(new Date(String(comment.time)));
+    // let iso = new Date(moment.utc(comment.time));
+    // console.log("iso time", iso);
+    // console.log("sql time", comment.time);
+    // console.log("moment converting utc", moment.utc(comment.time));
+    // // console.log(moment.time);
+    // // console.log(date);
+    // // date = new Date(comment.time);
     return `
         <div class="comment__container">
-          <h class="comment__header">${
-            comment.author
-          } at ${time} said: <btn class = "btn__reply">[reply]</btn></h>
+          <h class="comment__header">${comment.author} on ${
+      date || "unknown"
+    } said: <btn class = "btn__reply">[reply]</btn></h>
           <p class="comment__body">
               ${init ? "&shy" : comment.text}
           </p>

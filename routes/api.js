@@ -5,14 +5,10 @@ var router = express.Router();
 let SQLHelper = require("../helpers/sqlQueryHelper");
 router.use(express.json());
 
-// let test = idGen.generateID();
-// console.log(test);
-
 // First forum created: StableBest-sellingNewt
 
+// Get forum from url tag
 router.get("/threads/:tag", (req, res) => {
-  // TODO: Replace with SQL query
-
   let urlTag = req.params["tag"];
   // Make sql query
   let connection = SQLHelper.createConnection();
@@ -22,29 +18,24 @@ router.get("/threads/:tag", (req, res) => {
   `;
   connection.connect();
   connection.query(query, function (err, rows, fields) {
-    console.log("this ran yo");
     if (err) throw err;
-    // console.log(rows, fields);
     const id = rows[0]?.id;
+    if (!id) {
+      res.sendStatus(404);
+      return;
+    }
     const forum = {
       author: "Anonymous",
       id: id,
       comments: [],
     };
-    // console.log("success loading forum");
-    // console.log("forum ID: ", forum.id);
-    if (!forum.id) {
-      res.send(forum);
-      return;
-    }
     query = `
     SELECT * FROM Comments
     WHERE forumID = ${forum.id} 
+    ORDER BY postTime ASC
     `; //(SELECT id FROM Forums WHERE url = "${urlTag}"
     connection.query(query, function (err, rows, fields) {
       if (err) throw err;
-      // console.log("The api made a successful request");
-      // console.log("success loading comments");
       rows.forEach((row) => {
         if (!row) {
           res.send(forum);
@@ -52,7 +43,7 @@ router.get("/threads/:tag", (req, res) => {
         }
         let comment = {
           author: "Anonymous",
-          time: row.timeLog,
+          time: row.postTime,
           text: row.commentText,
           forumID: row.forumID,
         };
@@ -64,6 +55,8 @@ router.get("/threads/:tag", (req, res) => {
   });
 });
 
+// Post comment on thread from url
+
 router.post("/threads/:tag", (req, res) => {
   // TODO: Replace with SQL query
   let urlID = req.params["tag"];
@@ -74,9 +67,10 @@ router.post("/threads/:tag", (req, res) => {
   }
   // console.log("comment post requested");
   // console.log(commentData);
+  //commentData.forumID
   let query = `
-  INSERT INTO Comments (forumID, commentText)
-  VALUES (${commentData.forumID}, "${commentData.text}")
+  INSERT INTO Comments (forumID, commentText, postTime)
+  VALUES (${commentData.forumID}, "${commentData.text}", NOW())
   `;
   connection.connect();
   connection.query(query, function (err, rows, fields) {
