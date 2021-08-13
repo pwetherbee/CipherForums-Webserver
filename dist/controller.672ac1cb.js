@@ -6953,7 +6953,7 @@ var ForumView = /*#__PURE__*/function (_View) {
   }, {
     key: "setForumInfo",
     value: function setForumInfo() {
-      this._container.querySelector(".forum__title").textContent = "".concat(this._data.title, " Post by ").concat(this._data.author);
+      this._container.querySelector(".forum__title").textContent = "[".concat(this._data.title, "] Post by ").concat(this._data.author);
     }
   }]);
 

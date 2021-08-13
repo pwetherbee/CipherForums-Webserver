@@ -19,30 +19,35 @@
     />
     <link rel="shortcut icon" href="./assets/cfSideways3.png" />
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;500&display=swap");
     </style>
     <title>Cipherforums</title>
     <script defer src="./controller.js"></script>
   </head>
   <body>
-    <div class="key__container">
-      <input
-        class="key__textbox"
-        spellcheck="false"
-        type="text"
-        value="default_key"
-        placeholder="enter your private key here"
-      />
-      <button class="btn__hide">Hide?</button>
+    <div class="options__header">
+      <div class="key__container">
+        <input
+          class="key__textbox"
+          spellcheck="false"
+          type="text"
+          value="default_key"
+          placeholder="enter your private key here"
+        />
+        <button class="btn__hide">👁</button>
+      </div>
+
+      <div class="menu__container">
+        <div id="hider">
+          <a href="javascript:void(0);" class="icon" onclick="menuHider()">
+            <img class="menu" src="./assets/menu.png" />
+          </a>
+        </div>
+      </div>
+      <button class="create__forum__btn button">Create A Demo Forum</button>
+      <button class="switch darktheme">🌙</button>
     </div>
 
-    <div class="menu__container">
-      <div id="hider">
-        <a href="javascript:void(0);" class="icon" onclick="menuHider()">
-          <img class="menu" src="./assets/menu.png" />
-        </a>
-      </div>
-    </div>
     <!--     <div>
       Search for a forum
       <input
@@ -53,10 +58,7 @@
       />
       <button class="search__btn">Enter</button>
     </div> -->
-    <div class="createForum">
-      <button class="create__forum__btn button">Create A Demo Forum</button>
-      <button class="switch darktheme">🌙</button>
-    </div>
+
     <div class="forum">
       <!-- <a href="post.html"> -->
       <p class="forum__title">This is a post - @My_profile</p>
@@ -94,7 +96,7 @@
         ></textarea>
 
         <div class="postKey">
-          <button class="btn__comment">post comment</button>
+          <button class="btn__comment button">post comment</button>
           <!--           <p>Current key:</p> -->
         </div>
       </div>
