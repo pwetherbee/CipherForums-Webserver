@@ -1,0 +1,226 @@
+@font-face {
+  font-family: "Menlo";
+  src: url("//db.onlinewebfonts.com/t/9f94dc20bb2a09c15241d3a880b7ad01.otf");
+}
+
+body {
+  margin: 0;
+  font-family: "Menlo";
+  font-size: 17px;
+  background-size: cover;
+  /* background-image: url("assets/hubble.jpg"); */
+}
+
+.fadeInAnimated {
+  opacity: 0;
+  animation: fadeIn 2.5s forwards;
+}
+
+.top__container {
+  display: flex;
+}
+
+.profile {
+  /* font-family: menlo; */
+  color: white;
+  background-color: black;
+  width: 40%;
+  height: 10%;
+  margin-left: 4%;
+  margin-top: 5%;
+  padding: 1%;
+  /*border:1vmin solid black;*/
+}
+
+.forum {
+  /* font-family: menlo; */
+  background-color: white;
+  width: 60%;
+  height: 10%;
+  margin-left: 4%;
+  margin-top: 4%;
+  border: 1vmin solid black;
+  /*padding-bottom: 1%;*/
+}
+
+.insideForum {
+  /* font-family: menlo; */
+  width: 80%;
+  height: 14%;
+  /*margin-top: 0%;*/
+  margin-left: 6%;
+  background-color: #f5f5f5;
+  padding: 1%;
+  /*line-height: 1%;*/
+}
+
+.indent {
+  margin-left: 3%;
+}
+
+.indentmain:hover {
+  text-decoration: underline;
+}
+
+.indent2 {
+  margin-left: 6%;
+}
+
+.options {
+  /* font-family: menlo; */
+  text-align: right;
+  right: 5%;
+  top: 5%;
+  position: absolute;
+  font-size: 3vmin;
+}
+
+.key__textbox {
+  height: 3rem;
+  width: 18rem;
+  text-align: center;
+  /* border-radius: 0.5rem; */
+  font-size: 20px;
+}
+
+.date {
+  background-color: white;
+  display: flex;
+  /*flex:2,1;*/
+  justify-content: space-between;
+  color: black;
+  /*margin-top: 2%;*/
+  /*margin-left: 1%;*/
+  width: 40%;
+  padding-left: 3%;
+}
+
+/*.likes {
+  position: relative;
+  background-color: white;
+  color: black;
+  margin-left: 3%;
+  width: 8%;
+  height: 5%;
+  padding: none;
+}*/
+
+/*.likestxt {
+  margin-top: 10%;
+}*/
+
+.enterKey {
+  position: absolute;
+  margin-left: 55%;
+  top: 20%;
+}
+
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+a:link {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/*------------------------------------------------------------------------*/
+
+.bottomBar {
+  display: flex;
+  padding: 2%;
+}
+
+.bottomBarText {
+  padding: 2%;
+  margin: auto;
+}
+
+.leftSide {
+  background-color: black;
+  color: white;
+  width: 50%;
+  flex: 1;
+}
+
+.centerSide {
+  background-color: white;
+  flex: 2;
+}
+
+.rightSide {
+  width: 10%;
+  background-color: black;
+  color: white;
+  margin: auto;
+}
+
+.indentmain {
+  background-color: #f5f5f5;
+  color: black;
+  margin-left: 3%;
+  font-weight: bold;
+  padding: 1%;
+  width: 92%;
+}
+
+.indentmain:hover {
+  text-decoration: underline;
+}
+
+.comments {
+  height: 21vmin;
+  overflow-y: hidden;
+}
+
+.commentHolder {
+  position: absolute;
+  float: right;
+  margin-left: 67%;
+  margin-top: -90vmin;
+  padding: 1%;
+  width: 27%;
+}
+
+.userComments {
+  width: 100%;
+  border: 1vmin solid black;
+}
+
+.userCommentsText {
+  padding: 1%;
+  background-color: black;
+  color: white;
+  width: 25%;
+}
+
+.insideUserComments {
+  margin: auto;
+  /*padding: 1%;*/
+  word-wrap: break-word;
+}
+
+.bottomBarRightComments {
+  margin-left: 1%;
+  background-color: black;
+  color: white;
+  width: 30%;
+}
+
+.commentsSidebar {
+  margin-top: 20%;
+}
+
+.boxSpacing {
+  margin-top: 5%;
+}
+
+.formatHex {
+  /*margin-top: 0%;*/
+  margin: auto;
+}

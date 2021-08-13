@@ -1,226 +1,402 @@
-@font-face {
-  font-family: "Menlo";
-  src: url("//db.onlinewebfonts.com/t/9f94dc20bb2a09c15241d3a880b7ad01.otf");
+body{
+	background-color: white;
+	/*display: inline;*/
+	/*justify-content: space-between;*/
 }
 
-body {
-  margin: 0;
-  font-family: "Menlo";
-  font-size: 17px;
-  background-size: cover;
-  /* background-image: url("assets/hubble.jpg"); */
+/*html {
+  scroll-behavior: smooth;
+}*/
+
+p{
+	color: black;
+	margin: 0%;
 }
 
-.fadeInAnimated {
-  opacity: 0;
-  animation: fadeIn 2.5s forwards;
+
+
+.topBar{
+	position: relative;
+	display: inline-flex;
+	justify-content: space-around;
+	width: 95%;
+	padding: 1%;
+	background-color: black;
 }
 
-.top__container {
-  display: flex;
+.topBarText{
+	color: white;
+	margin: auto;
 }
 
-.profile {
-  /* font-family: menlo; */
-  color: white;
-  background-color: black;
-  width: 40%;
-  height: 10%;
-  margin-left: 4%;
-  margin-top: 5%;
-  padding: 1%;
-  /*border:1vmin solid black;*/
+a:visited{
+	color: white;
 }
 
-.forum {
-  /* font-family: menlo; */
-  background-color: white;
-  width: 60%;
-  height: 10%;
-  margin-left: 4%;
-  margin-top: 4%;
-  border: 1vmin solid black;
-  /*padding-bottom: 1%;*/
+.CFlogoHolder{
+	width: 3%;
 }
 
-.insideForum {
-  /* font-family: menlo; */
-  width: 80%;
-  height: 14%;
-  /*margin-top: 0%;*/
-  margin-left: 6%;
-  background-color: #f5f5f5;
-  padding: 1%;
-  /*line-height: 1%;*/
+.CFlogo{
+	width: 100%;
 }
 
-.indent {
-  margin-left: 3%;
+.commentBorder{
+	border: 2px solid black;
 }
 
-.indentmain:hover {
-  text-decoration: underline;
+.video{
+	padding:4%;
+	width: 40%;
 }
 
-.indent2 {
-  margin-left: 6%;
+.videoSize{
+	width: 100%;
 }
 
-.options {
-  /* font-family: menlo; */
-  text-align: right;
-  right: 5%;
-  top: 5%;
-  position: absolute;
-  font-size: 3vmin;
+
+
+.keyDemo{
+	position: absolute;
+	/*align-items: center;*/
+	/*justify-content: space-between;*/
+	width: 40%;
+	/*height: 50%;*/
+	left: 47%;
+	top: 20%;
+	margin: auto;
+	/*background-color: red;*/
+	line-height: 2.5;
 }
 
-.key__textbox {
-  height: 3rem;
-  width: 18rem;
-  text-align: center;
-  /* border-radius: 0.5rem; */
-  font-size: 20px;
+.demoCommentHolder{
+	text-align: center;
+	font-size: 2vmin;
 }
 
-.date {
-  background-color: white;
-  display: flex;
-  /*flex:2,1;*/
-  justify-content: space-between;
-  color: black;
-  /*margin-top: 2%;*/
-  /*margin-left: 1%;*/
-  width: 40%;
-  padding-left: 3%;
+.enterKey{
+	display: block;
+	text-align: center;
+	margin: auto;
+	/*margin-top: 4%;*/
 }
 
-/*.likes {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mainHolder{
+	margin-top: 19%;
+}
+
+.holder{
+	display: inline-flex;
+	justify-content: space-between;
+	background-color: white;
+	width: 60%;
+	padding: .2%;
+}
+
+.holder1{
+	display: block;
+	justify-content: space-around;
+	width: 30%;
+	/*height: 20%;*/
+	background-color: lightgrey;
+	/*word-wrap: break-word;*/
+	padding: 1%;
+	text-align: center;
+	border-radius: 25px;
+	border: 2px solid black;
+}
+/*
+.holder1yellow{
+	display: block;
+	justify-content: space-around;
+	width: 30%;
+	height: 20%;
+	background-color: lightgrey;
+	padding: 1%;
+	text-align: center;
+	border-radius: 25px;
+	border: 2px solid yellow;
+}*/
+
+/*
+.holder1orange{
+	display: block;
+	justify-content: space-around;
+	width: 30%;
+	height: 20%;
+	background-color: lightgrey;
+	padding: 1%;
+	text-align: center;
+	border-radius: 25px;
+	border: 2px solid orange;
+}*/
+
+
+/*.holder1pink{
+	display: block;
+	justify-content: space-around;
+	width: 30%;
+	height: 20%;
+	background-color: lightgrey;
+	padding: 1%;
+	text-align: center;
+	border-radius: 25px;
+	border: 2px solid #ff0a89;
+}*/
+
+
+.holder2{
+	margin-top: 0%;
+	height: 1%;
+	width: 25%;
+	/*word-wrap: break-word;*/
+	background-color: lightgrey;
+	text-align: center;
+	border-radius: 25px;
+}
+
+/*.holder2alt{
+	margin-top: 15%;
+	height: 1%;
+	width: 23%;
+	background-color: lightgrey;
+	text-align: center;
+	border: 2px solid white;
+}*/
+
+
+.holder3{
+	display: block;
+	justify-content: space-around;
+	margin:auto;
+	margin-top: 3%;
+	width: 60%;
+	height: 20%;
+	background-color: lightgrey;
+	/*word-wrap: break-word;*/
+	padding: 1%;
+	text-align: center;
+	border: 2px solid black;
+	border-radius: 25px;
+}
+
+.holder4{
+	margin-top: 20%;
+	height: 1%;
+	width: 21%;
+	/*word-wrap: break-word;*/
+	background-color: lightgrey;
+	text-align: center;
+	padding: 1%;
+	border: 2px solid black;
+}
+
+.holder4alt{
+	margin-top: 36%;
+	height: 1%;
+	width: 21%;
+	/*word-wrap: break-word;*/
+	background-color: lightgrey;
+	text-align: center;
+	padding: 1%;
+	border: 2px solid black;
+}
+
+
+
+/*.yellow{
+	color: yellow;
+	font-size: 70%;
+}
+
+.red{
+	color: red;
+	font-size: 70%;
+}
+
+.orange{
+	color: orange
+;
+}
+
+.orange2{
+	color: orange;
+	font-size: 70%;
+}
+
+.green{
+	color: green;
+	font-size: 70%;
+}
+
+.pink{
+	color: #ff0a89;
+	font-size: 70%;
+}
+
+.brown{
+	color: #7d5f1f;
+	font-size: 70%;
+}*/
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+}
+
+.pushDown{
+	padding-top: 50%;
+	/*font-size: 70%;*/
+}
+
+.smallFont{
+	word-break: break-word;
+	background-color: black;
+	color: white;
+    border-radius: 5px;
+    padding:1%;
+}
+
+
+
+/*.image{
+	width: 97%;
+	border: 3% solid black;
+	margin-top: 2%;
+}*/
+
+.encTitle{
+	color: white;
+	background-color: black;
+	width: 60%;
+	text-align: center;
+}
+
+.encTitle2{
+	color: white;
+	background-color: black;
+	width: 60%;
+	text-align: center;
+	margin-top: 30%;
+}
+
+h1{
+	font-size: 90%;
+	padding: 1%;
+}
+
+
+.r{
+	font-size: 120%;
+	text-decoration: underline;
+}
+
+
+
+.other{
+	display: inline-flex;
+	position: absolute;
+	background-color: black;
+	color: white;
+	width: 20%;
+	left: 70%;
+	top: 120%;
+	padding-right: 2%;
+	/*margin-top: -52%;*/
+	/*margin-left: 70%;*/
+	line-height: 1.5;
+}
+
+.other2{
+	display: block;
+	position: absolute;
+	background-color: black;
+	color: white;
+	width: 20%;
+	left: 70%;
+	top: 260%;
+	padding-right: 2%;
+	/*margin-top: -52%;*/
+	/*margin-left: 70%;*/
+	line-height: 1.5;
+}
+
+.red{
+	/*font-size: 130%;*/
+	color: black;
+	font-weight: bold;
+	word-break: break-word;
+}
+
+
+mark {
+  background-color: #53dbdb;
+}
+
+/*
+.tooltip {
   position: relative;
-  background-color: white;
-  color: black;
-  margin-left: 3%;
-  width: 8%;
-  height: 5%;
-  padding: none;
-}*/
-
-/*.likestxt {
-  margin-top: 10%;
-}*/
-
-.enterKey {
-  position: absolute;
-  margin-left: 55%;
-  top: 20%;
 }
 
-a:visited {
-  color: black;
-  text-decoration: none;
-}
-
-a:link {
-  color: black;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/*------------------------------------------------------------------------*/
-
-.bottomBar {
-  display: flex;
-  padding: 2%;
-}
-
-.bottomBarText {
-  padding: 2%;
-  margin: auto;
-}
-
-.leftSide {
+.tooltip .tooltiptext {
+  visibility: hidden;
   background-color: black;
-  color: white;
-  width: 50%;
-  flex: 1;
-}
-
-.centerSide {
-  background-color: white;
-  flex: 2;
-}
-
-.rightSide {
-  width: 10%;
-  background-color: black;
-  color: white;
-  margin: auto;
-}
-
-.indentmain {
-  background-color: #f5f5f5;
-  color: black;
-  margin-left: 3%;
-  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
   padding: 1%;
-  width: 92%;
-}
-
-.indentmain:hover {
-  text-decoration: underline;
-}
-
-.comments {
-  height: 21vmin;
-  overflow-y: hidden;
-}
-
-.commentHolder {
-  position: absolute;
-  float: right;
-  margin-left: 67%;
-  margin-top: -90vmin;
-  padding: 1%;
-  width: 27%;
-}
-
-.userComments {
+  left: 0%;
   width: 100%;
-  border: 1vmin solid black;
+  overflow-wrap: break-word;
+  position: absolute;
+  z-index: 1;
 }
 
-.userCommentsText {
-  padding: 1%;
-  background-color: black;
-  color: white;
-  width: 25%;
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
 
-.insideUserComments {
-  margin: auto;
-  /*padding: 1%;*/
-  word-wrap: break-word;
+*/
+
+
+.bottomPad{
+	position: relative;
+	margin-top: 4%;
+	color: white;
 }
 
-.bottomBarRightComments {
-  margin-left: 1%;
-  background-color: black;
-  color: white;
-  width: 30%;
+
+#section1 {
+  /*height: 600px;*/
+  color: black;
 }
 
-.commentsSidebar {
-  margin-top: 20%;
+#section2 {
+  height: 600px;
+  background-color: yellow;
 }
 
-.boxSpacing {
-  margin-top: 5%;
-}
 
-.formatHex {
-  /*margin-top: 0%;*/
-  margin: auto;
-}
+
+

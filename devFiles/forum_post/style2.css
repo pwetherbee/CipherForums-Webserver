@@ -46,7 +46,7 @@ input {
 }
 
 img {
-  max-width: 95%;
+  max-width: 100%;
   height: auto;
 }
 
@@ -180,6 +180,10 @@ a:hover {
 
 /*------------------------------------------------------------------------*/
 
+.comment__body{
+  word-wrap: break-word;
+}
+
 .commentBoxDiv {
   display: inline-block;
   /* background-color: var(--main-color); */
@@ -192,7 +196,7 @@ a:hover {
 }
 
 .menu {
-  display: fixed;
+  display: none;
   position: fixed;
   top: 5%;
   right: 2%;
