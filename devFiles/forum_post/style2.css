@@ -18,12 +18,14 @@
 body {
   margin: 0;
   font-family: "Menlo";
-  font-size: 17px;
+  font-size: 16px;
   background-size: cover;
   background-color: var(--main-color);
   color: var(--text-color);
   /* background-image: url("assets/hubble.jpg"); */
 }
+
+input, select { font-size: 100%; }
 
 textarea {
   background-color: var(--secondary-color);
