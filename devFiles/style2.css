@@ -229,7 +229,7 @@ a:visited{
 	justify-content: space-around;
 	margin:auto;
 	margin-top: 22%;
-	width: 69%;
+	width: 80%;
 	height: 20%;
 	background-color: lightgrey;
 	/*word-wrap: break-word;*/
@@ -241,7 +241,7 @@ a:visited{
 
 .holder4{
 	position: absolute;
-	margin-top: 49%;
+	margin-top: 52%;
 	height: 10%;
 	width: 89%;
 	margin-left: 2%;
@@ -254,7 +254,7 @@ a:visited{
 
 .holder4alt{
 	position: absolute;
-	margin-top: 67%;
+	margin-top: 73%;
 	height: 10%;
 	width: 89%;
 	margin-left: 2%;
@@ -345,7 +345,7 @@ a:visited{
 	background-color: black;
 	width: 98%;
 	text-align: center;
-	margin-top: 50%;
+	margin-top: 0%;
 }
 
 h1{
@@ -363,12 +363,12 @@ h1{
 
 .other{
 	display: inline-flex;
-	position: absolute;
+	position: relative;
 	background-color: black;
 	color: white;
-	width: 96%;
+	width: 94%;
 	left: 2%;
-	top: 181%;
+	/*top: 127%;*/
 	padding-right: 2%;
 	/*margin-top: -52%;*/
 	/*margin-left: 70%;*/
@@ -377,14 +377,14 @@ h1{
 
 .other2{
 	display: inline-flex;
-	position: absolute;
+	position: relative;
 	background-color: black;
 	color: white;
-	width: 96%;
+	width: 94%;
 	left: 2%;
-	top: 289%;
+	top: -20%;
 	padding-right: 2%;
-	/*margin-top: -52%;*/
+	/*margin-top: -72%;*/
 	/*margin-left: 70%;*/
 	line-height: 1.5;
 }
@@ -429,7 +429,7 @@ mark {
 
 .bottomPad{
 	position: relative;
-	margin-top: 37%;
+	margin-top: 0%;
 	color: white;
 }
 
