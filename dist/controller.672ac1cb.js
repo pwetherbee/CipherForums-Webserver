@@ -899,6 +899,9 @@ var updateState = function updateState(data) {
   console.log("this forum ID is:", data.id);
   state.author = data.author;
   state.comments = data.comments;
+  state.title = data.title;
+  console.log(state.data);
+  state.date = data.date;
 }; // const endpoint = "http://cipherforums.com";
 
 
@@ -931,19 +934,17 @@ var getForum = /*#__PURE__*/function () {
             throw new Error("ID not found");
 
           case 7:
-            // console.log("heres the res", res);
-            console.log();
-            _context.next = 10;
+            _context.next = 9;
             return res.json();
 
-          case 10:
+          case 9:
             data = _context.sent;
             console.log("data converted to JSON"); // console.log("heres the data", data);
 
             updateState(data);
             return _context.abrupt("return", data);
 
-          case 14:
+          case 13:
           case "end":
             return _context.stop();
         }
@@ -6952,7 +6953,7 @@ var ForumView = /*#__PURE__*/function (_View) {
   }, {
     key: "setForumInfo",
     value: function setForumInfo() {
-      this._container.querySelector(".forum__title").textContent = "Post by ".concat(this._data.author);
+      this._container.querySelector(".forum__title").textContent = "".concat(this._data.title, " Post by ").concat(this._data.author);
     }
   }]);
 
@@ -19338,6 +19339,8 @@ var controlInitialLoad = /*#__PURE__*/function () {
             return _context.abrupt("return");
 
           case 16:
+            document.querySelector(".date").textContent = model.state.date || "date does not exist";
+
             _forumView.default.render(data);
 
             _forumView.default.setForumInfo();
@@ -19356,7 +19359,7 @@ var controlInitialLoad = /*#__PURE__*/function () {
               controlUpdateKey();
             }, 500);
 
-          case 21:
+          case 22:
           case "end":
             return _context.stop();
         }
@@ -19578,27 +19581,44 @@ var controlHideKey = /*#__PURE__*/function () {
 }();
 
 var init = function init() {
+  var currentTheme = localStorage.getItem("theme");
+  var nightModeSwitch = document.querySelector(".switch");
+
+  if (currentTheme == "dark") {
+    document.body.classList.toggle("dark-mode");
+    nightModeSwitch.textContent = "💡";
+  }
+
   controlInitialLoad();
 
   _forumView.default.addHandlerRender(controlInitialLoad);
 
   _keyView.default.addHandlerInputText(controlUpdateKey);
 
-  _keyView.default.addHandlerHideKey(controlHideKey); // let searchBar = document.querySelector(".search__textbox");
-  // let searchButton = document.querySelector(".search__btn");
+  _keyView.default.addHandlerHideKey(controlHideKey);
 
-
-  var createForumButton = document.querySelector(".create__forum__btn"); // searchButton.addEventListener("click", (e) => {
-  //   controlForumView(searchBar.value);
-  // });
-
+  var createForumButton = document.querySelector(".create__forum__btn");
   createForumButton.addEventListener("click", controlCreateForum);
   var submitButton = document.querySelector(".btn__comment");
   submitButton.addEventListener("click", controlPostComment); //night mode
 
-  document.querySelector(".switch").addEventListener("click", function () {
+  nightModeSwitch.addEventListener("click", function () {
     document.body.classList.toggle("dark-mode");
-  });
+    var theme = "light";
+
+    if (document.body.classList.contains("dark-mode")) {
+      theme = "dark";
+    }
+
+    nightModeSwitch.textContent = nightModeSwitch.textContent == "🌙" ? "💡" : "🌙";
+    localStorage.setItem("theme", theme);
+  }); // ["mouseenter", "mouseleave"].forEach((event) =>
+  //   nightModeSwitch.addEventListener(event, function () {
+  //     console.log("event occuring");
+  //     nightModeSwitch.textContent =
+  //       nightModeSwitch.textContent == "🌙" ? "💡" : "🌙";
+  //   })
+  // );
 };
 
 init();
@@ -19630,7 +19650,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57515" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57399" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

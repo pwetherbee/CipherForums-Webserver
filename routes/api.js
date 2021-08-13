@@ -24,9 +24,12 @@ router.get("/threads/:tag", (req, res) => {
       res.sendStatus(404);
       return;
     }
+    // console.log(rows[0].creationDate);
     const forum = {
       author: "Anonymous",
       id: id,
+      title: rows[0].title,
+      date: rows[0].creationDate,
       comments: [],
     };
     query = `
@@ -82,35 +85,19 @@ router.post("/threads/:tag", (req, res) => {
 });
 
 router.put("/threads", (req, res) => {
-  // TODO: Replace with SQL query
   let connection = SQLHelper.createConnection();
   let urlID = idGen.generateID();
   connection.connect();
   let query = `
-  INSERT INTO Forums (url)
-  VALUES ("${urlID}");
+  INSERT INTO Forums (url, title, creationDate)
+  VALUES ("${urlID}", "${urlID}", NOW());
   `;
-  //SELECT id FROM FORUMS
-  //WHERE url IS '${urlID}'
   connection.query(query, function (err, rows, fields) {
     if (err) throw err;
     console.log(rows);
     console.log("success");
   });
   connection.end();
-  // assign forum id or name
-  // if name not given, generate one
-  // urlID = idGen.generateID();
-  let time = new Date();
-  // testdata[urlID] = {
-  //   id: id, // SQL database will generate the correct serial ID
-  //   url: id,
-  //   author: "Anonymous",
-  //   subtitle: `Forum created on ${time}`,
-  //   comments: [],
-  // };
-  // console.log("Successfully created new forum...");
-  // console.log(`With ID ${urlID}`);
   res.send(
     JSON.stringify({
       newID: urlID,

@@ -10,6 +10,9 @@ const updateState = function (data) {
   console.log("this forum ID is:", data.id);
   state.author = data.author;
   state.comments = data.comments;
+  state.title = data.title;
+  console.log(state.data);
+  state.date = data.date;
 };
 
 // const endpoint = "http://cipherforums.com";
@@ -24,7 +27,6 @@ export const getForum = async function (id, url = `${endpoint}/api/threads`) {
     throw new Error("ID not found");
   }
   // console.log("heres the res", res);
-  console.log();
   const data = await res.json();
   console.log("data converted to JSON");
   // console.log("heres the data", data);

@@ -58,7 +58,7 @@ class ForumView extends View {
   setForumInfo() {
     this._container.querySelector(
       ".forum__title"
-    ).textContent = `Post by ${this._data.author}`;
+    ).textContent = `${this._data.title} Post by ${this._data.author}`;
   }
 }
 

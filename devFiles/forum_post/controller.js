@@ -28,6 +28,8 @@ const controlInitialLoad = async function () {
     console.log("forum does not exist");
     return;
   }
+  document.querySelector(".date").textContent =
+    model.state.date || "date does not exist";
   forumView.render(data);
   forumView.setForumInfo();
   commentEls = document.querySelectorAll(".comment__body");
@@ -124,23 +126,39 @@ const controlHideKey = async function () {
 };
 
 const init = function () {
+  const currentTheme = localStorage.getItem("theme");
+  let nightModeSwitch = document.querySelector(".switch");
+  if (currentTheme == "dark") {
+    document.body.classList.toggle("dark-mode");
+    nightModeSwitch.textContent = "💡";
+  }
   controlInitialLoad();
   forumView.addHandlerRender(controlInitialLoad);
   keyView.addHandlerInputText(controlUpdateKey);
   keyView.addHandlerHideKey(controlHideKey);
-  // let searchBar = document.querySelector(".search__textbox");
-  // let searchButton = document.querySelector(".search__btn");
   let createForumButton = document.querySelector(".create__forum__btn");
-  // searchButton.addEventListener("click", (e) => {
-  //   controlForumView(searchBar.value);
-  // });
   createForumButton.addEventListener("click", controlCreateForum);
   let submitButton = document.querySelector(".btn__comment");
   submitButton.addEventListener("click", controlPostComment);
   //night mode
-  document.querySelector(".switch").addEventListener("click", () => {
+
+  nightModeSwitch.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
+    let theme = "light";
+    if (document.body.classList.contains("dark-mode")) {
+      theme = "dark";
+    }
+    nightModeSwitch.textContent =
+      nightModeSwitch.textContent == "🌙" ? "💡" : "🌙";
+    localStorage.setItem("theme", theme);
   });
+  // ["mouseenter", "mouseleave"].forEach((event) =>
+  //   nightModeSwitch.addEventListener(event, function () {
+  //     console.log("event occuring");
+  //     nightModeSwitch.textContent =
+  //       nightModeSwitch.textContent == "🌙" ? "💡" : "🌙";
+  //   })
+  // );
 };
 
 init();
