@@ -1,0 +1,72 @@
+body{
+	background-color: black;
+	/*display: inline;*/
+	/*justify-content: space-between;*/
+}
+
+/*html {
+  scroll-behavior: smooth;
+}*/
+
+p{
+	color: black;
+	margin: 0%;
+}
+
+
+
+.topBar{
+	position: relative;
+	display: inline-flex;
+	justify-content: space-around;
+	width: 95%;
+	padding: 1%;
+	background-color: black;
+}
+
+.topBarText{
+	color: white;
+	margin: auto;
+}
+
+a:visited{
+	color: white;
+}
+
+.CFlogoHolder{
+	width: 3%;
+}
+
+.CFlogo{
+	width: 100%;
+}
+
+.loginBox{
+	margin:auto;
+	display: block;
+	text-align: center;
+	margin-top: 5%;
+	width: 33%;
+/*	background-color: black;*/
+	padding:1%;
+}
+
+.inputHolder{
+	padding:5%;
+}
+
+p{
+	color: white;
+}
+
+ul{
+	color: white;
+	text-align: left;
+	margin-top: -3%;
+}
+
+input{
+	width:70%;
+	margin-top: 5%;
+}
+
