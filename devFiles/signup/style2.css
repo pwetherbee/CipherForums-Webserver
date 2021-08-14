@@ -29,6 +29,12 @@ p{
 	margin: auto;
 }
 
+.topBarTextTem{
+	display: none;
+	color: white;
+	margin: auto;
+}
+
 a:visited{
 	color: white;
 }
@@ -71,3 +77,19 @@ input{
 	margin-top: 5%;
 }
 
+
+.CFlogoHolderLogo{
+	display: none;
+}
+
+#movetxt{
+    display: none;
+}
+
+.logoHidden{
+	display: none;
+}
+
+.logoHidden2{
+	display: none;
+}

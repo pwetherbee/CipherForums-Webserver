@@ -29,6 +29,16 @@ p{
 	margin: auto;
 }
 
+.topBarTextTem{
+	display: all;
+	color: white;
+	margin: auto;
+}
+
+a{
+	text-decoration: none;
+}
+
 a:visited{
 	color: white;
 }
@@ -68,5 +78,100 @@ ul{
 input{
 	width:70%;
 	margin-top: 5%;
+}
+
+.CFlogoHolderLogo{
+	position: absolute;
+	display: inline-flex;
+	width: 3%;
+	font-size: 200%;
+	left: 1%;
+}
+
+#movetxt{
+    position: absolute;
+	margin-left: 70%;
+	margin-top: 11%;
+    -webkit-animation: movingundo .3s normal forwards ease-in-out;
+    animation: movingundo .3s normal forwards ease-in-out;
+    /*animation-play-state: paused;*/
+}
+.CFlogoHolderLogo:hover > #movetxt{
+  animation: moving .3s normal forwards ease-in-out;
+  }  
+
+.CFlogoHolderLogo:hover > .logoHidden{
+  animation: showing .5s normal forwards ease-in-out;
+  }  
+
+.CFlogoHolderLogo:hover > .logoHidden2{
+  animation: showing .5s normal forwards ease-in-out;
+  }  
+
+.logoHidden{
+	position: absolute;
+	margin-left: 55%;
+    animation: showingundo .3s normal forwards ease-in-out;
+}
+
+.logoHidden2{
+	position: absolute;
+	padding-left: 50%;
+	line-height: 3.8;
+    animation: showingundo .3s normal forwards ease-in-out;
+}
+
+/*.hider{
+	margin-top: 110%;
+	position: absolute;
+	opacity: 0%;
+}*/
+
+@keyframes showing {
+    from {opacity: 0%;}
+    to {opacity: 100%;}
+}
+
+@keyframes showingundo {
+    from {opacity: 100%;}
+    to {opacity: 0%;}
+}
+
+
+@-webkit-keyframes moving {
+    from {left: 0%;}
+    to {left: 2%;}
+    from{ transform: rotate(90deg); }
+    to { transform: rotate(0deg); }
+}
+
+@keyframes moving {
+    from {left: 3%;}
+    to {left: -65%;}
+    from {top: 0%;}
+    to {top: 100%;}
+    from{ transform: rotate(90deg); }
+    to { transform: rotate(0deg); }  
+}
+
+@keyframes movingundo {
+    from {left: -65%;}
+    to {left: 3%;}
+    from {top: 100%;}
+    to {top: 0%;}
+    from { transform: rotate(0deg); }  
+    to{ transform: rotate(90deg); }
+}
+
+
+button{
+  animation: rotate360 1.2s linear infinite;  /* animation set */
+  animation-play-state: paused;               /* but paused */
+}
+button:hover{
+  animation-play-state: running;              /* trigger on hover */
+}
+@keyframes rotate360 {
+  to { transform: rotate(360deg); }           
 }
 
