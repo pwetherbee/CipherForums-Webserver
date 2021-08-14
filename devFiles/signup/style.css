@@ -55,10 +55,11 @@ a:visited{
 	margin:auto;
 	display: block;
 	text-align: center;
-	margin-top: 5%;
+	margin-top: 2%;
 	width: 33%;
-/*	background-color: black;*/
+	background-color: #252525;
 	padding:1%;
+    border-radius: 5px;
 }
 
 .inputHolder{
@@ -78,6 +79,7 @@ ul{
 input{
 	width:70%;
 	margin-top: 5%;
+    border-radius: 5px;
 }
 
 .CFlogoHolderLogo{
@@ -161,17 +163,5 @@ input{
     to {top: 0%;}
     from { transform: rotate(0deg); }  
     to{ transform: rotate(90deg); }
-}
-
-
-button{
-  animation: rotate360 1.2s linear infinite;  /* animation set */
-  animation-play-state: paused;               /* but paused */
-}
-button:hover{
-  animation-play-state: running;              /* trigger on hover */
-}
-@keyframes rotate360 {
-  to { transform: rotate(360deg); }           
 }
 
