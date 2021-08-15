@@ -1,0 +1,207 @@
+body{
+	background-color: black;
+	/*display: inline;*/
+	/*justify-content: space-between;*/
+}
+
+/*html {
+  scroll-behavior: smooth;
+}*/
+
+p{
+	color: white;
+	margin: 0%;
+}
+
+
+
+.topBar{
+	position: relative;
+	display: inline-flex;
+	justify-content: space-around;
+	width: 100%;
+	padding: 3%;
+	background-color: white;
+}
+
+.topBarText{
+	color: black;
+	margin: auto;
+}
+
+.topBarTextTem{
+	display: none;
+	color: white;
+	margin: auto;
+}
+
+a:visited{
+	color: white;
+}
+
+.CFlogoHolder{
+	width: 3%;
+}
+
+.CFlogo{
+	width: 100%;
+	display: none;
+}
+
+
+
+
+
+
+.navi{
+	display: inline-block;
+	justify-content: space-between;
+	width: 80%;
+	margin-top: 5%;
+	margin-left: 10%;
+}
+ 
+.following{
+	background-color: black;
+	width: 90%;
+    margin-top: 30%;
+}
+
+.following ul{
+	list-style: none;
+	color: white;
+}
+.following li{
+	padding-top: 1%;
+}
+.following a
+{
+    color: white;
+    text-decoration: none;
+}
+
+.following a:hover
+{
+    text-decoration: underline;
+}
+
+
+.css-treeview ul,
+.css-treeview li
+{
+    padding: .5%;
+    margin: 0;
+    list-style: none;
+    color: white;
+}
+ 
+.css-treeview input
+{
+    position: absolute;
+    opacity: 0;
+}
+ 
+.css-treeview
+{
+	display: inline;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    background-color: black;
+    width: 90%;
+    font-size: 110%;
+}
+ 
+.css-treeview a
+{
+    color: white;
+    text-decoration: none;
+}
+ 
+.css-treeview a:hover
+{
+    text-decoration: underline;
+}
+ 
+.css-treeview input + label + ul
+{
+    margin: 0 0 0 3%;
+}
+ 
+.css-treeview input ~ ul
+{
+    display: none;
+}
+ 
+.css-treeview label,
+.css-treeview label::before
+{
+    cursor: pointer;
+}
+ 
+.css-treeview input:disabled + label
+{
+    cursor: default;
+    opacity: .6;
+}
+ 
+.css-treeview input:checked:not(:disabled) ~ ul
+{
+    display: block;
+}
+ 
+.css-treeview label,
+.css-treeview label::before
+{
+    background: url("http://experiments.wemakesites.net/pages/css3-treeview/example/icons.png") no-repeat;
+}
+ 
+.css-treeview label,
+.css-treeview a,
+.css-treeview label::before
+{
+    display: inline-block;
+    height: 16px;
+    line-height: 16px;
+    vertical-align: middle;
+}
+ 
+.css-treeview label
+{
+    background-position: 18px 0;
+}
+ 
+.css-treeview label::before
+{
+    content: "";
+    width: 16px;
+    margin: 0 22px 0 0;
+    vertical-align: middle;
+    background-position: 0 -32px;
+}
+ 
+.css-treeview input:checked + label::before
+{
+    background-position: 0 -16px;
+}
+ 
+/* webkit adjacent element selector bugfix */
+@media screen and (-webkit-min-device-pixel-ratio:0)
+{
+    .css-treeview 
+    {
+        -webkit-animation: webkit-adjacent-element-selector-bugfix infinite 1s;
+    }
+ 
+    @-webkit-keyframes webkit-adjacent-element-selector-bugfix 
+    {
+        from 
+        { 
+            padding: 0;
+        } 
+        to 
+        { 
+            padding: 0;
+        }
+    }
+}
