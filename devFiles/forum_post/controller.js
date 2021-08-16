@@ -11,6 +11,7 @@ import {
   decrypt,
   sleep,
 } from "../helpers/convert.js";
+import { async } from "regenerator-runtime/runtime";
 let commentEls;
 
 const controlInitialLoad = async function () {
@@ -125,6 +126,18 @@ const controlHideKey = async function () {
   keyView.hideKey();
 };
 
+const controlNightSwitch = async function () {
+  let nightModeSwitch = document.querySelector(".switch");
+  document.body.classList.toggle("dark-mode");
+  let theme = "light";
+  if (document.body.classList.contains("dark-mode")) {
+    theme = "dark";
+  }
+  nightModeSwitch.textContent =
+    nightModeSwitch.textContent == "🌙" ? "💡" : "🌙";
+  localStorage.setItem("theme", theme);
+};
+
 const init = function () {
   const currentTheme = localStorage.getItem("theme");
   let nightModeSwitch = document.querySelector(".switch");
@@ -140,25 +153,9 @@ const init = function () {
   createForumButton.addEventListener("click", controlCreateForum);
   let submitButton = document.querySelector(".btn__comment");
   submitButton.addEventListener("click", controlPostComment);
-  //night mode
 
-  nightModeSwitch.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-    let theme = "light";
-    if (document.body.classList.contains("dark-mode")) {
-      theme = "dark";
-    }
-    nightModeSwitch.textContent =
-      nightModeSwitch.textContent == "🌙" ? "💡" : "🌙";
-    localStorage.setItem("theme", theme);
-  });
-  // ["mouseenter", "mouseleave"].forEach((event) =>
-  //   nightModeSwitch.addEventListener(event, function () {
-  //     console.log("event occuring");
-  //     nightModeSwitch.textContent =
-  //       nightModeSwitch.textContent == "🌙" ? "💡" : "🌙";
-  //   })
-  // );
+  //night mode
+  nightModeSwitch.addEventListener("click", controlNightSwitch);
 };
 
 init();

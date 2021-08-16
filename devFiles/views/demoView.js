@@ -1,0 +1,1 @@
+class demoView extends View {}

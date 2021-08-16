@@ -15,8 +15,8 @@ const updateState = function (data) {
   state.date = data.date;
 };
 
-// const endpoint = "http://cipherforums.com";
-const endpoint = "http://localhost:3000";
+const endpoint = "http://cipherforums.com";
+// const endpoint = "http://localhost:3000";
 //http://localhost:3000/
 //http://node-express-dev2.us-east-2.elasticbeanstalk.com/
 export const getForum = async function (id, url = `${endpoint}/api/threads`) {

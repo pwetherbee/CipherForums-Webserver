@@ -902,10 +902,10 @@ var updateState = function updateState(data) {
   state.title = data.title;
   console.log(state.data);
   state.date = data.date;
-}; // const endpoint = "http://cipherforums.com";
+};
 
-
-var endpoint = "http://localhost:3000"; //http://localhost:3000/
+var endpoint = "http://cipherforums.com"; // const endpoint = "http://localhost:3000";
+//http://localhost:3000/
 //http://node-express-dev2.us-east-2.elasticbeanstalk.com/
 
 var getForum = /*#__PURE__*/function () {
@@ -19268,7 +19268,7 @@ function sleep(ms) {
 },{}],"forum_post/controller.js":[function(require,module,exports) {
 "use strict";
 
-require("regenerator-runtime/runtime");
+var _runtime = require("regenerator-runtime/runtime");
 
 var model = _interopRequireWildcard(require("./model.js"));
 
@@ -19580,6 +19580,37 @@ var controlHideKey = /*#__PURE__*/function () {
   };
 }();
 
+var controlNightSwitch = /*#__PURE__*/function () {
+  var _ref7 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee7() {
+    var nightModeSwitch, theme;
+    return regeneratorRuntime.wrap(function _callee7$(_context7) {
+      while (1) {
+        switch (_context7.prev = _context7.next) {
+          case 0:
+            nightModeSwitch = document.querySelector(".switch");
+            document.body.classList.toggle("dark-mode");
+            theme = "light";
+
+            if (document.body.classList.contains("dark-mode")) {
+              theme = "dark";
+            }
+
+            nightModeSwitch.textContent = nightModeSwitch.textContent == "🌙" ? "💡" : "🌙";
+            localStorage.setItem("theme", theme);
+
+          case 6:
+          case "end":
+            return _context7.stop();
+        }
+      }
+    }, _callee7);
+  }));
+
+  return function controlNightSwitch() {
+    return _ref7.apply(this, arguments);
+  };
+}();
+
 var init = function init() {
   var currentTheme = localStorage.getItem("theme");
   var nightModeSwitch = document.querySelector(".switch");
@@ -19602,23 +19633,7 @@ var init = function init() {
   var submitButton = document.querySelector(".btn__comment");
   submitButton.addEventListener("click", controlPostComment); //night mode
 
-  nightModeSwitch.addEventListener("click", function () {
-    document.body.classList.toggle("dark-mode");
-    var theme = "light";
-
-    if (document.body.classList.contains("dark-mode")) {
-      theme = "dark";
-    }
-
-    nightModeSwitch.textContent = nightModeSwitch.textContent == "🌙" ? "💡" : "🌙";
-    localStorage.setItem("theme", theme);
-  }); // ["mouseenter", "mouseleave"].forEach((event) =>
-  //   nightModeSwitch.addEventListener(event, function () {
-  //     console.log("event occuring");
-  //     nightModeSwitch.textContent =
-  //       nightModeSwitch.textContent == "🌙" ? "💡" : "🌙";
-  //   })
-  // );
+  nightModeSwitch.addEventListener("click", controlNightSwitch);
 };
 
 init();
@@ -19650,7 +19665,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57399" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62357" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

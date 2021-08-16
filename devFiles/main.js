@@ -1,132 +1,91 @@
 "use strict";
 // SHA256 A STRING
 // ------------------------------------------------------------------------------------------------------------------------
-
+import "regenerator-runtime/runtime";
 import {
-  sha256,
-  ascii_to_hexa,
-  hex_to_dec,
-  hex_to_text,
-  dec_to_hex,
-} from "./helpers/convert";
-
+  dec_to_text,
+  text_to_dec,
+  key_to_dec,
+  decrypt,
+  sleep,
+} from "./helpers/convert.js";
+import keyView from "./views/keyView.js";
+import { async } from "regenerator-runtime/runtime";
 //Implement generating comment page
-let myStorage = window.localStorage;
-let commentContainer = document.querySelector(".comments");
-let forumButtons = document.querySelectorAll(".select");
-let hideBtn = document.querySelector(".btn__hide");
-let keyInput = document.querySelector(".key__textbox");
 
-hideBtn.addEventListener("click", () => {
-  keyInput.type = keyInput.type === "text" ? "password" : "text";
-});
-
-let thread1 = [
-  "7f741c422a0a640a08312043405371345970035e2d7442435b090b444375767e5c717d536444705c473a086a67077b744336480c534411535352530a0204034b",
-  "5d7c2049170f51371c2532784072543c6a542f7a2e44514d5c450e504152185b40175712535d5f5f520c111e1118584547415e004c4d425b471708594b4a4f4b",
-  "5b4402771d2d5f01092e3b545b7775015d6232431e597e6c6327104645524d4e50585b5f555c4612540d085f540f4310560e590c5359161257580f55545e424b",
+const demoComments = [
+  "525622612505542007200a6204736f15695b31425150567764012c625b50794063474a65555e515d5a0745465e417459450951137058104759444c5b5e5d174b",
+  "051542626301503e5c2a21744a5578680e3f223461224f760e5e10570044475f531447574f45100e504457175c5515440103040f12040a05411812175101171e",
+  "7a2023041d52252a24754c620c50410a5d5b1f4116041b44175a1645575605445c42185c10441258455f5f414c4018435e5442005b1416535711110856411f4a",
+  "2e4e684f304641135f404109104015446548135511571508034d17590f405e16400c544550594819585f5545155c5c18150d5942180c554611010b404a4b1a19",
 ];
 
-let thread2 = [
-  "7c67096225377e162f0d00506179590a4859306d3d4b405b750f306d50644d7e7962415c614e5a574e42005c52134e4041085b0f165e11125656065c5043454b",
-  "5a7928680b0c61252309104d787d4e3d465e1a5d0550555c52451150135559515847445d5740535f5a070112430453545c151841525207481459174c4211164b",
-  "6e5a0d62022c6e24102608415a485c12454e1250174c14575c080b505d43185a56455313105c5d465f0b0b5511155810590e5b0a165616125d1711594811164b",
-  "407b294a0211520526061d5f57495745445a0f4644555147400401501340594113525851424b42465206454558155f104109514152520453415b16675a554f4b",
-];
+const decryptCycle = async function (final = "default_key") {
+  let interval = setInterval(() => {
+    keyView.changeKeyValue(Math.floor(10 ** 8 * Math.random()).toString(16));
+    controlUpdateKey();
+  }, 40);
+  setTimeout(() => {
+    clearInterval(interval);
+    keyView.changeKeyValue(final);
+    controlUpdateKey();
+  }, 800);
+};
 
-let thread3 = [
-  "636712702b1044250e0e1444745b5d27537c0c643c7d7b505b19145a505c18535d5316405f5e5e125c0700424241455f560a5d0f16560c5614450d545d59584b",
-  "535f127d02046300370f137c4476440d515a075d05185b5c1308075b1343505b40175f4110531251580f08575f151b10420e410d521016124d56424b5049094b",
-  "67660e743e3b6011130f16707a695233576808573c6b415c46152f614073794e43564453545d4a120a42115a5812175946415a0e4217031257580f55545e424b",
-];
+const controlInitialLoad = async function () {
+  decryptCycle("default_key");
+  var curr = 1;
+  var options = ["default_key", "alt_key", "other_key", "banana"];
+  let interval = setInterval(() => {
+    decryptCycle(options[curr]);
+    curr++;
+    curr = curr % options.length;
+  }, 5000);
+  document
+    .querySelector(".key__textbox")
+    .addEventListener("click", () => clearInterval(interval));
+};
 
-let forums = [thread1, thread2, thread3];
-
-let hexComments = [];
-
-forums.forEach((convo, i) => {
-  myStorage.setItem(`convo${i + 1}`, JSON.stringify(convo));
-});
-
-let myClasses = document.getElementsByClassName("formatHex");
-
-function changeForum(id) {
-  hexComments = JSON.parse(myStorage.getItem(`convo${id}`));
-  updateBox();
-}
-
-forumButtons.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    let i = btn.getAttribute("data-index");
-    changeForum(i);
-  });
-});
-
-changeForum(2);
-
-renderComments(hexComments);
-
-function renderComment(comment) {
-  commentContainer.insertAdjacentHTML(
-    "afterbegin",
-    `
-  <div class="insideForum">
-    <p class="formatHex">
-        ${comment}
-    </p>
-  </div>
-  `
+const controlUpdateKey = async function () {
+  // console.log("this was activated");
+  // get current key
+  let key = document.querySelector(".key__textbox").value;
+  // convert key to dec
+  const key_dec = key_to_dec(key);
+  // decrypt all comments
+  const decryptedComments = demoComments.map((enctext) =>
+    decrypt(enctext, key_dec)
   );
-  myClasses = document.getElementsByClassName("formatHex");
-}
-
-function renderComments(comms) {
-  comms.forEach(renderComment);
-}
-
-for (var i = 0; i < myClasses.length; i++) {
-  console.log(myClasses[i].textContent);
-}
-
-function keyXOR(key) {
-  return hex_to_dec(ascii_to_hexa(sha256(key)));
-}
-
-function updateBox() {
-  let keyText = keyInput.value;
-  let keyDec = keyXOR(keyText);
-  for (var i = 0; i < myClasses.length; i++) {
-    const xOrd = BigInt(hex_to_dec(hexComments[i])) ^ BigInt(keyDec);
-    let text = hex_to_text(dec_to_hex(xOrd));
-    if (text.includes("|")) {
-      text = text.split("|")[1];
-    }
-    myClasses[i].innerHTML = text;
+  let commentEls = document.querySelectorAll(".commentBorderText2");
+  for (let i = 0; i < commentEls.length; i++) {
+    await sleep(30);
+    // commentEls[i].innerHTML = decryptedComments[i] || "...";
+    commentEls[i].innerHTML = parseComment(decryptedComments[i]);
   }
-}
+  // commentEls.forEach((commentEl, i) => {
+  //   commentEl.textContent = decryptedComments[i];
+  // });
+};
 
-//Implement crazy hacker view
+const parseComment = function (comment) {
+  if (!comment) {
+    return "...";
+  }
+  if (comment.startsWith("#img[")) {
+    return `<img src = ${comment.split("[")[1].slice(0, -1)}>`;
+  }
+  if (comment.startsWith("#video[")) {
+    let embed = comment.split("[")[1].slice(0, -1).replace("watch", "embed");
+    console.log(embed);
+    return `<iframe width="420" height="315"
+    src="${embed}">
+    </iframe>`;
+  }
+  return comment;
+};
 
-function crazy() {
-  keyInput.value = dec_to_hex(600 * Math.random());
-  updateBox();
-}
-
-let interval = setInterval(crazy, 20);
-
-setTimeout(() => {
-  clearInterval(interval);
-  keyInput.value = "default_key";
-  updateBox();
-}, 500);
-
-// keyInput.addEventListener("keypress", (e) => {
-//   console.log(e.key);
-//   if (e.key === "Enter") {
-//     updateBox();
-//   }
-// });
-
-keyInput.addEventListener("input", updateBox);
-
-//Implement add comment
+const init = function () {
+  let interval = controlInitialLoad();
+  keyView.addHandlerInputText(controlUpdateKey);
+};
+init();
