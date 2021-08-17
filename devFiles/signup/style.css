@@ -2,6 +2,7 @@ body{
 	background-color: black;
 	/*display: inline;*/
 	/*justify-content: space-between;*/
+  font-family: "IBM Plex Mono", monospace;
 }
 
 /*html {
@@ -151,7 +152,7 @@ input{
     from {left: 3%;}
     to {left: -65%;}
     from {top: 0%;}
-    to {top: 100%;}
+    to {top: 93%;}
     from{ transform: rotate(90deg); }
     to { transform: rotate(0deg); }  
 }
@@ -159,7 +160,7 @@ input{
 @keyframes movingundo {
     from {left: -65%;}
     to {left: 3%;}
-    from {top: 100%;}
+    from {top: 93%;}
     to {top: 0%;}
     from { transform: rotate(0deg); }  
     to{ transform: rotate(90deg); }
