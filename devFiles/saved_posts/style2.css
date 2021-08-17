@@ -2,6 +2,7 @@ body{
 	background-color: black;
 	/*display: inline;*/
 	/*justify-content: space-between;*/
+  font-family: "IBM Plex Mono", monospace;
 }
 
 /*html {
