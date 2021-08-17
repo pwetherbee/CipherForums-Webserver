@@ -57,6 +57,8 @@ a:visited{
 
 .commentBorder{
 	border: 2px solid black;
+	display: block;
+	height: 10vmin;
 }
 
 .video{
