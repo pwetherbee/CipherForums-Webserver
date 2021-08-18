@@ -11,6 +11,7 @@ var helpRouter = require("./routes/help");
 var apiRouter = require("./routes/api");
 var signupRouter = require("./routes/signup");
 var loginRouter = require("./routes/login");
+var createRouter = require("./routes/create");
 
 process.env.NODE_ENV = "production"; // production or development
 
@@ -49,6 +50,7 @@ app.use("/help", helpRouter);
 app.use("/threads", threadRouter);
 app.use("/signup", signupRouter);
 app.use("/login", loginRouter);
+app.use("/create", createRouter);
 // app.use("/public/thread_files", express.static("public/thread_files"));
 app.use("/", express.static("dist"));
 
