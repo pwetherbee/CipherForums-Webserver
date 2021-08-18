@@ -33,8 +33,13 @@ a.topBarText:visited {
   color: white;
 }
 
+a.topBarText {
+  color: white;
+}
+
 a {
 	text-decoration: none;
+  color: white;
 }
 
 a:hover{
@@ -389,6 +394,6 @@ mark {
 	text-align: center;
 }
 
-a.dummy:visited{
-	color: white;
+a.dummy{
+	color: black;
 }
