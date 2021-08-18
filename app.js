@@ -10,8 +10,9 @@ var threadRouter = require("./routes/threads");
 var helpRouter = require("./routes/help");
 var apiRouter = require("./routes/api");
 var signupRouter = require("./routes/signup");
+var loginRouter = require("./routes/login");
 
-// process.env.NODE_ENV = "production"; // production or development
+process.env.NODE_ENV = "production"; // production or development
 
 const Bundler = require("parcel-bundler");
 
@@ -47,6 +48,7 @@ app.use("/user", usersRouter);
 app.use("/help", helpRouter);
 app.use("/threads", threadRouter);
 app.use("/signup", signupRouter);
+app.use("/login", loginRouter);
 // app.use("/public/thread_files", express.static("public/thread_files"));
 app.use("/", express.static("dist"));
 

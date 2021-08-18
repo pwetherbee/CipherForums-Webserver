@@ -30,6 +30,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script defer src="main.js"></script>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;500&display=swap");
     </style>
@@ -51,9 +52,9 @@
     </div>
 
     <div class="signup-form">
-      <form action="/examples/actions/confirmation.php" method="post">
+      <form class="login-submission" action="" method="post">
         <h2>Login</h2>
-        <p>Please fill in this form to create an account!</p>
+        <p>Enter your username and password below</p>
         <hr />
         <!--         <div class="form-group">
         	<input type="name" class="form-control" name="name" placeholder="Name" required="required">
@@ -81,7 +82,7 @@
         </div>    -->
         <div class="form-group">
           <label class="checkbox-inline"
-            ><input type="checkbox" required="required" /> Remember Me</label
+            ><input type="checkbox" /> Remember Me</label
           >
         </div>
         <div class="form-group">
@@ -89,7 +90,8 @@
         </div>
       </form>
       <div class="hint-text">
-        Don't have an account? <a href="../signup">Sign up here</a>
+        Don't have an account?
+        <a href="https://cipherforums.com/signup">Sign up here</a>
       </div>
     </div>
   </body>
