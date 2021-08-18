@@ -1,0 +1,21 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+var _View = require("./View");
+var _ViewDefault = _parcelHelpers.interopDefault(_View);
+class KeyView extends _ViewDefault.default {
+  _parentElement = document.querySelector(".keyDemo");
+  _keyTextbox = this._parentElement.querySelector(".key__textbox");
+  addHandlerInputText(handler) {
+    this._parentElement.querySelector(".key__textbox").addEventListener("input", handler);
+  }
+  changeKeyValue(newKey) {
+    this._keyTextbox.value = newKey;
+  }
+  hideKey() {
+    this._keyTextbox.type = this._keyTextbox.type === "text" ? "password" : "text";
+  }
+  addHandlerHideKey(handler) {
+    this._parentElement.querySelector(".btn__hide").addEventListener("click", handler);
+  }
+}
+exports.default = new KeyView();
