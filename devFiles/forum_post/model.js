@@ -1,3 +1,4 @@
+import { API_URL } from "../helpers/config";
 export const state = {
   id: "",
   key: "",
@@ -15,7 +16,8 @@ const updateState = function (data) {
   state.date = data.date;
 };
 
-const endpoint = "https://cipherforums.com";
+// const endpoint = "https://cipherforums.com";
+const endpoint = API_URL;
 // const endpoint = "http://localhost:3000";
 //http://localhost:3000/
 //http://node-express-dev2.us-east-2.elasticbeanstalk.com/

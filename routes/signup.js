@@ -7,6 +7,9 @@ router.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../dist/signup/index.html"));
 });
 
-router.post("/", (req, res) => {});
+router.post("/", (req, res) => {
+  console.log(req.body);
+  res.send("successfully created new account");
+});
 
 module.exports = router;

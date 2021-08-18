@@ -9,6 +9,7 @@ var usersRouter = require("./routes/users");
 var threadRouter = require("./routes/threads");
 var helpRouter = require("./routes/help");
 var apiRouter = require("./routes/api");
+var signupRouter = require("./routes/signup");
 
 // process.env.NODE_ENV = "production"; // production or development
 
@@ -45,6 +46,7 @@ app.use("/api", apiRouter);
 app.use("/user", usersRouter);
 app.use("/help", helpRouter);
 app.use("/threads", threadRouter);
+app.use("/signup", signupRouter);
 // app.use("/public/thread_files", express.static("public/thread_files"));
 app.use("/", express.static("dist"));
 
