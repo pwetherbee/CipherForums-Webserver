@@ -368,3 +368,7 @@ mark {
   height: 600px;
   background-color: yellow;
 }
+
+.create__forum__button:visited{
+  color: white;
+}

@@ -447,5 +447,7 @@ mark {
 }
 
 
-
+.create__forum__button:visited{
+  color: white;
+}
 
