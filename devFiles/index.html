@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="height=device-height, 
+  <head>
+    <meta
+      name="viewport"
+      content="height=device-height, 
                       width=device-width, initial-scale=1.0, 
                       minimum-scale=1.0, maximum-scale=1.0, 
-                      user-scalable=no, target-densitydpi=device-dpi">
-    <link rel = "icon" href = "assets/cf1.png"/>
+                      user-scalable=no, target-densitydpi=device-dpi"
+    />
+    <link rel="icon" href="assets/cf1.png" />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link
       rel="stylesheet"
@@ -21,90 +24,95 @@
       media="only screen and (min-width: 1051px)"
       href="style.css"
     />
-	<style>
-		@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;500&display=swap");
-	  </style>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;500&display=swap");
+    </style>
     <link rel="shortcut icon" href="assets/cf1.png" />
     <title>CipherForums</title>
-	<script defer src="./main.js"></script>
-</head>
-<body>
-<div class="topBar">
-	<a class="CFlogoHolder" href="">
-		<img class="CFlogo" src="assets/cfSideways3.png">
-	</a>
-	<p class="topBarText">
-		<a class="topBarText" href="public">Public Forums</a>
-	</p>
-	<p class="topBarText">
-		<a class="create__forum__button" href = '#'>Create A Forum </a>
-	</p>
-	<p class="topBarText">
-		<a class="topBarText" href="signup">Login/Signup</a>
-	</p>
-	<p class="topBarText">
-		<a class="topBarText" href="help_page">Help</a>
-	</p>
-</div>
+    <script defer src="./main.js"></script>
+  </head>
+  <body>
+    <div class="topBar">
+      <a class="CFlogoHolder" href="">
+        <img class="CFlogo" src="assets/cfSideways3.png" />
+      </a>
+      <p class="topBarText">
+        <a class="topBarText" href="public">Public Forums</a>
+      </p>
+      <p class="topBarText">
+        <a class="create__forum__button" href="https://cipherforums.com/create"
+          >Create A Forum
+        </a>
+      </p>
+      <p class="topBarText">
+        <a class="topBarText" href="signup">Login/Signup</a>
+      </p>
+      <p class="topBarText">
+        <a class="topBarText" href="help_page">Help</a>
+      </p>
+    </div>
 
-<div class="video">
-	<h2>How does this website work?</h2>
-<video class="videoSize" controls>
-  <source src="assets/brain.mp4" type="video/mp4">
-  <!-- <source src="assets/brain.ogg" type="video/ogg"> -->
-  Your browser does not support the video tag.
-</video>
+    <div class="video">
+      <h2>How does this website work?</h2>
+      <video class="videoSize" controls>
+        <source src="assets/brain.mp4" type="video/mp4" />
+        <!-- <source src="assets/brain.ogg" type="video/ogg"> -->
+        Your browser does not support the video tag.
+      </video>
+    </div>
 
-</div>
+    <div class="keyDemo">
+      <!-- <div class="enterKey"> -->
+      <h3 class="enterKey">Enter a key</h3>
+      <input class="key__textbox" type="" name="" />
+      <!-- </div> -->
 
+      <div class="demoCommentHolder">
+        <p class="commentBorderText">Encrypted with Default_key</p>
+        <div class="commentBorder">
+          <p class="commentBorderText2">
+            7d6b174f2e21433c5c1300616449535262635540150d6670670a3654695a62746b7643584c7a574052420c41110059105019550c465b071257580f55545e424b
+          </p>
+        </div>
+        <p class="commentBorderText">Encrypted with alt_key</p>
+        <div class="commentBorder">
+          <p class="commentBorderText2">
+            08127e557f7a025d6a0a32517b05787952352a097b5c517c17017468113561054c537f484b79551450165b4414550844061e000c420d0146500e0f0e510b421e
+          </p>
+        </div>
+        <p class="commentBorderText">Encrypted with other_key</p>
+        <div class="commentBorder">
+          <p class="commentBorderText2">
+            010d05282e26292631600667547605124a7d37242d5d550836454466450f12377b046e531f2c034500165842195556175349030e440a0116570a5c0e5656454a
+          </p>
+        </div>
+        <p class="commentBorderText">Encrypted with banana</p>
+        <div class="commentBorder">
+          <p class="commentBorderText2">
+            7d6b174f2e21433c5c1300616449535262635540150d6670670a3654695a62746b7643584c7a574052420c41110059105019550c465b071257580f55545e424b
+          </p>
+        </div>
+      </div>
 
-<div class="keyDemo">
-	
-	<!-- <div class="enterKey"> -->
-	<h3 class="enterKey">Enter a key</h3>
-	<input class="key__textbox" type="" name="">
-	<!-- </div> -->
+      <div class="moreInfo">
+        <a href="create">Create a demo forum</a>
+        &nbsp
+        <p>or</p>
+        &nbsp
 
-	<div class="demoCommentHolder">
-		<p class="commentBorderText">Encrypted with Default_key</p>
-			<div class="commentBorder">
-				<p class="commentBorderText2">7d6b174f2e21433c5c1300616449535262635540150d6670670a3654695a62746b7643584c7a574052420c41110059105019550c465b071257580f55545e424b</p>
-			</div>
-		<p class="commentBorderText">Encrypted with alt_key</p>
-			<div class="commentBorder">
-				<p  class="commentBorderText2">08127e557f7a025d6a0a32517b05787952352a097b5c517c17017468113561054c537f484b79551450165b4414550844061e000c420d0146500e0f0e510b421e</p>
-			</div>
-		<p class="commentBorderText">Encrypted with other_key</p>
-			<div class="commentBorder">
-				<p  class="commentBorderText2">010d05282e26292631600667547605124a7d37242d5d550836454466450f12377b046e531f2c034500165842195556175349030e440a0116570a5c0e5656454a</p>
-			</div>
-			<p class="commentBorderText">Encrypted with banana</p>
-			<div class="commentBorder">
-				<p class="commentBorderText2">7d6b174f2e21433c5c1300616449535262635540150d6670670a3654695a62746b7643584c7a574052420c41110059105019550c465b071257580f55545e424b</p>
-			</div>
-	</div>
-
-
-	<div class="moreInfo">
-			<a href="create">Create a demo forum</a>
-			&nbsp
-				<p>or</p>
-			&nbsp
-
-			<a href="detailed_help/index.html">See a more detailed explanation of the process</a>
-	</div>
-<!-- 	<div class="demoCommentHolder">
+        <a href="detailed_help/index.html"
+          >See a more detailed explanation of the process</a
+        >
+      </div>
+      <!-- 	<div class="demoCommentHolder">
 		<a href="#section1">
 			<p>Click Me to Smooth Scroll to Section 2 Below</p>
 		</a>
 	</div> -->
-</div>
+    </div>
 
+    <div class="bottomPad">Happy encrypting</div>
 
-<div class="bottomPad">Happy encrypting</div>
-
-<div><a class="dummy" href="dummy/index.html">dummy_links</a></div>
-
-
-</body>
+    <div><a class="dummy" href="dummy/index.html">dummy_links</a></div>
+  </body>
 </html>

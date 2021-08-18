@@ -33,7 +33,7 @@ router.post("/", (req, res) => {
   res.send(
     JSON.stringify({
       response: "Account Successfully created",
-      redirect: "https:/cipherforums.com/login",
+      redirect: "..",
     })
   );
 });

@@ -16,6 +16,7 @@ loginBtn.addEventListener("submit", async (e) => {
   };
   //   console.log(user);
   let response = await AJAX(`${API_URL}/signup`, user);
-  location.href = response.redirect;
+  // console.log(response.redirect);
+  location.href = `${response.redirect}/login`;
   //   console.log(response);
 });

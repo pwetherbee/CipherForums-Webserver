@@ -13,7 +13,7 @@ var signupRouter = require("./routes/signup");
 var loginRouter = require("./routes/login");
 var createRouter = require("./routes/create");
 
-process.env.NODE_ENV = "production"; // production or development
+// process.env.NODE_ENV = "production"; // production or development
 
 const Bundler = require("parcel-bundler");
 

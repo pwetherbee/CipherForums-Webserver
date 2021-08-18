@@ -87,11 +87,11 @@ const parseComment = function (comment) {
   return comment;
 };
 
-const controlCreateForum = async function () {
-  //create a new random forum with id
-  let newForum = await putForum();
-  location.href = `/threads/${newForum.newID}`;
-};
+// const controlCreateForum = async function () {
+//   //create a new random forum with id
+//   let newForum = await putForum();
+//   location.href = `/threads/${newForum.newID}`;
+// };
 
 const putForum = async function (comment, url = `${endpoint}/api/threads`) {
   const res = await fetch(url, {
@@ -114,8 +114,8 @@ const putForum = async function (comment, url = `${endpoint}/api/threads`) {
 const init = function () {
   let interval = controlInitialLoad();
   keyView.addHandlerInputText(controlUpdateKey);
-  document
-    .querySelector(".create__forum__button")
-    .addEventListener("click", controlCreateForum);
+  // document
+  //   .querySelector(".create__forum__button")
+  //   .addEventListener("click", controlCreateForum);
 };
 init();
