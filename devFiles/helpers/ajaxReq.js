@@ -5,6 +5,7 @@ export const AJAX = async function (url, uploadData = undefined) {
       ? fetch(url, {
           method: "POST",
           headers: {
+            Accept: "application/json",
             "Content-Type": "application/json",
           },
           body: JSON.stringify(uploadData),
@@ -12,8 +13,8 @@ export const AJAX = async function (url, uploadData = undefined) {
       : fetch(url);
 
     const res = await Promise.race([fetchPro, timeout(10)]);
+    // console.log(res);
     const data = await res.json();
-
     if (!res.ok) throw new Error(`${data.message} (${res.status})`);
     return data;
   } catch (err) {

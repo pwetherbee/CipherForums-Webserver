@@ -7,12 +7,14 @@ const email = document.getElementsByName("email")[0];
 
 let loginBtn = document.querySelector(".signup-submission");
 
-loginBtn.addEventListener("submit", (e) => {
+loginBtn.addEventListener("submit", async (e) => {
   e.preventDefault();
   const user = {
     username: username.value,
     password: password.value,
     email: email.value,
   };
-  AJAX(`${API_URL}/signup`, user);
+  let response = await AJAX(`${API_URL}/signup`, user);
+  location.href = response.redirect;
+  //   console.log(response);
 });
