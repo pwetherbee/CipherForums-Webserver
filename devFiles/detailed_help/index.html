@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="height=device-height, 
+                      width=device-width, initial-scale=1.0, 
+                      minimum-scale=1.0, maximum-scale=1.0, 
+                      user-scalable=no, target-densitydpi=device-dpi">
+    <link rel = "icon" href = "../assets/cf1.png"/>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      media="only screen and (max-width: 1050px)"
+      href="style2.css"
+    />
+    <link
+      rel="stylesheet"
+      media="only screen and (min-width: 1051px)"
+      href="style.css"
+    />
+	<style>
+		@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;500&display=swap");
+	  </style>
+    <link rel="shortcut icon" href="../assets/cf1.png" />
+    <title>CipherForums</title>
+	<script defer src="./main.js"></script>
+</head>
+<body>
+<div class="topBar">
+	<a class="CFlogoHolder" href="">
+		<img class="CFlogo" src="../assets/cfSideways3.png">
+	</a>
+	<p class="topBarText">
+		<a class="topBarText" href="public">Public Forums</a>
+	</p>
+	<p class="topBarText">
+		<a class="create__forum__button" href = '#'>Create A Forum </a>
+	</p>
+	<p class="topBarText">
+		<a class="topBarText" href="signup">Login/Signup</a>
+	</p>
+	<p class="topBarText">
+		<a class="topBarText" href="help_page">Help</a>
+	</p>
+</div>
+
+
+<div class="mainHolder">
+	<!-- <div id="section1"></div> -->
+	<div>
+	  <h1 class="encTitle">Encryption</h1>
+	</div>
+
+	<div class="holder">
+		<div class="holder1">
+			<p><p class="red">-----1-----</p>Enter a message</p>
+		    <!-- <p>Message input</p> -->
+		    <input class="enterData" type="" name="">
+		    <!-- <p class="smallFont">Here is a demo message</p> -->
+		    <!-- <i class="arrow right"></i> -->
+		    <p>Message is padded with random characters</p>
+		    <div class="tooltip">
+			    <p class="smallFont">IaGWxbtCpQwUIgyxBhWfFUerSJXwQQuTtJHfsbJv|Here is a demo message|</p>
+			</div>
+
+		    <i class="arrow right"></i>
+		    <p>Message text to hex</p>
+		    	<p class="smallFont">496147577862744370517755496779784268576646556572534a587751517554744a486673624a767c4865726520697320612064656d6f206d6573736167657c</p>
+		    <i class="arrow right"></i>
+		    <p>Message Hex to decimal</p>
+		    	<p class="smallFont">3843222174544847893467223091407451758882769854241809191125655886645800567640772719044396783796470304153789486761933803492522729752274294666727705316648316</p>
+	  	</div>
+
+		<div class="holder4alt">
+		    <p class="botomText">XOR the message decimal against the key decimal to produce a cipher decimal</p>
+		    <p class="`own">------> ⊕ <------</p>
+		    <i class="arrow right"></i>
+		</div>
+
+		<div class="holder1">
+			<p><p class="red">-----2-----</p>Enter a key</p>
+		    <!-- <p>Key input</p> -->
+		    <input  class="enterData" type="" name="">
+		    <!-- <p class="smallFont">new_key</p> -->
+		    <!-- <i class="arrow right"></i> -->
+			    <p>Sha256 hash (already in hex)</p>
+				    <p class="smallFont">cc22256064ada159fc509dc8f1bbb562ee74663d6ea649ab2a260d36bd0a73903e2f58674448bd187b82f4da5f44a1028e0e303d04cb64c98143c0944d5dc5db</p>
+			    <i class="arrow right"></i>
+			    <p class="pushDown">Key Hex to decimal</p>
+			    	<p class="smallFont">10691332769332619538623497094861176388333738065573175236600211676436943213364097704237459569202872653624137916862798807285029722208226473510038160128460251</p>
+		</div>
+
+	</div>
+
+	<div class="holder">
+	  <div class="holder3">
+	    <p>Cipher decimal</p>
+		    <p class="smallFont">6979561027248696747755045026230347442564756467967460970441311405314596550678773197070978689254359330543516392382508303976633506260669976618663169184407719</p>
+	    <i class="arrow right"></i>
+	    <p><p class="red">-----3-----</p>Cipher Decimal to Hex (This is what gets sent to the server)</p>
+	  	  <p class="smallFont">854362371ccfd51a8c01ea9db8dccc1aac1c315b28f32cd9796c5541ec5b06c44a651001372af76e07ca91a83a64c871ae6f105961a60be9ec26b3e72c3aa0a7</p>
+	  </div>
+	</div>
+
+</div>
+
+	<div class="other">
+		<ol>
+		  <li>
+		  	The message you enter is padded with random letters and converted into a decimal.
+		  </li>
+		  <li>Key text is hashed with sha256 and converted into a decimal.</li>
+		  <li>The decimal cipher is produced by XORing the decimal message against the decimal key.</li>
+		</ol>
+	</div>
+
+<div class="mainHolder">
+	<div>
+	  <h1 class="encTitle2">Decryption</h1>
+	</div>
+
+	<div class="holder">
+
+	  <div class="holder1">
+	    <p><p class="red">-----4-----</p>Cipher Input</p>
+	    <input class="enterData" type="" name="">
+    	<p>(copy and paste from Cipher Decimal to Hex above)</p>
+	    <!-- <p class="smallFont">854362371ccfd51a8c01ea9db8dccc1aac1c315b28f32cd9796c5541ec5b06c44a651001372af76e07ca91a83a64c871ae6f105961a60be9ec26b3e72c3aa0a7</p> -->
+	    <i class="arrow right"></i>
+	    <p>Cipher Hex to decimal</p>
+	    	<p class="smallFont">6979561027248696747755045026230347442564756467967460970441311405314596550678773197070978689254359330543516392382508303976633506260669976618663169184407719</p>
+	  </div>
+
+	  <div class="holder4">
+	    <p class="botomText">XOR the decimal message against the decimal key to produce a decimal cipher</p>
+	    <p class="`own">------> ⊕ <------</p>
+	    <i class="arrow right"></i>
+	  </div>
+
+	  <div class="holder1">
+	    <p><p class="red">-----5-----</p>Key input</p>
+	    <input  class="enterData" type="" name="">
+	    <!-- <p class="smallFont">new_key</p> -->
+	    <!-- <i class="arrow right"></i> -->
+	    <p>Sha256 hash (already in hex)</p>
+	    	<p class="smallFont">cc22256064ada159fc509dc8f1bbb562ee74663d6ea649ab2a260d36bd0a73903e2f58674448bd187b82f4da5f44a1028e0e303d04cb64c98143c0944d5dc5db</p>
+	    <i class="arrow right"></i>
+	    <p>Key Hex to decimal</p>
+		    <p class="smallFont">10691332769332619538623497094861176388333738065573175236600211676436943213364097704237459569202872653624137916862798807285029722208226473510038160128460251</p>
+	  </div>
+	</div>
+	<div class="holder">
+
+	  <div class="holder3">
+	    <p>XOR result of Cipher Decimal and Key Decimal</p>
+	  	  <p class="smallFont">3843222174544847893467223091407451758882769854241809191125655886645800567640772719044396783796470304153789486761933803492522729752274294666727705316648316</p>
+	    <p>Decypted Decimal to Hex (This is what gets sent to the server)</p>
+	 	   <p class="smallFont">496147577862744370517755496779784268576646556572534a587751517554744a486673624a767c4865726520697320612064656d6f206d6573736167657c</p>
+	    <p>Decrypted Hex to Text</p>
+	  	  <p class="smallFont">IaGWxbtCpQwUIgyxBhWfFUerSJXwQQuTtJHfsbJv|Here is a demo message|</p>
+	    <p class="r"><p class="red">-----6-----</p>Decrypted message with padding removed</p>
+	    <p class="smallFont">Here is a demo message</p>
+	  </div>
+
+	</div>
+</div>
+
+	<div class="other2">
+		<ol>
+		  <li>Copy and paste the hex cipher to turn it into a decimal.</li>
+		  <li>Key text is hashed with sha256 and converted into a decimal.</li>
+		  <li>The decimal of the message is XORed against the decimal of the key. This produces the cipher hex.</li>
+		</ol>
+
+	</div>
+
+
+
+
+</body>
+</html>
