@@ -42,6 +42,8 @@ a:visited {
 
 .commentBorder {
   border: 2px solid black;
+  display: block;
+  height: 10vmin;
 }
 
 .commentBorderText2 {
@@ -64,7 +66,7 @@ a:visited {
   width: 40%;
   /*height: 50%;*/
   left: 47%;
-  top: 20%;
+  top: 12%;
   margin: auto;
   /*background-color: red;*/
   line-height: 2.5;

@@ -904,7 +904,7 @@ var updateState = function updateState(data) {
   state.date = data.date;
 };
 
-var endpoint = "http://cipherforums.com"; // const endpoint = "http://localhost:3000";
+var endpoint = "https://cipherforums.com"; // const endpoint = "http://localhost:3000";
 //http://localhost:3000/
 //http://node-express-dev2.us-east-2.elasticbeanstalk.com/
 
@@ -19665,7 +19665,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62357" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51111" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

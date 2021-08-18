@@ -10,7 +10,7 @@ var threadRouter = require("./routes/threads");
 var helpRouter = require("./routes/help");
 var apiRouter = require("./routes/api");
 
-process.env.NODE_ENV = "production"; // production or development
+// process.env.NODE_ENV = "production"; // production or development
 
 const Bundler = require("parcel-bundler");
 

@@ -13,6 +13,9 @@ import keyView from "./views/keyView.js";
 import { async } from "regenerator-runtime/runtime";
 //Implement generating comment page
 
+const endpoint = "https://cipherforums.com";
+// const endpoint = "http://localhost:3000";
+
 const demoComments = [
   "525622612505542007200a6204736f15695b31425150567764012c625b50794063474a65555e515d5a0745465e417459450951137058104759444c5b5e5d174b",
   "051542626301503e5c2a21744a5578680e3f223461224f760e5e10570044475f531447574f45100e504457175c5515440103040f12040a05411812175101171e",
@@ -84,8 +87,35 @@ const parseComment = function (comment) {
   return comment;
 };
 
+const controlCreateForum = async function () {
+  //create a new random forum with id
+  let newForum = await putForum();
+  location.href = `/threads/${newForum.newID}`;
+};
+
+const putForum = async function (comment, url = `${endpoint}/api/threads`) {
+  const res = await fetch(url, {
+    method: "PUT",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  });
+  if (!res?.ok) {
+    alert("Post could not be created");
+    return;
+  }
+  const data = res.json();
+  // updateState(data);
+  // console.log(data);
+  return data;
+};
+
 const init = function () {
   let interval = controlInitialLoad();
   keyView.addHandlerInputText(controlUpdateKey);
+  document
+    .querySelector(".create__forum__button")
+    .addEventListener("click", controlCreateForum);
 };
 init();
