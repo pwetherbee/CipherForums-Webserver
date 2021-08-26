@@ -1,18 +1,20 @@
-var createError = require("http-errors");
-var express = require("express");
-var path = require("path");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
-var fileRouter = require("./routes/fileget");
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
-var threadRouter = require("./routes/threads");
-var helpRouter = require("./routes/help");
-var apiRouter = require("./routes/api");
-var signupRouter = require("./routes/signup");
-var loginRouter = require("./routes/login");
-var createRouter = require("./routes/create");
+const createError = require("http-errors");
+const express = require("express");
+const path = require("path");
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
+const logger = require("morgan");
+const fileRouter = require("./routes/fileget");
+const indexRouter = require("./routes/index");
+const usersRouter = require("./routes/users");
+const threadRouter = require("./routes/threads");
+const helpRouter = require("./routes/help");
+const apiRouter = require("./routes/api");
+const signupRouter = require("./routes/signup");
+const loginRouter = require("./routes/login");
+const createRouter = require("./routes/create");
 
+// Define node.js env, defaults to development
 // process.env.NODE_ENV = "production"; // production or development
 
 const Bundler = require("parcel-bundler");
@@ -35,14 +37,22 @@ bundlers.forEach(async (bundler) => {
   });
 });
 
-// const file = "public/forum_post/index.html";
-// const options = {
-//   outDir: "./public/thread_files/",
-//   publicUrl: "/public/thread_files/",
-// };
-// const bundler = new Bundler(file, options);
-// app.use("/", bundler.middleware());
+// Cors is used to accept requests from outside of the webserver
 app.use(cors());
+
+// Define sessions middleware
+let sess = session({
+  resave: true,
+  saveUninitialized: true,
+  secret: "secret",
+  cookie: { maxAge: 20000 },
+});
+if (app.get("env") === "production") {
+  app.set("trust proxy", 1); // trust first proxy
+  sess.cookie.secure = true; // serve secure cookies
+}
+app.use(sess);
+// Define routers
 app.use("/", indexRouter);
 app.use("/api", apiRouter);
 app.use("/user", usersRouter);
@@ -51,18 +61,46 @@ app.use("/threads", threadRouter);
 app.use("/signup", signupRouter);
 app.use("/login", loginRouter);
 app.use("/create", createRouter);
-// app.use("/public/thread_files", express.static("public/thread_files"));
+app.get("/test", function (req, res, next) {
+  if (req.session.views) {
+    req.session.views++;
+    res.setHeader("Content-Type", "text/html");
+    res.write("<p>views: " + req.session.views + "</p>");
+    res.write("<p>expires in: " + req.session.cookie.maxAge / 1000 + "s</p>");
+    res.write(
+      "<p>your session is: " + req.session.cookie.maxAge / 1000 + "s</p>"
+    );
+
+    res.end();
+  } else {
+    req.session.views = 1;
+    res.end("Welcome to the demo stream, refresh!");
+  }
+});
+app.get("/logintest", function (req, res, next) {
+  if (req.session.username) {
+    res.setHeader("Content-Type", "text/html");
+    res.write(
+      "<p>session is logged in for user: " + req.session.username + "</p>"
+    );
+    res.write("<p>expires in: " + req.session.cookie.maxAge / 1000 + "s</p>");
+    res.end();
+  } else {
+    res.end("User is not logged in!");
+  }
+});
+// Serve homepage
 app.use("/", express.static("dist"));
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 
+// JSON, urlencoded and cookie parser middleware
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-// app.use(express.static(path.join(__dirname, "public")));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

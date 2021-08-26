@@ -6,36 +6,30 @@ export const state = {
   comments: [],
 };
 
+// Updates current page state based on forum ID
 const updateState = function (data) {
   state.id = data.id;
-  console.log("this forum ID is:", data.id);
   state.author = data.author;
   state.comments = data.comments;
   state.title = data.title;
-  console.log(state.data);
   state.date = data.date;
 };
 
-// const endpoint = "https://cipherforums.com";
+// Grab correct url from config file in helpers
 const endpoint = API_URL;
-// const endpoint = "http://localhost:3000";
-//http://localhost:3000/
-//http://node-express-dev2.us-east-2.elasticbeanstalk.com/
+
 export const getForum = async function (id, url = `${endpoint}/api/threads`) {
-  console.log("fetching data");
   const res = await fetch(`${url}/${id}`);
   // console.log("heres the res", res);
   if (!res.ok) {
     throw new Error("ID not found");
   }
-  // console.log("heres the res", res);
   const data = await res.json();
-  console.log("data converted to JSON");
-  // console.log("heres the data", data);
   updateState(data);
   return data;
 };
 
+// Make an AJAX request to the web server to post a comment to the current thread
 export const postComment = async function (
   comment,
   url = `${endpoint}/api/threads/${state.id}`
@@ -53,15 +47,9 @@ export const postComment = async function (
     return;
   }
   state.comments.push(comment);
-  // const res = await Promise.race([fetchPro, timeout(1000)]);
-  // if (!res.ok) {
-
-  // }
-  // const res = await Promise.race([fetchPro]);
 };
 
-//
-// let url = "http://node-express-dev2.us-east-2.elasticbeanstalk.com/";
+// Make an AJAX request to the web server to create a new thread
 export const putForum = async function (
   comment,
   url = `${endpoint}/api/threads`

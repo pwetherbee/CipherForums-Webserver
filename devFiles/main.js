@@ -114,6 +114,16 @@ const putForum = async function (comment, url = `${endpoint}/api/threads`) {
 const init = function () {
   let interval = controlInitialLoad();
   keyView.addHandlerInputText(controlUpdateKey);
+  const now = +new Date();
+  // If user is logged in, change the text from login to logout
+  let timeoutDate = localStorage.getItem("timeoutDate");
+  if (timeoutDate && timeoutDate - now > 0) {
+    document.querySelector(".loginref").textContent =
+      "@" + localStorage.getItem("currUser");
+  } else {
+    localStorage.removeItem("timeoutDate");
+  }
+  console.log(localStorage);
   // document
   //   .querySelector(".create__forum__button")
   //   .addEventListener("click", controlCreateForum);

@@ -1,6 +1,5 @@
 var express = require("express");
 const idGen = require("../helpers/generateRandomID");
-// const idgen = require("../helpers/generateRandomID");
 var router = express.Router();
 let SQLHelper = require("../helpers/sqlQueryHelper");
 router.use(express.json());
@@ -16,7 +15,9 @@ router.get("/threads/:tag", (req, res) => {
   SELECT * FROM Forums
   WHERE url = "${urlTag}"
   `;
+  // Connect to database
   connection.connect();
+  // Send Query and read result
   connection.query(query, function (err, rows, fields) {
     if (err) throw err;
     const id = rows[0]?.id;
@@ -24,7 +25,7 @@ router.get("/threads/:tag", (req, res) => {
       res.sendStatus(404);
       return;
     }
-    // console.log(rows[0].creationDate);
+
     const forum = {
       author: "Anonymous",
       id: id,
@@ -37,6 +38,9 @@ router.get("/threads/:tag", (req, res) => {
     WHERE forumID = ${forum.id} 
     ORDER BY postTime ASC
     `; //(SELECT id FROM Forums WHERE url = "${urlTag}"
+
+    //TODO: Escape callback hell here
+
     connection.query(query, function (err, rows, fields) {
       if (err) throw err;
       rows.forEach((row) => {
@@ -44,6 +48,7 @@ router.get("/threads/:tag", (req, res) => {
           res.send(forum);
           return;
         }
+        // Generate comment for every row returned in SQL
         let comment = {
           author: "Anonymous",
           time: row.postTime,
@@ -61,16 +66,14 @@ router.get("/threads/:tag", (req, res) => {
 // Post comment on thread from url
 
 router.post("/threads/:tag", (req, res) => {
-  // TODO: Replace with SQL query
   let urlID = req.params["tag"];
   let connection = SQLHelper.createConnection();
   let commentData = req.body;
   if (!commentData) {
     return;
   }
-  // console.log("comment post requested");
-  // console.log(commentData);
-  //commentData.forumID
+
+  // Make SQL query to post new thread
   let query = `
   INSERT INTO Comments (forumID, commentText, postTime)
   VALUES (${commentData.forumID}, "${commentData.text}", NOW())
@@ -78,15 +81,17 @@ router.post("/threads/:tag", (req, res) => {
   connection.connect();
   connection.query(query, function (err, rows, fields) {
     if (err) throw err;
-    // console.log("success posting comment");
   });
   connection.end();
   res.send("comment successfully added");
 });
 
+// SQl query to generate and return a new random thread
 router.put("/threads", (req, res) => {
-  let connection = SQLHelper.createConnection();
+  // Generate random thread ID
   let urlID = idGen.generateID();
+  // Connect to database
+  let connection = SQLHelper.createConnection();
   connection.connect();
   let query = `
   INSERT INTO Forums (url, title, creationDate)
@@ -103,8 +108,6 @@ router.put("/threads", (req, res) => {
       newID: urlID,
     })
   );
-  // if name given, check if name is in data already
-  // create template with either anon user or profile name and thread id
 });
 
 module.exports = router;

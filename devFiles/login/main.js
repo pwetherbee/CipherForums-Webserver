@@ -15,7 +15,16 @@ loginBtn.addEventListener("submit", async (e) => {
     password: password.value,
   };
   let response = await AJAX(`${API_URL}/login`, user);
-  console.log(response);
+  if (response.valid) {
+    let now = +new Date();
+    console.log(now, response.timeout);
+    localStorage.setItem("timeoutDate", now + response.timeout);
+    localStorage.setItem("currUser", response.user);
+    location.href = response.redirect;
+    return;
+  } else {
+    alert(response.message);
+  }
   //   location.href = response.redirect;
   //   console.log(response);
 });

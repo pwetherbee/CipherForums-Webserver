@@ -3,6 +3,7 @@ const idGen = require("../helpers/generateRandomID");
 let SQLHelper = require("../helpers/sqlQueryHelper");
 var router = express.Router();
 
+// Create new forum post using random ID
 router.get("/", (req, res) => {
   let connection = SQLHelper.createConnection();
   let urlID = idGen.generateID();

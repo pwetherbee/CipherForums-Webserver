@@ -14,6 +14,7 @@ import {
 import { async } from "regenerator-runtime/runtime";
 let commentEls;
 
+// Run when page is first loaded
 const controlInitialLoad = async function () {
   let url = window.location.href;
   let id = url.split("/").slice(-1); // Grabs url after /threads/
@@ -29,6 +30,7 @@ const controlInitialLoad = async function () {
     console.log("forum does not exist");
     return;
   }
+  // Set date at the end of the forum post
   document.querySelector(".date").textContent =
     model.state.date || "date does not exist";
   forumView.render(data);
@@ -45,6 +47,7 @@ const controlInitialLoad = async function () {
   }, 500);
 };
 
+// Renders forum
 const controlForumView = async function (id = 999) {
   const data = await model.getForum(id);
   forumView.render(data);
@@ -52,6 +55,7 @@ const controlForumView = async function (id = 999) {
   await controlUpdateKey();
 };
 
+// Changes ciphertext whenever key is changed
 const controlUpdateKey = async function () {
   // get current key
   let key = document.querySelector(".key__textbox").value;
@@ -74,6 +78,7 @@ const controlUpdateKey = async function () {
   // });
 };
 
+// Converts raw encoded text to proper form
 const parseComment = function (comment) {
   if (!comment) {
     return "...";
@@ -91,6 +96,7 @@ const parseComment = function (comment) {
   return comment;
 };
 
+// Allow user to post comment and send update to web server
 const controlPostComment = async function () {
   const commentTextBox = document.querySelector(".comment__textbox");
   const commentText = commentTextBox.value;
@@ -116,16 +122,19 @@ const controlPostComment = async function () {
   commentEls = document.querySelectorAll(".comment__body");
 };
 
+// Create new random forum ** will be deprecated soon
 const controlCreateForum = async function () {
   //create a new random forum with id
   let newForum = await model.putForum();
   location.href = `/threads/${newForum.newID}`;
 };
 
+// Hide values in key textbox
 const controlHideKey = async function () {
   keyView.hideKey();
 };
 
+// Dark mode fuctionality
 const controlNightSwitch = async function () {
   let nightModeSwitch = document.querySelector(".switch");
   document.body.classList.toggle("dark-mode");
@@ -138,6 +147,7 @@ const controlNightSwitch = async function () {
   localStorage.setItem("theme", theme);
 };
 
+// Run all functions when page loads
 const init = function () {
   const currentTheme = localStorage.getItem("theme");
   let nightModeSwitch = document.querySelector(".switch");
