@@ -6,7 +6,7 @@ const session = require("express-session");
 const logger = require("morgan");
 const fileRouter = require("./routes/fileget");
 const indexRouter = require("./routes/index");
-const usersRouter = require("./routes/users");
+const userRouter = require("./routes/user");
 const threadRouter = require("./routes/threads");
 const helpRouter = require("./routes/help");
 const apiRouter = require("./routes/api");
@@ -55,7 +55,7 @@ app.use(sess);
 // Define routers
 app.use("/", indexRouter);
 app.use("/api", apiRouter);
-app.use("/user", usersRouter);
+app.use("/user", userRouter);
 app.use("/help", helpRouter);
 app.use("/threads", threadRouter);
 app.use("/signup", signupRouter);
