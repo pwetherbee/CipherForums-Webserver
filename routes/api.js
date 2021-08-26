@@ -12,8 +12,10 @@ router.get("/threads/:tag", (req, res) => {
   // Make sql query
   let connection = SQLHelper.createConnection();
   let query = `
-  SELECT * FROM Forums
-  WHERE url = "${urlTag}"
+  SELECT Forums.id, Forums.title, Forums.creationDate, Users.username FROM Forums
+  INNER JOIN Users
+  ON Forums.authorID = Users.userID
+  WHERE Forums.url = "${urlTag}"
   `;
   // Connect to database
   connection.connect();
@@ -27,7 +29,7 @@ router.get("/threads/:tag", (req, res) => {
     }
 
     const forum = {
-      author: "Anonymous",
+      author: rows[0].username || "Anon",
       id: id,
       title: rows[0].title,
       date: rows[0].creationDate,
@@ -68,6 +70,8 @@ router.get("/threads/:tag", (req, res) => {
     connection.end();
   });
 });
+
+router.get("/user/created", (req, res) => {});
 
 // Post comment on thread from url
 

@@ -24,8 +24,22 @@ router.get("/", (req, res) => {
 });
 router.get("/user", (req, res) => {
   if (!req.session.username) {
-    res.send("user not logged in");
+    // return res.send("user not logged in");
+    return res.redirect("../");
   }
+  let connection = SQLHelper.createConnection();
+  let urlID = idGen.generateID();
+  connection.connect();
+  let query = `
+    INSERT INTO Forums (url, title, authorID, creationDate)
+    VALUES ("${urlID}", "${urlID}", "${req.session.userID}", NOW());
+    `;
+  connection.query(query, function (err, rows, fields) {
+    if (err) throw err;
+    console.log("success");
+  });
+  connection.end();
+  res.redirect(`https://cipherforums.com/threads/${urlID}`);
 });
 
 module.exports = router;

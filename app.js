@@ -18,8 +18,6 @@ const createRouter = require("./routes/create");
 // Define node.js env, defaults to development
 // process.env.NODE_ENV = "production"; // production or development
 
-const Bundler = require("parcel-bundler");
-
 var cors = require("cors");
 
 var app = express();
@@ -27,16 +25,22 @@ var app = express();
 /*
 bundle multiple files
 */
-const options = {};
+// Make true when deploying
+// const onEB = false;
+if (process.env.BUNDLE) {
+  const Bundler = require("parcel-bundler");
 
-let bundlers = [new Bundler("./devFiles/index.html", {})];
+  const options = {};
 
-bundlers.forEach(async (bundler) => {
-  await new Promise((resolve) => {
-    bundler.on("bundled", resolve);
-    bundler.bundle();
+  let bundlers = [new Bundler("./devFiles/index.html", {})];
+
+  bundlers.forEach(async (bundler) => {
+    await new Promise((resolve) => {
+      bundler.on("bundled", resolve);
+      bundler.bundle();
+    });
   });
-});
+}
 
 // Cors is used to accept requests from outside of the webserver
 app.use(cors());

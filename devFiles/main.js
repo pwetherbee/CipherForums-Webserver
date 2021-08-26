@@ -118,8 +118,9 @@ const init = function () {
   // If user is logged in, change the text from login to logout
   let timeoutDate = localStorage.getItem("timeoutDate");
   if (timeoutDate && timeoutDate - now > 0) {
-    document.querySelector(".loginref").textContent =
-      "@" + localStorage.getItem("currUser");
+    let loginObj = document.querySelector(".loginref");
+    loginObj.href = `user/${localStorage.getItem("currUser")}`;
+    loginObj.textContent = "@" + localStorage.getItem("currUser");
   } else {
     localStorage.removeItem("timeoutDate");
   }
