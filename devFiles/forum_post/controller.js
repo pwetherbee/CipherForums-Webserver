@@ -25,7 +25,6 @@ const controlInitialLoad = async function () {
     forumView.render_error();
     return;
   }
-  console.log("the data for this forum is", data);
   if (data === "404") {
     console.log("forum does not exist");
     return;
