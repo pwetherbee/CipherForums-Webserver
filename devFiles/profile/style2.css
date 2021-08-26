@@ -80,7 +80,7 @@ a:hover{
   /*justify-content: space-between;*/
   width: 90%;
   /*height: 50%;*/
-  left: 2%;
+  left: -2%;
   /*top: 15%;*/
   margin: auto;
   /*background-color: red;*/
@@ -529,4 +529,23 @@ h3{
 
 .feedPostDate{
   font-size: 50%;
+}
+
+
+.aCreate{
+  color: white;
+}
+
+.createUserForum{
+  width: 90%;
+  position: relative;
+  /*align-items: center;*/
+  color: black;
+  margin: auto;
+  margin-bottom: 5%;
+  /*margin-left: 1%;*/
+  margin-top: 3%;
+  background-color: black;
+  text-align: center;
+  padding: 3%;
 }

@@ -528,3 +528,20 @@ h3{
 .feedPostDate{
   font-size: 50%;
 }
+
+
+
+.aCreate{
+  color: white;
+}
+
+.createUserForum{
+  width: 15%;
+  position: absolute;
+  color: black;
+  margin-left: 42%;
+  margin-top: 3%;
+  background-color: black;
+  text-align: center;
+  padding: 1%;
+}
