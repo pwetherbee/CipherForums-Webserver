@@ -1,0 +1,492 @@
+body, html{
+	background-color: white;
+	/*display: inline;*/
+	/*justify-content: space-between;*/
+    margin:0;
+    padding:0;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+body
+{
+margin:0px;
+padding:0px;
+width:100%;
+}
+
+/*html {
+  scroll-behavior: smooth;
+}*/
+
+p{
+	color: black;
+	margin: 0%;
+}
+
+h2{
+	text-align: center;
+}
+
+
+
+.topBar{
+	position: relative;
+	display: inline-flex;
+	justify-content: space-around;
+	width: 96%;
+	padding: 2%;
+	background-color: black;
+}
+
+.topBarText{
+	color: white;
+	margin: auto;
+}
+
+a:visited{
+	color: white;
+}
+
+.CFlogoHolder{
+	width: 3%;
+	display: none;
+}
+
+.CFlogo{
+	width: 100%;
+}
+
+.commentBorder{
+	border: 2px solid black;
+	display: block;
+	height: 10vmin;
+}
+
+.video{
+	padding:0%;
+	width: 96%;
+}
+
+.videoSize{
+	margin-left: 2%;
+	width: 100%;
+}
+
+
+
+
+.keyDemo{
+	position: relative;
+	/*align-items: center;*/
+	/*justify-content: space-between;*/
+	width: 95%;
+	/*height: 50%;*/
+	left: 2%;
+	/*top: 20%;*/
+	margin: auto;
+	margin-left: 1%;
+	/*background-color: red;*/
+	line-height: 2.5;
+}
+
+.demoCommentHolder{
+	text-align: center;
+	/*font-size: 2vmin;*/
+}
+
+.demoCommentHolderAlt{
+	text-align: center;
+	font-size: 130%;
+	line-height: 1;
+	margin-top: 20%;
+}
+
+.commentBorderText{
+	font-size: 200%;
+	word-wrap: break-word;
+	line-height: 1;
+	padding: 1%;
+}
+
+.commentBorderText2{
+	font-size: 150%;
+	word-wrap: break-word;
+	line-height: 1;
+	padding: 1%;
+}
+
+.enterKey{
+	display: block;
+	text-align: center;
+	margin: auto;
+	/*margin-top: 4%;*/
+}
+
+.enterData{
+	width: 60%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mainHolder{
+	margin-top: 19%;
+}
+
+.holder{
+	display: inline-flex;
+	justify-content: space-between;
+	background-color: white;
+	width: 96%;
+	padding: 2%;
+}
+
+.holder1{
+	display: block;
+	justify-content: space-around;
+	width: 44%;
+	/*height: 20%;*/
+	background-color: lightgrey;
+	/*word-wrap: break-word;*/
+	padding: 2%;
+	text-align: center;
+	border-radius: 25px;
+	border: 2px solid black;
+	/*margin-top: -1%;*/
+}
+/*
+.holder1yellow{
+	display: block;
+	justify-content: space-around;
+	width: 30%;
+	height: 20%;
+	background-color: lightgrey;
+	padding: 1%;
+	text-align: center;
+	border-radius: 25px;
+	border: 2px solid yellow;
+}*/
+
+/*
+.holder1orange{
+	display: block;
+	justify-content: space-around;
+	width: 30%;
+	height: 20%;
+	background-color: lightgrey;
+	padding: 1%;
+	text-align: center;
+	border-radius: 25px;
+	border: 2px solid orange;
+}*/
+
+
+/*.holder1pink{
+	display: block;
+	justify-content: space-around;
+	width: 30%;
+	height: 20%;
+	background-color: lightgrey;
+	padding: 1%;
+	text-align: center;
+	border-radius: 25px;
+	border: 2px solid #ff0a89;
+}*/
+
+
+.holder2{
+	margin-top: 0%;
+	height: 1%;
+	width: 25%;
+	/*word-wrap: break-word;*/
+	background-color: lightgrey;
+	text-align: center;
+	border-radius: 25px;
+}
+
+/*.holder2alt{
+	margin-top: 15%;
+	height: 1%;
+	width: 23%;
+	background-color: lightgrey;
+	text-align: center;
+	border: 2px solid white;
+}*/
+
+
+.holder3{
+	display: block;
+	justify-content: space-around;
+	margin:auto;
+	margin-top: 22%;
+	width: 80%;
+	height: 20%;
+	background-color: lightgrey;
+	/*word-wrap: break-word;*/
+	padding: 2%;
+	text-align: center;
+	border: 2px solid black;
+	border-radius: 25px;
+}
+
+.holder4{
+	position: absolute;
+	margin-top: 52%;
+	height: 10%;
+	width: 89%;
+	margin-left: 2%;
+	/*word-wrap: break-word;*/
+	background-color: lightgrey;
+	text-align: center;
+	padding: 1%;
+	border: 2px solid black;
+}
+
+.holder4alt{
+	position: absolute;
+	margin-top: 73%;
+	height: 10%;
+	width: 89%;
+	margin-left: 2%;
+	/*word-wrap: break-word;*/
+	background-color: lightgrey;
+	text-align: center;
+	padding: 1%;
+	border: 2px solid black;
+}
+
+.redEnc{
+  color:red;
+}
+
+
+/*.yellow{
+	color: yellow;
+	font-size: 70%;
+}
+
+.red{
+	color: red;
+	font-size: 70%;
+}
+
+.orange{
+	color: orange
+;
+}
+
+.orange2{
+	color: orange;
+	font-size: 70%;
+}
+
+.green{
+	color: green;
+	font-size: 70%;
+}
+
+.pink{
+	color: #ff0a89;
+	font-size: 70%;
+}
+
+.brown{
+	color: #7d5f1f;
+	font-size: 70%;
+}*/
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+}
+
+.pushDown{
+	padding-top: 40%;
+	/*font-size: 70%;*/
+}
+
+.smallFont{
+	overflow-x: hidden;
+	text-overflow: ellipsis;
+	word-break: normal;
+	background-color: black;
+	color: white;
+    border-radius: 5px;
+    padding:1%;
+}
+
+
+
+/*.image{
+	width: 97%;
+	border: 3% solid black;
+	margin-top: 2%;
+}*/
+
+.encTitle{
+	color: white;
+	background-color: black;
+	width: 98%;
+	text-align: center;
+}
+
+.encTitle2{
+	color: white;
+	background-color: black;
+	width: 98%;
+	text-align: center;
+	margin-top: 0%;
+}
+
+h1{
+	font-size: 90%;
+	padding: 1%;
+}
+
+
+.r{
+	font-size: 120%;
+	text-decoration: underline;
+}
+
+
+
+.other{
+	display: inline-flex;
+	position: relative;
+	background-color: black;
+	color: white;
+	width: 94%;
+	left: 2%;
+	/*top: 127%;*/
+	padding-right: 2%;
+	/*margin-top: -52%;*/
+	/*margin-left: 70%;*/
+	line-height: 1.5;
+}
+
+.other2{
+	display: inline-flex;
+	position: relative;
+	background-color: black;
+	color: white;
+	width: 94%;
+	left: 2%;
+	top: -20%;
+	padding-right: 2%;
+	/*margin-top: -72%;*/
+	/*margin-left: 70%;*/
+	line-height: 1.5;
+}
+
+.red{
+	/*font-size: 130%;*/
+	color: black;
+	font-weight: bold;
+	word-break: break-word;
+}
+
+
+mark {
+  background-color: #53dbdb;
+}
+
+/*
+.tooltip {
+  position: relative;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 1%;
+  left: 0%;
+  width: 100%;
+  overflow-wrap: break-word;
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+*/
+
+
+.bottomPad{
+	position: relative;
+	margin-top: 0%;
+	color: white;
+}
+
+
+#section1 {
+  /*height: 600px;*/
+  color: black;
+}
+
+#section2 {
+  height: 600px;
+  background-color: yellow;
+}
+
+
+.create__forum__button:visited{
+  color: white;
+}
+
+.container{
+  position: relative;
+  margin-left: 3%;
+  margin-top: 5%;
+  width: 95%;
+  margin-bottom: 5%;
+  /*padding:1%;*/
+}
+
+.title{
+  font-size: 150%;
+  font-weight: bold;
+}
+
+.image{
+  width: 50%;
+  margin-left: 10%;
+}
+
+.indentText{
+  width: 80%;
+  margin-left: 10%;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+a.black{
+  color: black;
+  text-decoration: underline;
+}
+
+
+
