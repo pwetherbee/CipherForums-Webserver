@@ -21,6 +21,7 @@ width:100%;
 p{
 	color: black;
 	margin: 0%;
+	overflow-wrap: break-word;
 }
 
 h2{
@@ -33,7 +34,7 @@ h2{
 	position: relative;
 	display: inline-flex;
 	justify-content: space-around;
-	width: 96%;
+	width: 100%;
 	padding: 2%;
 	background-color: black;
 }
