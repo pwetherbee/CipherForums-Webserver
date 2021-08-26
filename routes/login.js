@@ -42,7 +42,7 @@ router.post("/", (req, res) => {
         JSON.stringify({
           message: "Correct password!",
           valid: true,
-          redirect: "..",
+          redirect: `../user/${req.session.username}`,
           user: req.session.username,
           timeout: req.session.cookie.maxAge,
         })

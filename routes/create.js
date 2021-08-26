@@ -22,4 +22,10 @@ router.get("/", (req, res) => {
   // if name given, check if name is in data already
   // create template with either anon user or profile name and thread id
 });
+router.get("/user", (req, res) => {
+  if (!req.session.username) {
+    res.send("user not logged in");
+  }
+});
+
 module.exports = router;

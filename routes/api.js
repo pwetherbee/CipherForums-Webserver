@@ -83,7 +83,7 @@ router.post("/threads/:tag", (req, res) => {
   //   let id = req.session.userID
   // }
   // Make SQL query to post new thread
-  console.log(req.session.userID);
+  // console.log(req.session.userID);
   let query = `
   INSERT INTO Comments (forumID, authorID, commentText, postTime)
   VALUES (${commentData.forumID}, ${req.session.userID || "NULL"}, "${

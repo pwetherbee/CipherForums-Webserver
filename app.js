@@ -12,6 +12,7 @@ const helpRouter = require("./routes/help");
 const apiRouter = require("./routes/api");
 const signupRouter = require("./routes/signup");
 const loginRouter = require("./routes/login");
+const logoutRouter = require("./routes/logout");
 const createRouter = require("./routes/create");
 
 // Define node.js env, defaults to development
@@ -45,7 +46,7 @@ let sess = session({
   resave: true,
   saveUninitialized: true,
   secret: "secret",
-  cookie: { maxAge: 30000, secure: app.get("env") === "production" },
+  cookie: { maxAge: 60 * 60 * 1000, secure: app.get("env") === "production" },
 });
 if (app.get("env") === "production") {
   app.set("trust proxy", 1); // trust first proxy
@@ -60,7 +61,9 @@ app.use("/help", helpRouter);
 app.use("/threads", threadRouter);
 app.use("/signup", signupRouter);
 app.use("/login", loginRouter);
+app.use("/logout", logoutRouter);
 app.use("/create", createRouter);
+
 app.get("/test", function (req, res, next) {
   if (req.session.views) {
     req.session.views++;
