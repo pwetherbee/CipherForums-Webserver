@@ -13,7 +13,7 @@ router.get("/threads/:tag", (req, res) => {
   let connection = SQLHelper.createConnection();
   let query = `
   SELECT Forums.id, Forums.title, Forums.creationDate, Users.username FROM Forums
-  INNER JOIN Users
+  LEFT JOIN Users
   ON Forums.authorID = Users.userID
   WHERE Forums.url = "${urlTag}"
   `;

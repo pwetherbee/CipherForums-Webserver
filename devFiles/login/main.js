@@ -6,7 +6,7 @@ const password = document.getElementsByName("password")[0];
 
 let loginBtn = document.querySelector(".login-submission");
 
-console.log(username, password);
+// console.log(username, password);
 
 loginBtn.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -17,7 +17,7 @@ loginBtn.addEventListener("submit", async (e) => {
   let response = await AJAX(`${API_URL}/login`, user);
   if (response.valid) {
     let now = +new Date();
-    console.log(now, response.timeout);
+    // console.log(now, response.timeout);
     localStorage.setItem("timeoutDate", now + response.timeout);
     localStorage.setItem("currUser", response.user);
     location.href = response.redirect;
@@ -40,4 +40,4 @@ loginBtn.addEventListener("submit", async (e) => {
 // };
 // localStorage.clear();
 
-console.log(localStorage);
+// console.log(localStorage);

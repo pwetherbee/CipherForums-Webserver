@@ -107,9 +107,10 @@ const controlPostComment = async function () {
   let commentEncrypted = text_to_dec(commentText, key);
   const currTime = moment.utc();
   const authorTest = "Anonymous";
+  // TODO: Check timeout on this before posting as user
   const comment = {
     forumID: model.state.id,
-    author: authorTest,
+    author: localStorage.getItem("currUser") || authorTest,
     time: currTime,
     text: commentEncrypted,
   };

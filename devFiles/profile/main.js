@@ -31,11 +31,14 @@ const controlInitialLoad = async function () {
   // show create a forum button
   const now = +new Date();
   let timeoutDate = localStorage.getItem("timeoutDate");
-  if (timeoutDate && timeoutDate - now > 0) {
+  if (
+    timeoutDate &&
+    timeoutDate - now > 0 &&
+    username == localStorage.getItem("currUser")
+  ) {
     let createForumBtn = document.querySelector(".createUserForum").classList;
     createForumBtn.remove("hidden");
   } else {
-    localStorage.removeItem("timeoutDate");
   }
 };
 
