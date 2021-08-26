@@ -1,68 +1,50 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta
-      name="viewport"
-      content="height=device-height, 
-                      width=device-width, initial-scale=1.0, 
-                      minimum-scale=1.0, maximum-scale=1.0, 
-                      user-scalable=no, target-densitydpi=device-dpi"
-    />
-    <link rel="icon" href="../assets/cf1.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    />
+
     <link
       rel="stylesheet"
       media="only screen and (max-width: 1050px)"
-      href="style2.css"
+      href="style.css"
     />
     <link
       rel="stylesheet"
       media="only screen and (min-width: 1051px)"
       href="style.css"
     />
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;500&display=swap");
-    </style>
-    <link rel="shortcut icon" href="../assets/cf1.png" />
-    <title>CipherForums</title>
-    <script defer src="./main.js"></script>
+    <link rel="shortcut icon" href="assets/icon.jpg" />
+
+    <title>Cipherforums</title>
   </head>
+
   <body>
-    <div class="topBar">
-      <a class="CFlogoHolder" href="https://cipherforums.com">
-        <img class="CFlogo" src="../assets/cfSideways3.png" />
-      </a>
-      <p class="topBarText">
-        <a class="topBarText" href="../public_forum/index.html">Public Forums</a>
-      </p>
-      <p class="topBarText">
-        <a class="create__forum__button" href="https://cipherforums.com/create"
-          >Create A Forum
-        </a>
-      </p>
-      <p class="topBarText">
-        <a class="topBarText loginref" href="https://cipherforums.com/signup/">Login/Signup</a>
-      </p>
-      <p class="topBarText">
-        <a class="topBarText" href="../help_page/index.html">Help</a>
-      </p>
+  <div>
+    <div id="hider">
+      <a href="javascript:void(0);" class="icon" onclick="menuHider()">
+      <img class="menu" src="../assets/menu.png">
+    </a>
     </div>
+    <div id="submenu">
+      <a href="../index.html">
+        <p class="submenuText">My Page</p>
+     </a>
+     <a href="../following/index.html">
+        <p class="submenuText">Following</p>
+      </a>
+        <a href="../help_page/index.html">
+        <p class="submenuText">Help</p>
+        </a>
+    </div>
+  </div>
+
 
 <div>
-  <h2>
+  <h1>
     Public topic forums
-  </h2>
-  <p>
-  <a class="newTopic" href="not_yet">
-    Petition to create a new public topic!
-  </a>
-</p>
+  </h1>
 </div>
-
 
 <div class="topicHolder">
 
@@ -132,5 +114,9 @@
 
 </div>
 
+
+
+
+    <script src="main.js"></script>
   </body>
 </html>
