@@ -216,6 +216,10 @@ a:hover{
   border: 2px solid black;
 }
 
+.redEnc{
+  color:red;
+}
+
 /*.yellow{
 	color: yellow;
 	font-size: 70%;
@@ -223,7 +227,6 @@ a:hover{
 
 .red{
 	color: red;
-	font-size: 70%;
 }
 
 .orange{
