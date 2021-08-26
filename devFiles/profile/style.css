@@ -28,7 +28,6 @@ p {
   margin: auto;
 }
 
-
 a.topBarText:visited {
   color: white;
 }
@@ -38,12 +37,12 @@ a.topBarText {
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
   color: white;
 }
 
-a:hover{
-	text-decoration: underline;
+a:hover {
+  text-decoration: underline;
 }
 
 .CFlogoHolder {
@@ -383,32 +382,29 @@ mark {
   background-color: yellow;
 }
 
-.create__forum__button:visited{
+.create__forum__button:visited {
   color: white;
 }
 
-.moreInfo{
-	display: inline-block;
-	width: 100%;
-	/*justify-content: center;*/
-	text-align: center;
+.moreInfo {
+  display: inline-block;
+  width: 100%;
+  /*justify-content: center;*/
+  text-align: center;
 }
 
-a.dummy{
-	color: black;
+a.dummy {
+  color: black;
 }
-
-
-
 
 /*---------------------*/
 
-h3{
+h3 {
   margin-top: 0%;
   font-weight: bold;
 }
 
-.profile{
+.profile {
   display: inline-flex;
   justify-content: space-between;
   position: relative;
@@ -421,22 +417,21 @@ h3{
   /*border:.5vmin solid black;*/
 }
 
-.info{
+.info {
   display: block;
   padding-left: 3%;
 }
 
-.bio{
- color: white;
+.bio {
+  color: white;
 }
 
-.avi{
+.avi {
   width: 25%;
   height: 25%;
 }
 
-
-.postHolder{
+.postHolder {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -444,32 +439,32 @@ h3{
   margin-left: 3%;
   /*margin-top: 3%;*/
   padding: 1%;
-  padding-top:0%;
+  padding-top: 0%;
   width: 60%;
   /*background-color: red;*/
-  border:.5vmin solid black;
+  border: 0.5vmin solid black;
 }
 
-.boxTitle{
+.boxTitle {
   margin-top: 1.5%;
   margin-left: 3%;
   font-weight: bold;
   /*background-color: black;*/
   /*color: white;*/
   width: 10%;
-  padding: .3%;
+  padding: 0.3%;
   margin-bottom: 1%;
   /*text-align: center;*/
 }
 
-.boxTitle1{
+.boxTitle1 {
   margin-top: 1.5%;
   margin-left: 3%;
   font-weight: bold;
   /*background-color: black;*/
   /*color: white;*/
   width: 10%;
-  padding: .3%;
+  padding: 0.3%;
   margin-bottom: 1%;
   /*text-align: center;*/
 }
@@ -486,56 +481,54 @@ h3{
   border:.5vmin solid black;
 }*/
 
-.forumPost{
+.forumPost {
   width: 49%;
   margin-top: 2%;
-  border:.5vmin solid black;
-  padding: .3%;
+  border: 0.5vmin solid black;
+  padding: 0.3%;
 }
 
-.postTitle{
+.postTitle {
   background-color: #292929;
   color: white;
   font-weight: bold;
   padding: 1%;
 }
 
-.postSubTitle{
+.postSubTitle {
   /*height: 5vmin;*/
   /*white-space: wrap;*/
   /*overflow-y: hidden;*/
   /*text-overflow: ellipsis;*/
 }
 
-.feedHolder{
+.feedHolder {
   position: absolute;
   left: 67%;
   width: 30%;
   /*background-color: red;*/
 }
 
-.feed{
+.feed {
   position: absolute;
   margin-top: 2%;
   width: 100%;
-  border:.5vmin solid black;
+  border: 0.5vmin solid black;
 }
 
-.feedPost{
+.feedPost {
   padding: 1%;
 }
 
-.feedPostDate{
+.feedPostDate {
   font-size: 50%;
 }
 
-
-
-.aCreate{
+.aCreate {
   color: white;
 }
 
-.createUserForum{
+.createUserForum {
   width: 15%;
   position: absolute;
   color: black;
@@ -546,6 +539,6 @@ h3{
   padding: 1%;
 }
 
-.userCreate{
+.hidden {
   display: none;
 }

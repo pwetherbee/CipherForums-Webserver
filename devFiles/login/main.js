@@ -28,3 +28,16 @@ loginBtn.addEventListener("submit", async (e) => {
   //   location.href = response.redirect;
   //   console.log(response);
 });
+
+// const init = async function () {
+//   // delete user session if invalid
+//   let response = await AJAX(`${API_URL}/login/status`);
+//   if (response.ok) {
+//     localStorage.removeItem("timeoutDate");
+//     localStorage.removeItem("currUser");
+//   }
+//   console.log(localStorage);
+// };
+// localStorage.clear();
+
+console.log(localStorage);

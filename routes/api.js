@@ -71,7 +71,23 @@ router.get("/threads/:tag", (req, res) => {
   });
 });
 
-router.get("/user/created", (req, res) => {});
+router.get("/:username/created", (req, res) => {
+  const username = req.params["username"];
+  // console.log(username);
+  const connection = SQLHelper.createConnection();
+  const query = `
+  SELECT Forums.title, Users.username FROM Forums
+  INNER JOIN Users
+  ON Forums.authorID = Users.userID
+  WHERE Users.username = "${username}"
+  `;
+  connection.query(query, (err, rows) => {
+    const createdForums = [];
+    rows.forEach((row) => createdForums.push(row));
+    // console.log(createdForums);
+    res.send(JSON.stringify(createdForums));
+  });
+});
 
 // Post comment on thread from url
 

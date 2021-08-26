@@ -37,7 +37,9 @@
         <img class="CFlogo" src="../assets/cfSideways3.png" />
       </a>
       <p class="topBarText">
-        <a class="topBarText" href="../public_forum/index.html">Public Forums</a>
+        <a class="topBarText" href="../public_forum/index.html"
+          >Public Forums</a
+        >
       </p>
       <p class="topBarText">
         <a class="create__forum__button" href="https://cipherforums.com/create"
@@ -45,19 +47,20 @@
         </a>
       </p>
       <p class="topBarText">
-        <a class="topBarText" href="https://cipherforums.com/logout">Logout</a>
+        <a class="topBarText logoutBtn" href="https://cipherforums.com/logout"
+          >Logout</a
+        >
       </p>
       <p class="topBarText">
         <a class="topBarText" href="../help_page/index.html">Help</a>
       </p>
     </div>
 
-<a class="userCreate" href="https://cipherforums.com/create/user">
-  <div class="createUserForum">
-   <p class="aCreate">Create a user forum</p>
-  </div>
-</a>
-
+    <a class="userCreate" href="https://cipherforums.com/create/user">
+      <div class="createUserForum hidden">
+        <p class="aCreate">Create a user forum</p>
+      </div>
+    </a>
 
     <div class="keyDemo">
       <!-- <div class="enterKey"> -->
@@ -65,15 +68,10 @@
       <input class="key__textbox" type="" name="" />
     </div>
 
-
-
-
-
-
     <div class="profile">
       <img class="avi" src="dawg.jpg" />
       <div class="info">
-        <h3>@<!-- btc_doggo --></h3>
+        <h3 class="username">@<!-- btc_doggo --></h3>
         <p class="bio">
           Here is a demo bio. These will always be stored unencrypted. Here is
           more demo text to demo what will happen when a user has a very long
@@ -81,10 +79,6 @@
         </p>
       </div>
     </div>
-
-
-
-
 
     <div class="feedHolder">
       <p class="feedTitle">Update Feed</p>
@@ -108,7 +102,7 @@
 
     <p class="boxTitle">All Posts</p>
     <div class="postHolder">
-      <!--   <div class="forumPost">
+      <!-- <div class="forumPost">
   <p class="postTitle">Oh boy this is a post</p>
     <div class="postSubTitle">
       Me oh my here comes some more demo text, get ready

@@ -62,6 +62,21 @@ router.post("/", (req, res) => {
   // res.send(JSON.stringify({ response: "Username is incorrect" }));
 });
 
+router.get("/status", function (req, res) {
+  // res.send(req.session);
+  // return;
+  // res.send("hello");
+  // return;
+  if (req.session.username) {
+    // res.send(req.session.username);
+    // res.status(400);
+    res.send(JSON.stringify({ ok: 1 }));
+  } else {
+    // res.send("error");
+    // res.status(200);
+    res.send(JSON.stringify({ ok: 0 }));
+  }
+});
 // const getUserID = function (username) {
 //   let connection = SQLHelper.createConnection();
 //   connection.connect();
