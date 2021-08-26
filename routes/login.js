@@ -16,7 +16,7 @@ router.post("/", (req, res) => {
   // Get password hash for corresponding username from database
   let connection = SQLHelper.createConnection();
   const query = `
-  SELECT passwd FROM Users
+  SELECT passwd, userID FROM Users
   WHERE username = "${account.username}"
   LIMIT 1
   `;
@@ -32,10 +32,12 @@ router.post("/", (req, res) => {
       return;
     }
     const hash = rows[0].passwd;
+    const id = rows[0].userID;
     const matches = bcrypt.compareSync(account.password, hash);
     if (matches) {
       // create new session
       req.session.username = account.username;
+      req.session.userID = id;
       res.send(
         JSON.stringify({
           message: "Correct password!",
@@ -55,9 +57,33 @@ router.post("/", (req, res) => {
     // res.send(JSON.stringify({ response: "Error has occured" }));
     // console.log("error occured");
   });
-
   connection.end();
+
   // res.send(JSON.stringify({ response: "Username is incorrect" }));
 });
+
+// const getUserID = function (username) {
+//   let connection = SQLHelper.createConnection();
+//   connection.connect();
+//   var query = `
+//   SELECT userID FROM Users
+//   WHERE username = "${username}"
+//   LIMIT 1
+//   `;
+//   var result;
+//   return new Promise((resolve, reject) => {
+//     connection.query(query, (err, rows) => {
+//       if (err) {
+//         throw err;
+//       }
+//       // console.log(rows);
+//       resolve(rows[0].userID);
+//     });
+//   });
+
+//   connection.end();
+//   console.log(result);
+//   return result;
+// };
 
 module.exports = router;

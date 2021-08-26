@@ -34,23 +34,29 @@ router.get("/threads/:tag", (req, res) => {
       comments: [],
     };
     query = `
-    SELECT * FROM Comments
-    WHERE forumID = ${forum.id} 
-    ORDER BY postTime ASC
+    SELECT Comments.postTime, Comments.commentText, Comments.forumID, Users.username FROM Comments
+    LEFT JOIN Users
+    ON Comments.authorID = Users.userID
+    WHERE forumID = ${id}
+    ORDER BY Comments.postTime ASC
     `; //(SELECT id FROM Forums WHERE url = "${urlTag}"
 
     //TODO: Escape callback hell here
 
     connection.query(query, function (err, rows, fields) {
       if (err) throw err;
-      rows.forEach((row) => {
+
+      // const authorIDs = rows.map((row) => row.authorID);
+
+      rows.forEach((row, i) => {
         if (!row) {
           res.send(forum);
           return;
         }
         // Generate comment for every row returned in SQL
+
         let comment = {
-          author: "Anonymous",
+          author: row.username || "Anonymous",
           time: row.postTime,
           text: row.commentText,
           forumID: row.forumID,
@@ -72,11 +78,17 @@ router.post("/threads/:tag", (req, res) => {
   if (!commentData) {
     return;
   }
-
+  // if (req.session.userID) {
+  //   // get user id
+  //   let id = req.session.userID
+  // }
   // Make SQL query to post new thread
+  console.log(req.session.userID);
   let query = `
-  INSERT INTO Comments (forumID, commentText, postTime)
-  VALUES (${commentData.forumID}, "${commentData.text}", NOW())
+  INSERT INTO Comments (forumID, authorID, commentText, postTime)
+  VALUES (${commentData.forumID}, ${req.session.userID || "NULL"}, "${
+    commentData.text
+  }", NOW())
   `;
   connection.connect();
   connection.query(query, function (err, rows, fields) {
@@ -99,7 +111,6 @@ router.put("/threads", (req, res) => {
   `;
   connection.query(query, function (err, rows, fields) {
     if (err) throw err;
-    console.log(rows);
     console.log("success");
   });
   connection.end();

@@ -45,11 +45,11 @@ let sess = session({
   resave: true,
   saveUninitialized: true,
   secret: "secret",
-  cookie: { maxAge: 20000 },
+  cookie: { maxAge: 30000, secure: app.get("env") === "production" },
 });
 if (app.get("env") === "production") {
   app.set("trust proxy", 1); // trust first proxy
-  sess.cookie.secure = true; // serve secure cookies
+  // sess.cookie.secure = true; // serve secure cookies
 }
 app.use(sess);
 // Define routers

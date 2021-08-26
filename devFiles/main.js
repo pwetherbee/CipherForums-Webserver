@@ -123,7 +123,6 @@ const init = function () {
   } else {
     localStorage.removeItem("timeoutDate");
   }
-  console.log(localStorage);
   // document
   //   .querySelector(".create__forum__button")
   //   .addEventListener("click", controlCreateForum);
