@@ -21,6 +21,7 @@ width:100%;
 p{
 	color: black;
 	margin: 0%;
+	overflow-wrap: break-word;
 }
 
 h2{
@@ -143,7 +144,7 @@ a:visited{
 
 
 .mainHolder{
-	/*margin-top: 19%;*/
+	margin-top: 19%;
 }
 
 .holder{
@@ -244,8 +245,8 @@ a:visited{
 
 .holder4{
 	position: absolute;
-	margin-top: 46%;
-	height: 11%;
+	margin-top: 52%;
+	height: 10%;
 	width: 89%;
 	margin-left: 2%;
 	/*word-wrap: break-word;*/
@@ -257,8 +258,8 @@ a:visited{
 
 .holder4alt{
 	position: absolute;
-	margin-top: 62%;
-	height: 11%;
+	margin-top: 73%;
+	height: 10%;
 	width: 89%;
 	margin-left: 2%;
 	/*word-wrap: break-word;*/
@@ -268,6 +269,9 @@ a:visited{
 	border: 2px solid black;
 }
 
+.redEnc{
+  color:red;
+}
 
 
 /*.yellow{
@@ -348,7 +352,7 @@ a:visited{
 	background-color: black;
 	width: 98%;
 	text-align: center;
-	margin-top: 5%;
+	margin-top: 0%;
 }
 
 h1{
@@ -376,7 +380,6 @@ h1{
 	/*margin-top: -52%;*/
 	/*margin-left: 70%;*/
 	line-height: 1.5;
-	border-radius: 0%;
 }
 
 .other2{
@@ -391,7 +394,6 @@ h1{
 	/*margin-top: -72%;*/
 	/*margin-left: 70%;*/
 	line-height: 1.5;
-	border-radius: 0%;
 }
 
 .red{
@@ -453,4 +455,39 @@ mark {
 .create__forum__button:visited{
   color: white;
 }
+
+.container{
+  position: relative;
+  margin-left: 3%;
+  margin-top: 5%;
+  width: 95%;
+  margin-bottom: 5%;
+  /*padding:1%;*/
+}
+
+.title{
+  font-size: 150%;
+  font-weight: bold;
+}
+
+.image{
+  width: 50%;
+  margin-left: 10%;
+}
+
+.indentText{
+  width: 80%;
+  margin-left: 10%;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+a.black{
+  color: black;
+  text-decoration: underline;
+}
+
+
 

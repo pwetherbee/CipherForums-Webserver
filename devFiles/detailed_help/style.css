@@ -104,14 +104,14 @@ a:hover{
   display: inline-flex;
   justify-content: space-between;
   background-color: white;
-  width: 60%;
+  width: 70%;
   padding: 0.2%;
 }
 
 .holder1 {
   display: block;
   justify-content: space-around;
-  width: 30%;
+  width: 40%;
   /*height: 20%;*/
   background-color: lightgrey;
   /*word-wrap: break-word;*/
@@ -194,6 +194,8 @@ a:hover{
 
 .holder4 {
   margin-top: 20%;
+  margin-left: 3%;
+  margin-right: 3%;
   height: 1%;
   width: 21%;
   /*word-wrap: break-word;*/
@@ -204,7 +206,9 @@ a:hover{
 }
 
 .holder4alt {
-  margin-top: 36%;
+  margin-top: 15%;
+  margin-left: 3%;
+  margin-right: 3%;
   height: 1%;
   width: 21%;
   /*word-wrap: break-word;*/
@@ -258,7 +262,7 @@ a:hover{
 }
 
 .pushDown {
-  padding-top: 50%;
+  /*padding-top: 50%;*/
   /*font-size: 70%;*/
 }
 
@@ -279,14 +283,16 @@ a:hover{
 .encTitle {
   color: white;
   background-color: black;
-  width: 60%;
+  width: 20%;
+  margin-left: 2%;
   text-align: center;
 }
 
 .encTitle2 {
   color: white;
   background-color: black;
-  width: 60%;
+  width: 20%;
+  margin-left: 2%;
   text-align: center;
   /*margin-top: 30%;*/
 }
@@ -307,12 +313,14 @@ h1 {
   background-color: black;
   color: white;
   width: 20%;
-  left: 70%;
+  left: 73%;
   top: 20%;
+  padding: 1%;
   padding-right: 2%;
   /*margin-top: -52%;*/
   /*margin-left: 70%;*/
   line-height: 1.5;
+  border-radius: 3%;
 }
 
 .other2 {
@@ -321,11 +329,12 @@ h1 {
   background-color: black;
   color: white;
   width: 20%;
-  left: 70%;
-  top: 130%;
+  left: 73%;
+  top: 110%;
   padding-right: 2%;
   /*margin-top: -52%;*/
   /*margin-left: 70%;*/
+  border-radius: 3%;
   line-height: 1.5;
 }
 
@@ -383,4 +392,8 @@ mark {
 
 .create__forum__button:visited{
   color: white;
+}
+
+.padding{
+	height: 20px;
 }
