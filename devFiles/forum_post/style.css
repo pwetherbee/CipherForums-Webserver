@@ -280,8 +280,12 @@ a:hover{
   margin-left: 10%;
   background-color: var(--secondary-color);
   padding: 1%;
-
 }
+
+.darkmodeText{
+	margin:auto;
+}
+
 
 a:visited {
   color: black;
