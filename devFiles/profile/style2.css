@@ -75,6 +75,14 @@ a:hover{
   width: 100%;
 }
 
+
+.follow__button {
+  background-color: var(--text-color);
+  color: var(--secondary-color);
+}
+
+
+
 .commentBorder {
   border: 2px solid black;
   display: block;
@@ -474,7 +482,7 @@ h3{
 }
 
 .boxTitle1{
-  margin-top: 11%;
+  margin-top: 5%;
   margin-left: 3%;
   font-weight: bold;
   /*background-color: black;*/
@@ -532,14 +540,14 @@ h3{
 }
 
 .feedHolder{
-  position: absolute;
+  position: relative;
   left: 3%;
   width: 90%;
   /*background-color: red;*/
 }
 
 .feed{
-  position: absolute;
+  position: relative;
   margin-top: 2%;
   width: 104.5%;
   border:.5vmin solid var(--secondary-color);
