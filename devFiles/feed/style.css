@@ -79,7 +79,7 @@ a:hover{
   /*justify-content: space-between;*/
   width: 40%;
   /*height: 50%;*/
-  left: 47%;
+  left: 1%;
   top: 12%;
   margin: auto;
   /*background-color: red;*/
@@ -93,7 +93,7 @@ a:hover{
 
 .enterKey {
   display: block;
-  text-align: center;
+  text-align: left;
   margin: auto;
   /*margin-top: 4%;*/
 }
@@ -410,7 +410,7 @@ a.dummy{
   width: 96%;
   flex-wrap: wrap;
   display: inline-flex;
-  margin-top: 5%;
+  margin-top: 10%;
   margin-left: 2%;
   margin-right: 2%;
 

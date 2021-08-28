@@ -82,11 +82,10 @@ a:visited{
 	width: 95%;
 	/*height: 50%;*/
 	left: 2%;
-	/*top: 20%;*/
 	margin: auto;
 	margin-left: 1%;
 	/*background-color: red;*/
-	line-height: 2.5;
+	line-height: 2;
 }
 
 .demoCommentHolder{
@@ -117,9 +116,9 @@ a:visited{
 
 .enterKey{
 	display: block;
-	text-align: center;
+	text-align: left;
 	margin: auto;
-	/*margin-top: 4%;*/
+	margin-top: 4%;
 }
 
 .enterData{
