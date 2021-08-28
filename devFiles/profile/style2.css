@@ -75,6 +75,14 @@ a:hover{
   width: 100%;
 }
 
+
+.follow__button {
+  background-color: var(--text-color);
+  color: var(--secondary-color);
+}
+
+
+
 .commentBorder {
   border: 2px solid black;
   display: block;

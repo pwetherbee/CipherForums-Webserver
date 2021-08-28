@@ -94,7 +94,14 @@ a:hover{
   width: 100%;
 }
 
+.darkmodeHolder{
+  position: relative;
+  display: inline-flex;
+  margin-left: 10%;
+  background-color: var(--secondary-color);
+  padding: 1%;
 
+}
 
 
 .dark-mode {
@@ -160,8 +167,8 @@ a:hover{
 }
 
 .key__textbox {
-  height: 2rem;
-  width: 12rem;
+  height: 4rem;
+  width: 17rem;
   text-align: center;
   /*border-radius: 0.5rem; */
   font-size: 20px;
@@ -206,10 +213,11 @@ a:hover{
 
 .key__container {
   position: relative;
-  margin-left: 25%;
+  margin-left: 10%;
   /* background-color: var(--tertiary-color); */
   /*top: 5%;*/
   margin-top: 5%;
+  margin-bottom: 4%;
 }
 
 a:visited {

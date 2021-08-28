@@ -135,7 +135,7 @@ a:hover{
   width: 50%;
   height: 10%;
   margin-left: 3%;
-  margin-top: 7%;
+  margin-top: 2%;
   padding: 1%;
   /*border: 1vmin solid black;*/
   /*padding-bottom: 1%;*/
@@ -167,8 +167,8 @@ a:hover{
   border: none;
   border-radius: 5px;
   background: var(--secondary-color);
-  height: 2rem;
-  width: 15rem;
+  height: 4rem;
+  width: 20rem;
   text-align: center;
   /*border-radius: 0.5rem; */
   font-size: 20px;
@@ -232,7 +232,7 @@ a:hover{
   /* top: 5%; */
 }
 .options__header {
-  margin-top: 5%;
+  margin-top: 2%;
 }
 .button {
   /* padding-top: 0.5rem;
@@ -272,6 +272,15 @@ a:hover{
   border: none;
   background: none;
   transition: all 0.2s;
+}
+
+.darkmodeHolder{
+  position: relative;
+  display: inline-flex;
+  margin-left: 10%;
+  background-color: var(--secondary-color);
+  padding: 1%;
+
 }
 
 a:visited {
