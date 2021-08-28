@@ -4,11 +4,10 @@ import { AJAX } from "../helpers/ajaxReq.js";
 import { API_URL } from "../helpers/config.js";
 // TODO: Apply MVC architecture to this
 // Control inital load
-const controlInitialLoad = async function () {
+const controlInitialLoad = async function (username) {
   // show user profile title and description
   // get username from url
-  const url = window.location.href;
-  const username = url.split("/").slice(-1)[0];
+
   const createdForums = await getCreatedForums(username);
   // show created posts
   document.querySelector(".username").textContent = `@${username}`;
@@ -58,7 +57,9 @@ const getCreatedForums = async function (username) {
 };
 
 const init = function () {
-  controlInitialLoad();
+  const url = window.location.href;
+  const username = url.split("/").slice(-1)[0];
+  controlInitialLoad(username);
   document.querySelector(".logoutBtn").addEventListener("click", (e) => {
     e.preventDefault();
     localStorage.removeItem("timeoutDate");
@@ -68,6 +69,10 @@ const init = function () {
   document.querySelector(".follow__button").addEventListener("click", (e) => {
     e.preventDefault();
     controlFollowButton();
+  });
+  document.querySelector(".following").addEventListener("click", (e) => {
+    e.preventDefault();
+    location.href = `${API_URL}/user/${username}/following`;
   });
 };
 
