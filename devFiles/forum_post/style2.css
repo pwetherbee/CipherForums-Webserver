@@ -53,6 +53,50 @@ img {
   height: auto;
 }
 
+
+.topBar {
+  position: relative;
+  display: inline-flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 1%;
+  background-color: var(--secondary-color);
+}
+
+.topBarText {
+  color: var(--main-color);
+  margin: auto;
+}
+
+
+a.topBarText:visited {
+  color: var(--text-color);
+}
+
+a.topBarText {
+  color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+.CFlogoHolder {
+  width: 8%;
+}
+
+.CFlogo {
+  width: 100%;
+}
+
+
+
+
 .dark-mode {
   --main-color: #121212;
   --secondary-color: #252525;
