@@ -81,7 +81,15 @@ a:hover{
   color: var(--secondary-color);
 }
 
+a.following{
+  color: var(--text-color)
+  /*color:black;*/
+}
 
+a.following:visited{
+  color: var(--text-color)
+  /*color:black;*/
+}
 
 .commentBorder {
   border: 2px solid black;
