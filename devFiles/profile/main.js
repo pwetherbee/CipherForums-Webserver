@@ -47,9 +47,8 @@ const controlFollowButton = async function () {
   const url = window.location.href;
   const user = url.split("/").slice(-1)[0];
   // make ajax request to follow on web server
-  const input = JSON.stringify({ username: user });
+  const input = { username: user };
   const data = await AJAX(`${API_URL}/user/${user}/following`, input);
-  console.log(data);
 };
 
 const getCreatedForums = async function (username) {
