@@ -42,6 +42,16 @@ const controlInitialLoad = async function () {
   }
 };
 
+const controlFollowButton = async function () {
+  // grab username from url
+  const url = window.location.href;
+  const user = url.split("/").slice(-1)[0];
+  // make ajax request to follow on web server
+  const input = JSON.stringify({ username: user });
+  const data = await AJAX(`${API_URL}/user/${user}/following`, input);
+  console.log(data);
+};
+
 const getCreatedForums = async function (username) {
   // make ajax request
   const data = await AJAX(`${API_URL}/api/${username}/created`);
@@ -55,6 +65,10 @@ const init = function () {
     localStorage.removeItem("timeoutDate");
     localStorage.removeItem("currUser");
     location.href = "../logout";
+  });
+  document.querySelector(".follow__button").addEventListener("click", (e) => {
+    e.preventDefault();
+    controlFollowButton();
   });
 };
 

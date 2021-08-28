@@ -6,7 +6,6 @@ let SQLHelper = require("../helpers/sqlQueryHelper");
 router.use(express.json());
 
 router.get("/", (req, res) => {
-  console.log("fetching file");
   res.sendFile(path.join(__dirname, "../dist/signup/index.html"));
 });
 
@@ -26,16 +25,33 @@ router.post("/", (req, res) => {
   VALUES ("${newAccount.username}", "${newAccount.email}", "${passHash}", NOW())
   `;
   connection.connect();
-  connection.query(query, function (err, rows, fields) {
-    if (err) throw err;
-  });
-  connection.end();
-  res.send(
-    JSON.stringify({
-      response: "Account Successfully created",
-      redirect: "..",
-    })
-  );
+  try {
+    connection.query(query, function (err, rows, fields) {
+      if (err) {
+        if (err.code === "ER_DUP_ENTRY") {
+          console.log("sending error response");
+          res.send(
+            JSON.stringify({
+              response: "Username already exists",
+              error: 1,
+              redirect: ".",
+            })
+          );
+          return;
+        } else {
+          throw err;
+        }
+      }
+      // console.log("creating new account");
+      res.send(
+        JSON.stringify({
+          response: "Account Successfully created",
+          redirect: "..",
+        })
+      );
+    });
+    connection.end();
+  } catch (err) {}
 });
 
 module.exports = router;

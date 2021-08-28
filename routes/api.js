@@ -131,7 +131,6 @@ router.put("/threads", (req, res) => {
   `;
   connection.query(query, function (err, rows, fields) {
     if (err) throw err;
-    console.log("success");
   });
   connection.end();
   res.send(

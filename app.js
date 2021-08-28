@@ -16,7 +16,7 @@ const logoutRouter = require("./routes/logout");
 const createRouter = require("./routes/create");
 
 // Define node.js env, defaults to development
-process.env.NODE_ENV = "production"; // production or development
+// process.env.NODE_ENV = "production"; // production or development
 
 var cors = require("cors");
 
