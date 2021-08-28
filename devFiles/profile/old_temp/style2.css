@@ -1,5 +1,5 @@
 body {
-  background-color: var(--main-color);
+  background-color: white;
   /*display: inline;*/
   /*justify-content: space-between;*/
   font-family: "IBM Plex Mono", monospace;
@@ -14,34 +14,13 @@ p {
   margin: 0%;
 }
 
-
-:root {
-  --main-color: #f5f5f5;
-  --secondary-color: white;
-  --tertiary-color: black;
-  --alt-color: lightgrey;
-  --text-color: black;
-  --default-font: "IBM Plex Mono", monospace;
-  --svg-invert: invert(0%);
-}
-
-.dark-mode {
-  --main-color: #121212;
-  --secondary-color: #252525;
-  --tertiary-color: #33ff33;
-  --text-color: #33ff33;
-  --svg-invert: invert(100%);
-}
-
-
-
 .topBar {
   position: relative;
   display: inline-flex;
   justify-content: space-around;
   width: 100%;
   padding: 1%;
-  background-color: var(--secondary-color);
+  background-color: black;
 }
 
 .topBarText {
@@ -49,26 +28,25 @@ p {
   margin: auto;
 }
 
-
 a.topBarText:visited {
-  color: var(--tertiary-color);
+  color: white;
 }
 
 a.topBarText {
-  color: var(--tertiary-color);
+  color: white;
 }
 
 a {
-	text-decoration: none;
-  color: var(--tertiary-color);
+  text-decoration: none;
+  color: white;
 }
 
-a:hover{
-	text-decoration: underline;
+a:hover {
+  text-decoration: underline;
 }
 
 .CFlogoHolder {
-  width: 8%;
+  width: 3%;
 }
 
 .CFlogo {
@@ -406,32 +384,29 @@ mark {
   background-color: yellow;
 }
 
-.create__forum__button:visited{
+.create__forum__button:visited {
   color: white;
 }
 
-.moreInfo{
-	display: inline-block;
-	width: 100%;
-	/*justify-content: center;*/
-	text-align: center;
+.moreInfo {
+  display: inline-block;
+  width: 100%;
+  /*justify-content: center;*/
+  text-align: center;
 }
 
-a.dummy{
-	color: black;
+a.dummy {
+  color: black;
 }
-
-
-
 
 /*---------------------*/
 
-h3{
+h3 {
   margin-top: 0%;
   font-weight: bold;
 }
 
-.profile{
+.profile {
   display: inline-flex;
   justify-content: space-between;
   position: relative;
@@ -439,27 +414,26 @@ h3{
   margin-top: 3%;
   padding: 1%;
   width: 94%;
-  background-color: var(--secondary-color);
-  color: var(--tertiary-color);
+  background-color: black;
+  color: white;
   /*border:.5vmin solid black;*/
 }
 
-.info{
+.info {
   display: block;
   padding-left: 3%;
 }
 
-.bio{
- color: var(--tertiary-color);
+.bio {
+  color: white;
 }
 
-.avi{
+.avi {
   width: 25%;
   height: 25%;
 }
 
-
-.postHolder{
+.postHolder {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -467,32 +441,32 @@ h3{
   margin-left: 3%;
   /*margin-top: 3%;*/
   padding: 1%;
-  padding-top:0%;
+  padding-top: 0%;
   width: 94%;
-  background-color: var(--secondary-color);
-  border:.5vmin solid var(--main-color);
+  /*background-color: red;*/
+  border: 0.5vmin solid black;
 }
 
-.boxTitle1{
+.boxTitle1 {
   margin-top: 11%;
   margin-left: 3%;
   font-weight: bold;
   /*background-color: black;*/
   /*color: white;*/
   width: 90%;
-  padding: .3%;
+  padding: 0.3%;
   margin-bottom: 1%;
   /*text-align: center;*/
 }
 
-.boxTitle{
+.boxTitle {
   margin-top: 5%;
   margin-left: 3%;
   font-weight: bold;
   /*background-color: black;*/
   /*color: white;*/
   width: 90%;
-  padding: .3%;
+  padding: 0.3%;
   margin-bottom: 1%;
   /*text-align: center;*/
 }
@@ -509,56 +483,54 @@ h3{
   border:.5vmin solid black;
 }*/
 
-.forumPost{
+.forumPost {
   width: 49%;
   margin-top: 2%;
-  border:.5vmin solid var(--main-color);
-  padding: .3%;
+  border: 0.5vmin solid black;
+  padding: 0.3%;
 }
 
-.postTitle{
-  background-color:var(--secondary-color);
-  color: var(--tertiary-color);
+.postTitle {
+  background-color: #292929;
+  color: white;
   font-weight: bold;
-  padding: 2%;
+  padding: 1%;
 }
 
-
-.postSubTitle{
+.postSubTitle {
   /*height: 5vmin;*/
   /*white-space: wrap;*/
   /*overflow-y: hidden;*/
   /*text-overflow: ellipsis;*/
 }
 
-.feedHolder{
+.feedHolder {
   position: absolute;
   left: 3%;
   width: 90%;
   /*background-color: red;*/
 }
 
-.feed{
+.feed {
   position: absolute;
   margin-top: 2%;
   width: 104.5%;
-  border:.5vmin solid var(--secondary-color);
+  border: 0.5vmin solid black;
 }
 
-.feedPost{
+.feedPost {
   padding: 1%;
 }
 
-.feedPostDate{
+.feedPostDate {
   font-size: 50%;
 }
 
-
-.aCreate{
+.aCreate {
   color: white;
 }
 
-.createUserForum{
+.createUserForum {
   width: 90%;
   position: relative;
   /*align-items: center;*/
@@ -572,6 +544,10 @@ h3{
   padding: 3%;
 }
 
-.userCreate{
+/* .userCreate{
+  display: none;
+} */
+
+.hidden {
   display: none;
 }
