@@ -571,7 +571,7 @@ h3{
 
 
 .aCreate{
-  color: white;
+  color: var(--tertiary-color);
 }
 
 .createUserForum{
@@ -589,5 +589,10 @@ h3{
 }
 
 .userCreate{
+  display: none;
+}
+
+
+.hidden {
   display: none;
 }

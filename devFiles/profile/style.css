@@ -588,7 +588,11 @@ h3 {
 }
 
 .aCreate {
-  color: white;
+  color: var(--tertiary-color);
+}
+
+.userCreate{
+  color: var(--tertiary-color);
 }
 
 .createUserForum {

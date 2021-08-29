@@ -1,0 +1,76 @@
+doctype html
+head
+  meta(name='viewport' content='height=device-height, \
+  width=device-width, initial-scale=1.0, \
+  minimum-scale=1.0, maximum-scale=1.0, \
+  user-scalable=no, target-densitydpi=device-dpi')
+  link(rel='icon' href='../assets/cf1.png')
+  link(rel='stylesheet' type='text/css' href='style.css')
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+  link(rel='stylesheet' media='only screen and (max-width: 1050px)' href='style2.css')
+  link(rel='stylesheet' media='only screen and (min-width: 1051px)' href='style.css')
+  style.
+    @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;500&display=swap");
+  link(rel='shortcut icon' href='../assets/cf1.png')
+  title CipherForums
+  script(defer='' src='./main.js')
+.topBar
+  a.CFlogoHolder(href='../')
+    img.CFlogo(src='../assets/cfSideways3.png')
+  p.topBarText
+    a.topBarText(href='../public_forum/index.html') Public Forums
+  p.topBarText
+    a.create__forum__button(href='https://cipherforums.com/create')
+      | Create A Forum
+  p.topBarText
+    a.topBarText.loginref(href='https://cipherforums.com/signup') Login/Signup
+  p.topBarText
+    a.topBarText(href='../help_page/index.html') Help
+.keyDemo
+  // <div class="enterKey">
+  h3.enterKey Enter a key
+  input.key__textbox(type='' name='')
+.followingHolder
+  .forumPost
+    .authorDate
+      p.forumPostText @user
+      p.forumPostText 10/10/21 4:00PM
+    p.forumPostText This is a post title
+  .feedPost
+    .authorDate
+      p.feedPostText @user
+      p.feedPostText 10/10/21 4:00PM
+    p.feedPostText This is a feedpost
+  .feedPost
+    .authorDate
+      p.feedPostText @user
+      p.feedPostText 10/10/21 4:00PM
+    p.feedPostText This is a feedpost
+  .forumPost
+    .authorDate
+      p.forumPostText @user
+      p.forumPostText 10/10/21 4:00PM
+    p.forumPostText This is a post title
+  .comment
+    .authorDateComment
+      p.forumCommentText @user
+      p.forumCommentText 10/10/21 4:00PM
+    p.commentForum &quot;eded&quot;
+    .authorDate
+      p.forumCommentText @user
+      p.forumCommentText 10/10/21 4:00PM
+    p.forumCommentText This is a comment
+  .forumPost
+    .authorDate
+      p.forumPostText @user
+      p.forumPostText 10/10/21 4:00PM
+    p.forumPostText This is a post title
+  .comment
+    .authorDateComment
+      p.forumCommentText @user
+      p.forumCommentText 10/10/21 4:00PM
+    p.commentForum &quot;eded&quot;
+    p.forumCommentText This is a comment
+    .authorDate
+      p.forumCommentText @user
+      p.forumCommentText 10/10/21 4:00PM
