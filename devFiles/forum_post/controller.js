@@ -150,6 +150,7 @@ const controlNightSwitch = async function () {
 // Run all functions when page loads
 const init = function () {
   const currentTheme = localStorage.getItem("theme");
+
   let nightModeSwitch = document.querySelector(".switch");
   if (currentTheme == "dark") {
     document.body.classList.toggle("dark-mode");
@@ -159,8 +160,8 @@ const init = function () {
   forumView.addHandlerRender(controlInitialLoad);
   keyView.addHandlerInputText(controlUpdateKey);
   keyView.addHandlerHideKey(controlHideKey);
-  let createForumButton = document.querySelector(".create__forum__btn");
-  createForumButton.addEventListener("click", controlCreateForum);
+  // let createForumButton = document.querySelector(".create__forum__btn");
+  // createForumButton.addEventListener("click", controlCreateForum);
   let submitButton = document.querySelector(".btn__comment");
   submitButton.addEventListener("click", controlPostComment);
 

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta
+      name="viewport"
+      content="height=device-height, 
+                      width=device-width, initial-scale=1.0, 
+                      minimum-scale=1.0, maximum-scale=1.0, 
+                      user-scalable=no, target-densitydpi=device-dpi"
+    />
+    <link rel="icon" href="../assets/cf1.png" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      media="only screen and (max-width: 1050px)"
+      href="style2.css"
+    />
+    <link
+      rel="stylesheet"
+      media="only screen and (min-width: 1051px)"
+      href="style.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;500&display=swap");
+    </style>
+    <link rel="shortcut icon" href="../assets/cf1.png" />
+    <title>CipherForums</title>
+    <script defer src="./main.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script
+      src="https://code.jquery.com/jquery-1.12.4.min.js"
+      integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+      integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+      crossorigin="anonymous"
+    ></script>
+    <div class="topBar">
+      <a class="CFlogoHolder" href="https://cipherforums.com">
+        <img class="CFlogo" src="../assets/cfSideways3black.png" />
+      </a>
+      <p class="topBarText">
+        <a class="topBarText" href="../public_forum/index.html"
+          >Public Forums</a
+        >
+      </p>
+      <!--       <p class="topBarText">
+        <a class="create__forum__button" href="https://cipherforums.com/create"
+          >Create Anonymous Forum
+        </a>
+      </p> -->
+      <p class="topBarText">
+        <a class="topBarText logoutBtn" href="https://cipherforums.com/logout"
+          >Logout</a
+        >
+      </p>
+      <p class="topBarText">
+        <a class="topBarText" href="../help_page/index.html">Help</a>
+      </p>
+    </div>
+
+    <a class="userCreate" href="https://cipherforums.com/create/user">
+      <div class="createUserForum hidden">
+        <p class="aCreate">Create a user forum</p>
+      </div>
+    </a>
+    <div class="dropdown">
+      <a
+        id="dLabel"
+        data-target="#"
+        href="http://example.com/"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Dropdown trigger
+        <span class="caret"></span>
+      </a>
+
+      <ul class="dropdown-menu" aria-labelledby="dLabel">
+        ...
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a
+        id="dLabel"
+        data-target="#"
+        href="http://example.com/"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Dropdown trigger
+        <span class="caret"></span>
+      </a>
+
+      <ul class="dropdown-menu" aria-labelledby="dLabel">
+        ...
+      </ul>
+    </div>
+    <!-- /.modal -->
+    <div class="profile">
+      <img class="avi" src="dawg.jpg" />
+      <div class="info">
+        <h3 class="username">@<!-- btc_doggo --></h3>
+        <button class="follow__button button">Follow</button>
+        <a class="following" href="#">Following</a>
+        <p class="bio">
+          Here is a demo bio. These will always be stored unencrypted. Here is
+          more demo text to demo what will happen when a user has a very long
+          bio.
+        </p>
+      </div>
+    </div>
+
+    <div class="feedHolder">
+      <p class="feedTitle">Update Feed</p>
+      <button>post to feed</button>
+      <div class="feed">
+        <!-- 
+  <div class="feedPost">
+ 		<div class="feedPostDate">12/12/21</div>
+ 		<p>WeeWoo</p>
+ 	</div>
+
+  <div class="feedPost">
+    <div class="feedPostDate">12/12/21</div>
+    <p>WeeWoo</p>
+  </div>
+
+  <div class="feedPost">
+    <div class="feedPostDate">12/12/21</div>
+    <p>WeeWoo</p>
+  </div>
+
+  <div class="feedPost">
+    <div class="feedPostDate">12/12/21</div>
+    <p>WeeWoo</p>
+  </div>
+ -->
+      </div>
+    </div>
+
+    <p class="boxTitle1">Pinned Posts</p>
+    <div class="postHolder">
+      <!-- 	<div class="forumPost">
+	<p class="postTitle">Is blue definately the bluest color?</p>
+		<div class="postSubTitle">
+			I believe it is. Here is a long string of text supporting that claim. I have a large amount of evidence. You will see.
+		</div>
+	</div> -->
+    </div>
+
+    <p class="boxTitle">All Posts</p>
+    <div class="postHolder">
+      <!-- <div class="forumPost">
+  <p class="postTitle">Oh boy this is a post</p>
+    <div class="postSubTitle">
+      Me oh my here comes some more demo text, get ready
+    </div>
+  </div> -->
+    </div>
+  </body>
+</html>

@@ -8,6 +8,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "bcryptjs": "^2.4.3",
+    "bootstrap": "^3.4.1",
     "cookie-parser": "^1.4.5",
     "core-js": "^3.16.0",
     "cors": "^2.8.5",
