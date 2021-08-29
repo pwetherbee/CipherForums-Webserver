@@ -1,0 +1,513 @@
+body {
+  background-color: var(--main-color);
+  /*display: inline;*/
+  /*justify-content: space-between;*/
+  font-family: "IBM Plex Mono", monospace;
+}
+
+/*html {
+  scroll-behavior: smooth;
+}*/
+
+p {
+  color: black;
+  margin: 0%;
+}
+
+.topBar {
+  position: relative;
+  display: inline-flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 1%;
+  background-color: var(--secondary-color);
+}
+
+.topBarText {
+  color: var(--tertiary-color);
+  margin: auto;
+}
+
+
+a.topBarText:visited {
+  color: var(--tertiary-color);
+}
+
+a.topBarText {
+  color: var(--tertiary-color);
+}
+
+a {
+	text-decoration: none;
+  color: white;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
+.CFlogoHolder {
+  width: 3%;
+}
+
+.CFlogo {
+  width: 100%;
+}
+
+.commentBorder {
+  border: 2px solid black;
+  display: block;
+  height: 10vmin;
+}
+
+.commentBorderText2 {
+  word-wrap: break-word;
+}
+
+.video {
+  padding: 4%;
+  width: 40%;
+}
+
+.videoSize {
+  width: 100%;
+}
+
+.keyDemo {
+  position: absolute;
+  /*align-items: center;*/
+  /*justify-content: space-between;*/
+  width: 40%;
+  /*height: 50%;*/
+  left: 1%;
+  top: 12%;
+  margin: auto;
+  /*background-color: red;*/
+  line-height: 2.5;
+}
+
+.demoCommentHolder {
+  text-align: center;
+  font-size: 2vmin;
+}
+
+.enterKey {
+  display: block;
+  text-align: left;
+  margin: auto;
+  /*margin-top: 4%;*/
+  color: var(--tertiary-color);
+}
+
+.key__textbox{
+  background-color: var(--main-color);
+  color: var(--tertiary-color);
+}
+
+.create__forum__button:visited{
+  color: var(--tertiary-color);
+}
+
+.mainHolder {
+  margin-top: 19%;
+}
+
+.holder {
+  display: inline-flex;
+  justify-content: space-between;
+  background-color: white;
+  width: 60%;
+  padding: 0.2%;
+}
+
+.holder1 {
+  display: block;
+  justify-content: space-around;
+  width: 30%;
+  /*height: 20%;*/
+  background-color: lightgrey;
+  /*word-wrap: break-word;*/
+  padding: 1%;
+  text-align: center;
+  border-radius: 25px;
+  border: 2px solid black;
+}
+/*
+.holder1yellow{
+	display: block;
+	justify-content: space-around;
+	width: 30%;
+	height: 20%;
+	background-color: lightgrey;
+	padding: 1%;
+	text-align: center;
+	border-radius: 25px;
+	border: 2px solid yellow;
+}*/
+
+/*
+.holder1orange{
+	display: block;
+	justify-content: space-around;
+	width: 30%;
+	height: 20%;
+	background-color: lightgrey;
+	padding: 1%;
+	text-align: center;
+	border-radius: 25px;
+	border: 2px solid orange;
+}*/
+
+/*.holder1pink{
+	display: block;
+	justify-content: space-around;
+	width: 30%;
+	height: 20%;
+	background-color: lightgrey;
+	padding: 1%;
+	text-align: center;
+	border-radius: 25px;
+	border: 2px solid #ff0a89;
+}*/
+
+.holder2 {
+  margin-top: 0%;
+  height: 1%;
+  width: 25%;
+  /*word-wrap: break-word;*/
+  background-color: lightgrey;
+  text-align: center;
+  border-radius: 25px;
+}
+
+/*.holder2alt{
+	margin-top: 15%;
+	height: 1%;
+	width: 23%;
+	background-color: lightgrey;
+	text-align: center;
+	border: 2px solid white;
+}*/
+
+.holder3 {
+  display: block;
+  justify-content: space-around;
+  margin: auto;
+  margin-top: 3%;
+  width: 60%;
+  height: 20%;
+  background-color: lightgrey;
+  /*word-wrap: break-word;*/
+  padding: 1%;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 25px;
+}
+
+.holder4 {
+  margin-top: 20%;
+  height: 1%;
+  width: 21%;
+  /*word-wrap: break-word;*/
+  background-color: lightgrey;
+  text-align: center;
+  padding: 1%;
+  border: 2px solid black;
+}
+
+.holder4alt {
+  margin-top: 36%;
+  height: 1%;
+  width: 21%;
+  /*word-wrap: break-word;*/
+  background-color: lightgrey;
+  text-align: center;
+  padding: 1%;
+  border: 2px solid black;
+}
+
+.redEnc{
+  color:red;
+}
+
+/*.yellow{
+	color: yellow;
+	font-size: 70%;
+}
+
+.red{
+	color: red;
+}
+
+.orange{
+	color: orange
+;
+}
+
+.orange2{
+	color: orange;
+	font-size: 70%;
+}
+
+.green{
+	color: green;
+	font-size: 70%;
+}
+
+.pink{
+	color: #ff0a89;
+	font-size: 70%;
+}
+
+.brown{
+	color: #7d5f1f;
+	font-size: 70%;
+}*/
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+}
+
+.pushDown {
+  padding-top: 50%;
+  /*font-size: 70%;*/
+}
+
+.smallFont {
+  word-break: break-word;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  padding: 1%;
+}
+
+/*.image{
+	width: 97%;
+	border: 3% solid black;
+	margin-top: 2%;
+}*/
+
+.encTitle {
+  color: white;
+  background-color: black;
+  width: 60%;
+  text-align: center;
+}
+
+.encTitle2 {
+  color: white;
+  background-color: black;
+  width: 60%;
+  text-align: center;
+  margin-top: 30%;
+}
+
+h1 {
+  font-size: 90%;
+  padding: 1%;
+}
+
+.r {
+  font-size: 120%;
+  text-decoration: underline;
+}
+
+.other {
+  display: inline-flex;
+  position: absolute;
+  background-color: black;
+  color: white;
+  width: 20%;
+  left: 70%;
+  top: 120%;
+  padding-right: 2%;
+  /*margin-top: -52%;*/
+  /*margin-left: 70%;*/
+  line-height: 1.5;
+}
+
+.other2 {
+  display: block;
+  position: absolute;
+  background-color: black;
+  color: white;
+  width: 20%;
+  left: 70%;
+  top: 260%;
+  padding-right: 2%;
+  /*margin-top: -52%;*/
+  /*margin-left: 70%;*/
+  line-height: 1.5;
+}
+
+.red {
+  /*font-size: 130%;*/
+  color: black;
+  font-weight: bold;
+  word-break: break-word;
+}
+
+mark {
+  background-color: #53dbdb;
+}
+
+/*
+.tooltip {
+  position: relative;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 1%;
+  left: 0%;
+  width: 100%;
+  overflow-wrap: break-word;
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+*/
+
+.bottomPad {
+  position: relative;
+  margin-top: 4%;
+  color: white;
+}
+
+#section1 {
+  /*height: 600px;*/
+  color: black;
+}
+
+#section2 {
+  height: 600px;
+  background-color: yellow;
+}
+
+.create__forum__button:visited{
+  color: var(--tertiary-color);
+}
+
+.moreInfo{
+	display: inline-block;
+	width: 100%;
+	/*justify-content: center;*/
+	text-align: center;
+}
+
+a.dummy{
+	color: black;
+}
+
+
+/*feed
+---------------------*/
+
+
+.followingHolder{
+  width: 96%;
+  flex-wrap: wrap;
+  display: inline-flex;
+  margin-top: 10%;
+  margin-left: 2%;
+  margin-right: 2%;
+
+/*  height: 20px;*/
+  /*margin: auto;*/
+  padding: 1%;
+  border: 2px solid var(--tertiary-color);
+}
+
+
+.authorDate{
+	font-size: 70%;
+	display: inline-flex;
+  color: var(--tertiary-color);
+}
+
+.authorDateComment{
+	margin-left: 5%;
+	font-size: 70%;
+	display: inline-flex;
+}
+
+.forumPost{
+  flex-wrap: wrap;
+  width: 45%;
+  margin: auto;
+  margin-top: 3%;
+  padding: .5%;
+  border: 2px solid var(--tertiary-color);
+  background-color: var(--tertiary-color);
+}
+
+.feedPost{
+  flex-wrap: wrap;
+  width: 45%;
+  margin: auto;
+  margin-top: 3%;
+  padding: .5%;
+   border: 2px solid var(--tertiary-color);
+}
+
+
+.comment{
+  flex-wrap: wrap;
+  width: 45%;
+  margin: auto;
+  margin-top: 3%;
+  padding: 1%;
+   border: 2px solid var(--tertiary-color);
+}
+
+.commentForum{
+	margin-left: 2%;
+	font-size: 70%;
+}
+
+.forumPostText{
+	color: var(--main-color);
+}
+
+
+
+:root{
+  --main-color: #f5f5f5;
+  --secondary-color: white;
+  --tertiary-color: black;
+  --text-color: black;
+  --default-font: "IBM Plex Mono", monospace;
+  --svg-invert: invert(0%);
+}
+
+.dark-mode{
+  --main-color: #121212;
+  --secondary-color: #252525;
+  --tertiary-color: #33ff33;
+  --text-color: #33ff33;
+  --svg-invert: invert(100%);
+}
+
+.feedPostText{
+  color: var(--tertiary-color);
+}
+
+.forumCommentText{
+  color: var(--tertiary-color);
+}
+
+
+
+
