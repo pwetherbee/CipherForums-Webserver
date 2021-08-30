@@ -15,6 +15,7 @@ const signupRouter = require("./routes/signup");
 const loginRouter = require("./routes/login");
 const logoutRouter = require("./routes/logout");
 const createRouter = require("./routes/create");
+const demoRouter = require("./routes/demo");
 
 // Define node.js env, defaults to development
 // process.env.NODE_ENV = "production"; // production or development
@@ -75,6 +76,7 @@ app.use("/signup", signupRouter);
 app.use("/login", loginRouter);
 app.use("/logout", logoutRouter);
 app.use("/create", createRouter);
+app.use("/demo", demoRouter);
 
 app.get("/test", function (req, res, next) {
   if (req.session.views) {

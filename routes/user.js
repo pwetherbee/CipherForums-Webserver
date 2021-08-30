@@ -1,6 +1,7 @@
 var express = require("express");
 var keyChainRouter = require("./keyChain");
 var followingRouter = require("./following");
+const threadRouter = require("./threads");
 var router = express.Router();
 var path = require("path");
 let SQLHelper = require("../helpers/sqlQueryHelper");
@@ -22,6 +23,8 @@ router.get("/:username", (req, res) => {
     }
   });
 });
+
+router.use("/:id/thread", threadRouter);
 
 router.use("/:id/keychain", keyChainRouter);
 
