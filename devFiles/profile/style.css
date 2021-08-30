@@ -15,7 +15,7 @@ p {
   margin: 0%;
 }
 
-:root {
+:root{
   --main-color: #f5f5f5;
   --secondary-color: white;
   --tertiary-color: black;
@@ -24,7 +24,7 @@ p {
   --svg-invert: invert(0%);
 }
 
-.dark-mode {
+.dark-mode{
   --main-color: #121212;
   --secondary-color: #252525;
   --tertiary-color: #33ff33;
@@ -588,11 +588,11 @@ h3 {
 }
 
 .aCreate {
-  color: var(--tertiary-color);
+  color: var(--main-color);
 }
 
 .userCreate{
-  color: var(--tertiary-color);
+  background-color: var(--main-color);
 }
 
 .createUserForum {
@@ -601,7 +601,7 @@ h3 {
   color: black;
   margin-left: 42%;
   margin-top: 3%;
-  background-color: black;
+  background-color: var(--tertiary-color);
   text-align: center;
   padding: 1%;
 }
