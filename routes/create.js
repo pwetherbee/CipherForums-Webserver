@@ -2,9 +2,10 @@ var express = require("express");
 const idGen = require("../helpers/generateRandomID");
 let SQLHelper = require("../helpers/sqlQueryHelper");
 var router = express.Router();
+var path = require("path");
 
 // Create new forum post using random ID
-router.get("/", (req, res) => {
+router.get("/demo", (req, res) => {
   let connection = SQLHelper.createConnection();
   let urlID = idGen.generateID();
   connection.connect();
@@ -22,6 +23,13 @@ router.get("/", (req, res) => {
   // if name given, check if name is in data already
   // create template with either anon user or profile name and thread id
 });
+
+router.get("/forum", (req, res) => {
+  res.sendFile(path.join(__dirname, "../dist/titled_forum/index.html"));
+});
+
+router.post("/forum", (req, res) => {});
+
 router.get("/user", (req, res) => {
   if (!req.session.username) {
     // return res.send("user not logged in");

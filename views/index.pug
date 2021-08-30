@@ -5,19 +5,21 @@ head
   user-scalable=no, target-densitydpi=device-dpi')
   //- link(rel='icon' href='../devFiles/assets/cf1.png')
   //- link(rel='stylesheet' type='text/css' href='../devFiles/style.css')
+  //- style 
+  //-   include ../devfiles/style.css
   link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
   //- link(rel='stylesheet' media='only screen and (max-width: 1050px)' href='../devFiles/style2.css')
-  link(rel='stylesheet' media='only screen and (min-width: 1051px)' href='./style.css')
+  link(rel='stylesheet' media='only screen and (min-width: 1051px)' href='style.css')
   style.
     @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;500&display=swap");
   link(rel='shortcut icon' href='../devFiles/assets/cf1.png')
   title CipherForums
-  script(defer='' src='../devFiles/main.js')
+  //- script(defer = '' src = '../devFiles/main.js')
 .topBar
   a.CFlogoHolder(href='')
     img.CFlogo(src='../devFiles/assets/cfSideways3.png')
   p.topBarText
-    a.topBarText(href='public_forum/index.html') Public Forums
+    a.topBarText(href='../devFiles/public_forum/index.html') Public Forums
   p.topBarText
     a.create__forum__button(href='https://cipherforums.com/create')
       | Create A Forum

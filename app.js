@@ -33,7 +33,10 @@ if (process.env.BUNDLE) {
 
   const options = {};
 
-  let bundlers = [new Bundler("./devFiles/index.html", {})];
+  let bundlers = [
+    new Bundler("./devFiles/index.html", {}),
+    // new Bundler("./views/index.pug"),
+  ];
 
   bundlers.forEach(async (bundler) => {
     await new Promise((resolve) => {
@@ -59,10 +62,11 @@ if (app.get("env") === "production") {
 }
 app.use(sess);
 // Define routers
-app.use("/", (req, res) => {
-  res.render("index", { url: "sjdfksajdkf", action: "login" });
-});
-// app.use("/", indexRouter);
+// app.use("/", (req, res) => {
+//   res.render("index", { url: "sjdfksajdkf", action: "login" });
+// });
+app.use("/", indexRouter);
+// app.use(express.static(path.join(__dirname, "public")));
 app.use("/api", apiRouter);
 app.use("/user", userRouter);
 app.use("/help", helpRouter);
@@ -101,7 +105,8 @@ app.get("/logintest", function (req, res, next) {
   }
 });
 // Serve homepage
-// app.use("/", express.static("dist"));
+app.use("/", express.static("dist"));
+// app.use("/", express.static("public"));
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));

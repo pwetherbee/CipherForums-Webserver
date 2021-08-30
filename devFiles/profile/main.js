@@ -16,7 +16,7 @@ const controlInitialLoad = async function (username) {
   createdForums.forEach((forum) => {
     markup += `
     <div class="forumPost">
-    <a class="postTitle" href="${API_URL}/threads/${forum.title}">${forum.title}</a>
+    <a class="postTitle" href="/threads/${forum.title}">${forum.title}</a>
       <div class="postSubTitle">
       </div>
     </div>

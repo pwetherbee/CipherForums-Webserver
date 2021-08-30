@@ -4,6 +4,7 @@ var path = require("path");
 const sessions = require("express-session");
 const bcrypt = require("bcryptjs");
 let SQLHelper = require("../helpers/sqlQueryHelper");
+// var cors = require("cors");
 router.use(express.json());
 
 router.get("/", (req, res) => {
