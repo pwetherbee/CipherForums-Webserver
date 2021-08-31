@@ -295,3 +295,26 @@ a:hover {
 .formatHexIndent {
   margin-left: 5%;
 }
+
+
+/*restyled forum post title*/
+/*-----------------------*/
+
+.posterInfo{
+  position: relative;
+  display: block;
+  margin-left: 3%;
+  margin-top: 3%;
+  background-color: var(--secondary-color);
+  width: 93%;
+  /*padding: 1%;*/
+  padding-top: .1%;
+  padding-bottom: .5%;
+  padding-left: 2%;
+}
+
+.posterUser{
+  padding-top: 3%;
+  padding-left: 5%;
+}
+
