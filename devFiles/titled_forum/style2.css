@@ -52,8 +52,8 @@ a.topBarText.loginref {
     color: var(--tertiary-color);
 }
 
-a:visited{
-	color: white;
+a{
+	color: var(--tertiary-color);
 }
 
 .CFlogoHolder{

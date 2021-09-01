@@ -526,10 +526,10 @@ h3{
 }*/
 
 .forumPost{
-  width: 49%;
+  width: 95%;
   margin-top: 2%;
   border:.5vmin solid var(--main-color);
-  padding: .3%;
+  padding: .5%;
 }
 
 .postTitle{

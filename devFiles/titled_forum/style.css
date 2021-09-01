@@ -48,7 +48,7 @@ a.topBarText {
 
 a {
 	text-decoration: none;
-  color: white;
+  color: var(--tertiary-color);
 }
 
 a:hover{
