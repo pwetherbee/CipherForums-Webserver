@@ -3,6 +3,7 @@ const idGen = require("../helpers/generateRandomID");
 let SQLHelper = require("../helpers/sqlQueryHelper");
 var router = express.Router();
 var path = require("path");
+router.use(express.json());
 
 // Create new forum post using random ID
 router.get("/demo", (req, res) => {
@@ -30,9 +31,26 @@ router.get("/forum", (req, res) => {
 
 router.post("/forum", (req, res) => {
   const data = req.body;
+  console.log(data);
+
   // TODO: Replace whitespace
   // TODO: Validate title
-  //
+  const url = data.title + "#" + idGen.generateHexID();
+  console.log(url);
+  let connection = SQLHelper.createConnection();
+  connection.connect();
+  let query = `
+      INSERT INTO Forums (url, subtitle, authorID, creationDate)
+    VALUES ("${url}", "${data.subtitle}", "${req.session.userID}", NOW());
+    `;
+  connection.query(query, function (err, rows, fields) {
+    if (err) throw err;
+    console.log(rows);
+    console.log("success");
+  });
+  connection.end();
+  res.send(JSON.stringify({ url: url }));
+  // res.send(JSON.stringify({ redirect: "ok" }));
 });
 
 router.get("/user", (req, res) => {

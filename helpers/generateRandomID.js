@@ -1120,6 +1120,15 @@ unrestricted`.split("\n");
   _capitalizeFL(word) {
     return word[0].toUpperCase() + word.slice(1);
   }
+  generateHexID(length = 4) {
+    let pad = "";
+    const characters = "0123456789";
+    for (let i = 0; i < length; i++) {
+      // TODO: replace this insecure psuedorandom function with #crypto on node server instead
+      pad += characters.charAt(Math.random() * 10);
+    }
+    return pad;
+  }
 }
 
 module.exports = new IDGenerator();

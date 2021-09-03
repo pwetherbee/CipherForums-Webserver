@@ -56,7 +56,7 @@ class ForumView extends View {
     return this._parentElement.querySelectorAll(".comment__body");
   }
   setForumInfo() {
-    this._container.querySelector(
+    document.querySelector(
       ".forum__title"
     ).textContent = `[${this._data.title}] Post by ${this._data.author}`;
   }
