@@ -3,11 +3,21 @@
   src: url("//db.onlinewebfonts.com/t/9f94dc20bb2a09c15241d3a880b7ad01.ttf");
 }
 
-:root {
+:root{
   --main-color: #f5f5f5;
   --secondary-color: white;
   --tertiary-color: rgb(221, 221, 221);
   --text-color: black;
+}
+
+.dark-mode {
+  --main-color: #121212;
+  --secondary-color: #252525;
+  --tertiary-color: #33ff33;
+  /* --text-color: rgb(154, 255, 96); */
+  --text-color: #33ff33;
+  /* --text-color: rgba(54, 255, 28, 0.781); */
+  /* --text-color: rgb(255, 255, 255); */
 }
 
 ::placeholder {
@@ -41,6 +51,7 @@ button {
   width: 98%;
   margin-left: -3%;
  font-size: 16px;
+ background-color: var(--main-color)
 }
 
 input {
@@ -86,6 +97,11 @@ a:hover{
   text-decoration: underline;
 }
 
+a:link, a:visited {
+    color: var(--text-color);
+    text-decoration: underline;
+}
+
 .CFlogoHolder {
   width: 8%;
 }
@@ -107,16 +123,6 @@ a:hover{
 	margin:auto;
 }
 
-
-.dark-mode {
-  --main-color: #121212;
-  --secondary-color: #252525;
-  --tertiary-color: rgb(58, 58, 58);
-  /* --text-color: rgb(154, 255, 96); */
-  --text-color: rgb(223, 223, 223);
-  /* --text-color: rgba(54, 255, 28, 0.781); */
-  /* --text-color: rgb(255, 255, 255); */
-}
 
 .fadeInAnimated {
   opacity: 0;
@@ -311,6 +317,9 @@ a:hover {
   padding-top: .1%;
   padding-bottom: .5%;
   padding-left: 2%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 .posterUser{

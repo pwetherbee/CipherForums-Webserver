@@ -532,6 +532,10 @@ h3{
   padding: .5%;
 }
 
+.forumPostHolder{
+	display: block;
+}
+
 .postTitle{
   background-color:var(--secondary-color);
   color: var(--tertiary-color);
@@ -541,6 +545,7 @@ h3{
 
 
 .postSubTitle{
+  padding: 2%;
   /*height: 5vmin;*/
   /*white-space: wrap;*/
   /*overflow-y: hidden;*/
@@ -596,3 +601,11 @@ h3{
 .hidden {
   display: none;
 }
+
+.titleImage{
+	width: 10vmin;
+	height: 10vmin;
+}
+
+
+

@@ -464,6 +464,9 @@ mark {
   color: var(--tertiary-color);
 }
 
+a.create__forum__button {
+  color: var(--tertiary-color);
+}
 
 /*
 styling for create post with title
@@ -521,6 +524,16 @@ styling for create post with title
 	display: block;
 	margin: auto;
 	text-align: left;
+}
+
+.imageInput{
+  width: 40%;
+  height: 5vmin;
+  display: block;
+  margin: auto;
+  text-align: left;
+  background-color: var(--tertiary-color);
+  color: var(--main-color);
 }
 
 .titleInput{
