@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var path = require("path");
+const { body, validationResult } = require("express-validator");
 const sessions = require("express-session");
 const bcrypt = require("bcryptjs");
 let SQLHelper = require("../helpers/sqlQueryHelper");
@@ -11,10 +12,17 @@ router.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../dist/login/index.html"));
 });
 
-router.post("/", (req, res) => {
-  const account = req.body;
+router.post("/", body("username").isAlphanumeric(), (req, res) => {
   // TODO: Validate input
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({
+      success: false,
+      message: "invalid username",
+    });
+  }
   // Get password hash for corresponding username from database
+  const account = req.body;
   let connection = SQLHelper.createConnection();
   const query = `
   SELECT passwd, userID FROM Users

@@ -14,7 +14,14 @@ loginBtn.addEventListener("submit", async (e) => {
     username: username.value,
     password: password.value,
   };
-  let response = await AJAX(`${API_URL}/login`, user);
+
+  let response;
+  try {
+    response = await AJAX(`${API_URL}/login`, user);
+  } catch (err) {
+    return alert(err);
+  }
+
   if (response.valid) {
     let now = +new Date();
     // console.log(now, response.timeout);

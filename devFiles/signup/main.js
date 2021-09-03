@@ -15,14 +15,20 @@ loginBtn.addEventListener("submit", async (e) => {
     email: email.value,
   };
   //   console.log(user);
-  let response = await AJAX(`${API_URL}/signup`, user);
-  // console.log(response.redirect);
-  if (response.error) {
-    // TODO: Render username already exists message
-    alert(response.response);
-  } else {
+  let response;
+  try {
+    response = await AJAX(`${API_URL}/signup`, user);
     location.href = `${response.redirect}/login`;
+    if (response.error) {
+      // TODO: Render username already exists message
+      alert(response.response);
+    } else {
+    }
+  } catch (err) {
+    alert(err);
   }
+
+  // console.log(response.redirect);
 
   //   console.log(response);
 });
