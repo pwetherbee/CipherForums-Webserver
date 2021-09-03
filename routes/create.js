@@ -16,8 +16,8 @@ router.get("/demo", (req, res) => {
     `;
   connection.query(query, function (err, rows, fields) {
     if (err) throw err;
-    console.log(rows);
-    console.log("success");
+    // console.log(rows);
+    // console.log("success");
   });
   connection.end();
   res.send(res.redirect(`https://cipherforums.com/threads/${urlID}`));
@@ -30,13 +30,17 @@ router.get("/forum", (req, res) => {
 });
 
 router.post("/forum", (req, res) => {
+  // console.log("logged in as ", req.session.username);
+  if (!req.session.username) {
+    console.log("no user logged in");
+    res.send({});
+    return;
+  }
   const data = req.body;
-  console.log(data);
-
   // TODO: Replace whitespace
   // TODO: Validate title
-  const url = data.title + "#" + idGen.generateHexID();
-  console.log(url);
+  const url = data.title + "!" + idGen.generateHexID();
+  // console.log(url);
   let connection = SQLHelper.createConnection();
   connection.connect();
   let query = `
@@ -45,11 +49,11 @@ router.post("/forum", (req, res) => {
     `;
   connection.query(query, function (err, rows, fields) {
     if (err) throw err;
-    console.log(rows);
     console.log("success");
+    res.send(JSON.stringify({ url: `${req.session.username}/thread/${url}` }));
   });
   connection.end();
-  res.send(JSON.stringify({ url: url }));
+
   // res.send(JSON.stringify({ redirect: "ok" }));
 });
 

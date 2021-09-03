@@ -12,7 +12,7 @@ router.get("/threads/:tag", (req, res) => {
   // Make sql query
   let connection = SQLHelper.createConnection();
   let query = `
-  SELECT Forums.id, Forums.url, Forums.creationDate, Users.username FROM Forums
+  SELECT Forums.id, Forums.url, Forums.creationDate, Forums.subtitle, Users.username FROM Forums
   LEFT JOIN Users
   ON Forums.authorID = Users.userID
   WHERE Forums.url = "${urlTag}"
@@ -33,6 +33,7 @@ router.get("/threads/:tag", (req, res) => {
       id: id,
       title: rows[0].url,
       date: rows[0].creationDate,
+      subtitle: rows[0].subtitle,
       comments: [],
     };
     query = `
@@ -76,12 +77,14 @@ router.get("/:username/created", (req, res) => {
   // console.log(username);
   const connection = SQLHelper.createConnection();
   const query = `
-  SELECT Forums.url, Users.username FROM Forums
+  SELECT Forums.url, Forums.subtitle, Forums.creationDate, Users.username FROM Forums
   INNER JOIN Users
   ON Forums.authorID = Users.userID
   WHERE Users.username = "${username}"
+  ORDER BY Forums.creationDate ASC
   `;
   connection.query(query, (err, rows) => {
+    if (err) throw err;
     const createdForums = [];
     rows.forEach((row) => createdForums.push(row));
     // console.log(createdForums);

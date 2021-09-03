@@ -1,5 +1,6 @@
 import View from "./View.js";
 import moment from "moment";
+import { API_URL } from "../../helpers/config.js";
 
 class ForumView extends View {
   _parentElement = document.querySelector(".thread__container");
@@ -39,7 +40,9 @@ class ForumView extends View {
     // // date = new Date(comment.time);
     return `
         <div class="comment__container">
-          <h class="comment__header">${comment.author} on ${
+          <h class="comment__header"><a href = ${API_URL}/user/${
+      comment.author
+    }>@${comment.author}</a> on ${
       date || "unknown"
     } said: <btn class = "btn__reply">[reply]</btn></h>
           <p class="comment__body">
@@ -57,8 +60,17 @@ class ForumView extends View {
   }
   setForumInfo() {
     document.querySelector(
-      ".forum__title"
-    ).textContent = `[${this._data.title}] Post by ${this._data.author}`;
+      ".posterUser"
+    ).innerHTML = `<a href = ${API_URL}/user/${this._data.author}>@${this._data.author}</a>`;
+    //`@${this._data.author}`;
+    document.querySelector(".forum__title").textContent = `[${this._data.title
+      .split("!")
+      .slice(0, 1)}]`;
+    document.querySelector(".subtitle").innerHTML = `${
+      this._data.subtitle.startsWith("#img[")
+        ? `<img src = ${this._data.subtitle.split("[")[1].slice(0, -1)}>`
+        : this._data.subtitle
+    }`;
   }
 }
 

@@ -28,7 +28,6 @@ p {
   margin: auto;
 }
 
-
 a.topBarText:visited {
   color: white;
 }
@@ -38,12 +37,12 @@ a.topBarText {
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
   color: white;
 }
 
-a:hover{
-	text-decoration: underline;
+a:hover {
+  text-decoration: underline;
 }
 
 .CFlogoHolder {
@@ -216,8 +215,8 @@ a:hover{
   border: 2px solid black;
 }
 
-.redEnc{
-  color:red;
+.redEnc {
+  color: red;
 }
 
 /*.yellow{
@@ -386,17 +385,17 @@ mark {
   background-color: yellow;
 }
 
-.create__forum__button:visited{
+.create__forum__button:visited {
   color: white;
 }
 
-.moreInfo{
-	display: inline-block;
-	width: 100%;
-	/*justify-content: center;*/
-	text-align: center;
+.moreInfo {
+  display: inline-block;
+  width: 100%;
+  /*justify-content: center;*/
+  text-align: center;
 }
 
-a.dummy{
-	color: black;
+a.dummy {
+  color: black;
 }

@@ -39,6 +39,7 @@ router.post("/", (req, res) => {
       // create new session
       req.session.username = account.username;
       req.session.userID = id;
+      // console.log("logging in as ", req.session.username);
       res.send(
         JSON.stringify({
           message: "Correct password!",

@@ -5,7 +5,6 @@ export const state = {
   author: "",
   comments: [],
 };
-
 // Updates current page state based on forum ID
 const updateState = function (data) {
   state.id = data.id;
@@ -13,6 +12,7 @@ const updateState = function (data) {
   state.comments = data.comments;
   state.title = data.title;
   state.date = data.date;
+  state.subtitle = data.subtitle;
 };
 
 // Grab correct url from config file in helpers
@@ -34,6 +34,7 @@ export const postComment = async function (
   comment,
   url = `${endpoint}/api/threads/${state.id}`
 ) {
+  console.log("the url is:", url);
   const fetchPro = await fetch(url, {
     method: "POST",
     headers: {

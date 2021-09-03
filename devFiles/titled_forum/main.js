@@ -18,7 +18,9 @@ const controlFormSubmit = async function (e) {
   };
   console.log(data);
   console.log(`${API_URL}/create/forum`);
-  const res = AJAX(`${API_URL}/create/forum`, data);
+  const res = await AJAX(`${API_URL}/create/forum`, data);
+  console.log(res);
+  location.href = `${API_URL}/user/${res.url}`;
 };
 
 const init = function () {

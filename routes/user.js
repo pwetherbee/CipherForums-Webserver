@@ -22,6 +22,7 @@ router.get("/:username", (req, res) => {
       res.sendFile(path.join(__dirname, "../dist/profile/index.html"));
     }
   });
+  connection.end();
 });
 
 router.use("/:id/thread", threadRouter);
