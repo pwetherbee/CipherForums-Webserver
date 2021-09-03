@@ -10,7 +10,7 @@ router.get("/demo", (req, res) => {
   let urlID = idGen.generateID();
   connection.connect();
   let query = `
-    INSERT INTO Forums (url, title, creationDate)
+      INSERT INTO Forums (url, subtitle, creationDate)
     VALUES ("${urlID}", "${urlID}", NOW());
     `;
   connection.query(query, function (err, rows, fields) {
@@ -28,7 +28,12 @@ router.get("/forum", (req, res) => {
   res.sendFile(path.join(__dirname, "../dist/titled_forum/index.html"));
 });
 
-router.post("/forum", (req, res) => {});
+router.post("/forum", (req, res) => {
+  const data = req.body;
+  // TODO: Replace whitespace
+  // TODO: Validate title
+  //
+});
 
 router.get("/user", (req, res) => {
   if (!req.session.username) {
@@ -39,8 +44,8 @@ router.get("/user", (req, res) => {
   let urlID = idGen.generateID();
   connection.connect();
   let query = `
-    INSERT INTO Forums (url, title, authorID, creationDate)
-    VALUES ("${urlID}", "${urlID}", "${req.session.userID}", NOW());
+    INSERT INTO Forums (url, subtitle, authorID, creationDate)
+          VALUES ("${urlID}", "${urlID}", "${req.session.userID}", NOW());
     `;
   connection.query(query, function (err, rows, fields) {
     if (err) throw err;

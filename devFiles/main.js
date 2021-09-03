@@ -35,6 +35,8 @@ const decryptCycle = async function (final = "default_key") {
   }, 800);
 };
 
+console.log(5 + 3 + "8");
+
 const controlInitialLoad = async function () {
   decryptCycle("default_key");
   var curr = 1;

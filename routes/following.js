@@ -48,6 +48,8 @@ router.get("/list/:name", (req, res) => {
   //     return;
   //   }
   // If request is valid, grab the users that person is following from SQL database
+  // TODO: Prevent duplicate entries to following
+
   const connection = SQLHelper.createConnection();
   const query = `
   SELECT Users.username FROM Following
