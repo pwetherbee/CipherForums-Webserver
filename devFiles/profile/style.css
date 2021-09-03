@@ -498,7 +498,7 @@ h3 {
   /*margin-top: 3%;*/
   padding: 1%;
   padding-top: 0%;
-  width: 60%;
+  width: 70%;
   background-color: var(--secondary-color);
   border: 0.5vmin solid var(--secondary-color);
 }
@@ -540,11 +540,16 @@ h3 {
 }*/
 
 .forumPost {
+	display: inline-flex;
   width: 49%;
   margin-top: 2%;
   border: 0.5vmin solid var(--main-color);
   padding: 0.3%;
   overflow-wrap: break-word;
+}
+
+.forumPostHolder{
+	display: block;
 }
 
 .postTitle {
@@ -556,6 +561,7 @@ h3 {
 
 .postSubTitle {
   color: var(--tertiary-color);
+  padding: 1%;
   /*height: 5vmin;*/
   /*white-space: wrap;*/
   /*overflow-y: hidden;*/
@@ -610,4 +616,10 @@ h3 {
 
 .hidden {
   display: none;
+}
+
+
+.titleImage{
+	width: 10vmin;
+	height: 10vmin;
 }

@@ -82,11 +82,16 @@ a.topBarText {
 
 a {
   text-decoration: none;
-  color: white;
+  color: var(--tertiary-color);
 }
 
 a:hover {
   text-decoration: underline;
+}
+
+a:link, a:visited {
+    color: var(--text-color);
+    text-decoration: underline;
 }
 
 .CFlogoHolder {
@@ -374,6 +379,9 @@ a:hover {
   /*padding: 1%;*/
   padding-bottom: 0.5%;
   padding-left: 2%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 .posterUser {
