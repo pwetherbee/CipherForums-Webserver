@@ -20,7 +20,7 @@ const updateState = function (data) {
 const controlInitialLoad = async function () {
   const url = window.location.href;
   const username = url.split("/").slice(-1)[0];
-  const postHolderContainer = document.querySelector(".postHolder");
+  const postHolderContainer = document.querySelector(".postHolderContainer");
   // Load all relevant data into state
   const data = await AJAX(`${API_URL}/user/${username}/info`);
   updateState(data);
