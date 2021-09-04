@@ -231,16 +231,17 @@ a:link, a:visited {
 }
 
 a:visited {
-  color: black;
+  color: var(--text-color);
   text-decoration: none;
 }
 
 a:link {
-  color: black;
+  color: var(--text-color);
   text-decoration: none;
 }
 
 a:hover {
+  color: var(--text-color);
   text-decoration: underline;
 }
 
