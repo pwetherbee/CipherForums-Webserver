@@ -33,7 +33,7 @@ router.get("/:username/info", (req, res) => {
     createdPosts: [],
     currUser: req.session?.username == username,
     isFollowing: true,
-    loggedIn: !!req.session?.userID,
+    loggedIn: Boolean(req.session?.userID),
   };
   // Get bio, created posts, and following list from database
   const connection = SQLHelper.createConnection();

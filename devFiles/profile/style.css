@@ -17,19 +17,22 @@ p {
 }
 
 :root {
-  --main-color: #f5f5f5;
-  --secondary-color: white;
-  --tertiary-color: black;
+  --main-color: #f0f0f0;
+  --secondary-color: #f7f7f7;
+  --tertiary-color: rgb(0, 0, 0);
+  --top-color: rgb(255, 255, 255);
   --text-color: black;
   --default-font: "IBM Plex Mono", monospace;
   --svg-invert: invert(0%);
   --png-green: none;
+  --border-rad: 5px;
 }
 
 .dark-mode {
   --main-color: #121212;
   --secondary-color: #252525;
   --tertiary-color: #33ff33;
+  --top-color: #303030;
   --text-color: #33ff33;
   --svg-invert: invert(100%);
   --png-green: invert(82%) sepia(59%) saturate(2290%) hue-rotate(61deg)
@@ -38,6 +41,12 @@ p {
 
 input {
   background-color: var(--secondary-color);
+}
+
+.button {
+  border: none;
+  border-radius: var(--border-rad);
+  text-align: center;
 }
 
 .CFlogo {
@@ -495,8 +504,9 @@ h3 {
   justify-content: space-between;
   position: relative;
   margin-left: 3%;
+  border-radius: 5px;
   /*margin-top: 3%;*/
-  padding: 1%;
+  padding: 0.1%;
   padding-top: 0%;
   width: 90%;
   background-color: var(--main-color);
@@ -541,22 +551,23 @@ h3 {
 }*/
 
 .forumPost {
-	display: inline-flex;
-  width: 70%;
-  margin-top: 2%;
-  border: 0.5vmin solid var(--main-color);
-  padding: .5%;
-  overflow-wrap: break-word;
+  background-color: var(--top-color);
+  display: inline-flex;
+  width: 49%;
+  /* margin-top: 2%; */
+  border: 0.5vmin solid var(--top-color);
+  border-radius: var(--border-rad);
+  /* padding: 0.3%; */
+  /* overflow-wrap: break-word; */
 }
 
-.forumPostHolder{
-	display: block;
-  width: 100%;
-  word-break: break-word;
+.forumPostHolder {
+  display: block;
 }
 
 .postTitle {
-  background-color: var(--secondary-color);
+  text-align: center;
+
   color: var(--tertiary-color);
   font-weight: bold;
   padding: 1%;
@@ -621,16 +632,30 @@ h3 {
   display: none;
 }
 
+.titleImage {
+  max-width: 5vmin;
+  max-height: 5vmin;
+  min-width: 5vmin;
+  min-height: 5vmin;
+  display: block;
+  width: auto;
+  height: auto;
+  padding-right: 1%;
 
-.titleImage{
-	width: 10vmin;
-	height: 10vmin;
+  /* width: 10vmin; */
+  /* overflow: hidden; */
 }
 
-.editBio{
+.textIcon {
+  filter: var(--png-green);
+}
+
+/* .titleImage{
+	width: 10vmin;
+	height: 10vmin;
+} */
+
+.editBio {
   background-color: var(--tertiary-color);
   color: white;
 }
-
-
-

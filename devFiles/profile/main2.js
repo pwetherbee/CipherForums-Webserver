@@ -1,7 +1,7 @@
 "use strict";
 import { AJAX } from "../helpers/ajaxReq";
 import { API_URL } from "../helpers/config";
-
+const chatIcon = require("../assets/chatIcon2.png");
 // Load all data from web server and fill in html dynamically
 
 let state = {
@@ -31,7 +31,11 @@ const controlInitialLoad = async function () {
     // TODO: Render 404 error
     return;
   }
-  document.querySelector(".username").textContent = `@${state.username}`;
+  document.querySelector(".username").innerHTML = `@${state.username} ${
+    state.isFollowing && !state.currUser
+      ? `<h class = "followingMarker">you follow this user ✔</h>`
+      : ""
+  }`;
   //   document.querySelector(".bio").textContent = `@${state.bio}`;
   postHolderContainer.insertAdjacentHTML(
     "afterbegin",
@@ -39,8 +43,12 @@ const controlInitialLoad = async function () {
   );
   // Only render follow button if current user has not followed that profile
   const followBtn = document.querySelector(".follow__button");
-  if (!state.isFollowing) {
-    followBtn.classList.toggle("hidden");
+  if (!state.isFollowing && state.loggedIn) {
+    followBtn.classList.remove("hidden");
+  }
+  // Render create forum button if logged in
+  if (state.loggedIn && state.currUser) {
+    document.querySelector(".createUserForum").classList.remove("hidden");
   }
   renderNavBar();
 };
@@ -66,22 +74,38 @@ const renderPosts = async function (posts, username) {
   // TODO: change username to be taken from forum object
   let markup = "";
   posts.forEach((forum) => {
+    // markup += `
+    //     <div class="forumPost">
+    //     <a class="postTitle" href="${username}/thread/${forum.url}">${
+    //   forum.url
+    // }</a>
+    //       <div class="postSubTitle">
+    //       ${
+    //         forum.subtitle?.startsWith("#img[")
+    //           ? `<img width = "300vmin" src = ${forum.subtitle
+    //               .split("[")[1]
+    //               .slice(0, -1)}>`
+    //           : forum.subtitle
+    //       }
+    //       </div>
+    //     </div>
+    //       `;
     markup += `
-        <div class="forumPost">
+    <div class="postHolder">
+    <div class="forumPost">
+        <img class="titleImage ${forum.image ? "" : "textIcon"}" src=${
+      forum.image || chatIcon
+    } />
+        <div class="forumPostHolder">
         <a class="postTitle" href="${username}/thread/${forum.url}">${
       forum.url
     }</a>
-          <div class="postSubTitle">
-          ${
-            forum.subtitle?.startsWith("#img[")
-              ? `<img width = "300vmin" src = ${forum.subtitle
-                  .split("[")[1]
-                  .slice(0, -1)}>`
-              : forum.subtitle
-          }
-          </div>
+        <p class="postSubTitle">
+            ${forum.subtitle}
+        </p>
         </div>
-          `;
+    </div>
+    </div>`;
   });
   return markup;
 };
