@@ -509,7 +509,23 @@ h3 {
   padding: 0.1%;
   padding-top: 0%;
   width: 90%;
-  background-color: var(--main-color);
+  background-color: var(--secondary-color);
+  border: 0.5vmin solid var(--secondary-color);
+  /* word-break: break-word; */
+}
+
+.postHolderContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+  margin-left: 3%;
+  border-radius: 5px;
+  /*margin-top: 3%;*/
+  padding: 0.1%;
+  padding-top: 0%;
+  width: 90%;
+  background-color: var(--secondary-color);
   border: 0.5vmin solid var(--secondary-color);
   /* word-break: break-word; */
 }
