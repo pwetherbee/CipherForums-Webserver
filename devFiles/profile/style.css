@@ -511,7 +511,7 @@ h3 {
   width: 90%;
   background-color: var(--main-color);
   border: 0.5vmin solid var(--secondary-color);
-  word-break: break-word;
+  /* word-break: break-word; */
 }
 
 .boxTitle {
