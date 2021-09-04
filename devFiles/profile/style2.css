@@ -481,6 +481,7 @@ h3{
   justify-content: space-between;
   position: relative;
   margin-left: 3%;
+  margin-top: 2%;
   /*margin-top: 3%;*/
   padding: 1%;
   padding-top:0%;
@@ -607,5 +608,9 @@ h3{
 	height: 10vmin;
 }
 
+.editBio{
+  background-color: var(--tertiary-color);
+  color: white;
+}
 
 

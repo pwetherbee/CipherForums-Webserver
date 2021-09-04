@@ -498,9 +498,10 @@ h3 {
   /*margin-top: 3%;*/
   padding: 1%;
   padding-top: 0%;
-  width: 70%;
-  background-color: var(--secondary-color);
+  width: 90%;
+  background-color: var(--main-color);
   border: 0.5vmin solid var(--secondary-color);
+  word-break: break-word;
 }
 
 .boxTitle {
@@ -541,7 +542,7 @@ h3 {
 
 .forumPost {
 	display: inline-flex;
-  width: 49%;
+  width: 70%;
   margin-top: 2%;
   border: 0.5vmin solid var(--main-color);
   padding: 0.3%;
@@ -623,3 +624,11 @@ h3 {
 	width: 10vmin;
 	height: 10vmin;
 }
+
+.editBio{
+  background-color: var(--tertiary-color);
+  color: white;
+}
+
+
+
